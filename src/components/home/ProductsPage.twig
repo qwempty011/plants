@@ -1,0 +1,208 @@
+<div class="flex px-10 py-8 gap-8">
+
+    <!-- ===== LEFT SIDEBAR ===== -->
+    <aside class="w-64 shrink-0 space-y-10 bg-gray-50">
+
+      <!-- Categories -->
+      <div>
+        <h3 class="font-bold text-gray-900 mb-4 text-xl">Categories</h3>
+        <ul class="space-y-3 text-base font-bold text-gray-700 px-7">
+          <li class="text-green-600 font-semibold cursor-pointer flex justify-between">
+          <span>House Plants</span>
+          <span class="font-normal">(33)</span>
+          </li>
+
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Potter Plants</span>
+            <span class="font-normal">(12)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Seeds</span>
+            <span class="font-normal">(65)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Small Plants</span>
+            <span class="font-normal">(39)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Big Plants</span>
+            <span class="font-normal">(23)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Succulents</span>
+            <span class="font-normal">(17)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Terrariums </span>
+            <span class="font-normal">(19)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Gardening</span>
+            <span class="font-normal">(13)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Accessories</span>
+            <span class="font-normal">(18)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Price Range -->
+      <div x-data="{ min: 39, max: 1230, minValue: 39, maxValue: 1230 }" class="space-y-3">
+        <h3 class="font-semibold text-gray-900 text-lg">Price Range</h3>
+
+        <div class="relative h-1 ">
+          <!-- Зеленая линия между ползунками -->
+          <div class="absolute top-1/2 -translate-y-1/2 w-full h-1 bg-green-100 rounded-full"></div>
+          <div class="absolute top-1/2 -translate-y-1/2 h-1 bg-green-500 rounded-full"
+               :style="`left: ${(minValue-min)/(max-min)*100}%; right: ${100-(maxValue-min)/(max-min)*100}%`">
+          </div>
+
+          <!-- Диапазон -->
+          <input type="range" x-model="minValue" :min="min" :max="max"
+                 class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
+          <input type="range" x-model="maxValue" :min="min" :max="max"
+                 class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
+
+          <style>
+            input[type=range]::-webkit-slider-thumb {
+              appearance: none;
+              height: 20px;
+              width: 20px;
+              border: 3px solid white;
+              border-radius: 9999px;
+              background: #22c55e;
+              cursor: pointer;
+              pointer-events: auto;
+            }
+          </style>
+        </div>
+
+        <p class="text-sm text-gray-700">
+          Price: 
+          <span class="font-semibold text-green-600">$<span x-text="minValue"></span></span> – 
+          <span class="font-semibold text-green-600">$<span x-text="maxValue"></span></span>
+        </p>
+
+        <button class="bg-green-600 text-white font-semibold px-4 py-2 w-full rounded-md hover:bg-green-700 transition">
+          Filter
+        </button>
+      </div>
+
+      <!-- Size -->
+      <div>
+        <h3 class="font-bold text-gray-900 mb-4 text-xl ">Size</h3>
+        <ul class="space-y-3 text-base font-bold px-7 text-gray-700">
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Small</span>
+            <span class="font-normal">(119)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Medium</span>
+            <span class="font-normal">(86)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Large</span>
+            <span class="font-normal">(78)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sale Banner -->
+      <div class="bg-green-100 text-center py-6 rounded-lg">
+        <h2 class="text-3xl font-extrabold text-green-600 mb-1">Super Sale</h2>
+        <p class="text-gray-700 text-sm mb-2">UP TO 75% OFF</p>
+        <img src="plant-sale.png" alt="Sale Banner" class="w-32 mx-auto">
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="flex-1">
+
+      <!-- Top Bar -->
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex space-x-8 font-medium text-gray-700 text-base">
+          <a href="#" class="text-green-600 border-b-2 border-green-600 pb-1">All Plants</a>
+          <a href="#" class="hover:text-green-600">New Arrivals</a>
+          <a href="#" class="hover:text-green-600">Sale</a> 
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-gray-700">
+          <label for="sort">Sort by:</label>
+          <select id="sort" class="border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-1 focus:ring-green-500">
+            <option>Default sorting</option>
+            <option>Price: low to high</option>
+            <option>Price: high to low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="grid grid-cols-3 gap-8 ">
+        <!-- Product Card -->
+        <div class="text-center shadow-md pb-5 group">
+          <img src="/assets/images/card-1.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
+          <h4 class="font-medium text-gray-800">Barberton Daisy</h4>
+          <p class="text-green-600 font-semibold">$119.00</p>
+        </div>
+
+        <div class="text-center shadow-md pb-5 group">
+          <img src="/assets/images/card-2.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
+          <h4 class="font-medium text-gray-800">Angel Wing Begonia</h4>
+          <p class="text-green-600 font-semibold">$169.00</p>
+        </div>
+
+        <div class="relative text-center pb-5 shadow-md group">
+          <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-0.5 rounded">13% OFF</span>
+          <img src="/assets/images/card-3.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
+          <h4 class="font-medium text-gray-800">African Violet</h4>
+          <p class="text-green-600 font-semibold">$199.00 <span class="text-gray-400 line-through">$229.00</span></p>
+        </div>
+
+        <div class="text-center shadow-md pb-5 group">
+          <img src="/assets/images/card-4.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
+          <h4 class="font-medium text-gray-800">Beach Spider Lily</h4>
+          <p class="text-green-600 font-semibold">$129.00</p>
+        </div>
+
+        <div class="text-center shadow-md pb-5 group">
+          <img src="/assets/images/card-5.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
+          <h4 class="font-medium text-gray-800">Blushing Bromeliad</h4>
+          <p class="text-green-600 font-semibold">$139.00</p>
+        </div>
+
+        <div class="text-center shadow-md pb-5 group">
+          <img src="/assets/images/card-6.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
+          <h4 class="font-medium text-gray-800">Aluminum Plant</h4>
+          <p class="text-green-600 font-semibold">$179.00</p>
+        </div>
+
+        <div class="text-center shadow-md pb-5 group">
+          <img src="/assets/images/card-7.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
+          <h4 class="font-medium text-gray-800">Bird’s Nest Fern</h4>
+          <p class="text-green-600 font-semibold">$99.00</p>
+        </div>
+
+        <div class="text-center pb-5 shadow-md group">
+          <img src="/assets/images/card-8.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
+          <h4 class="font-medium text-gray-800">Broadleaf Lady Palm</h4>
+          <p class="text-green-600 font-semibold">$59.00</p>
+        </div>
+
+        <div class="text-center pb-5 shadow-md group">
+          <img src="/assets/images/card-9.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
+          <h4 class="font-medium text-gray-800">Chinese Evergreen</h4>
+          <p class="text-green-600 font-semibold">$39.00</p>
+        </div>
+      </div>
+    </main>
+
+    
+  </div>  
+  <div class="flex items-end justify-end space-x-2 ">
+      <button class="px-3 py-1 rounded-lg bg-green-600 text-white font-medium">1</button>
+      <button class="px-3 py-1 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">2</button>
+      <button class="px-3 py-1 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">3</button>
+      <button class="px-3 py-1 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">4</button>
+      <button class="px-3 py-1 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">&gt;</button>
+    </div>

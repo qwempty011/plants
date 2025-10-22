@@ -1,0 +1,8 @@
+{
+  "appName": "Project name",
+  "pages": {
+    "index": {
+      "title": "Title from pages/index.json"
+    }
+  }
+}
