@@ -1,5 +1,11 @@
 {% extends '@layout/main.twig' %}
 {% set title = pages.index.title %}
+
 {% block body %}
-	
+  {% include '@component/home/header.twig' %}
+  {% include '@component/home/main-banner.twig' %}
+  {% include '@component/home/ProductsPage.twig' %} 
+  {% include '@component/home/section-promo-banners.twig' %}
+  {% include '@component/home/blog-posts.twig' %}
+  {% include '@component/home/footer.twig' %} 
 {% endblock %}

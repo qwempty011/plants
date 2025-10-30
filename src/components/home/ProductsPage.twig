@@ -1,3 +1,4 @@
+
 <div class="flex px-10 py-8 gap-8">
 
     <!-- ===== LEFT SIDEBAR ===== -->
@@ -138,71 +139,62 @@
       </div>
 
       <!-- Product Grid -->
-      <div class="grid grid-cols-3 gap-8 ">
-        <!-- Product Card -->
-        <div class="text-center shadow-md pb-5 group">
-          <img src="/assets/images/card-1.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
-          <h4 class="font-medium text-gray-800">Barberton Daisy</h4>
-          <p class="text-green-600 font-semibold">$119.00</p>
-        </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6"
+      x-data="pagination()" x-init='init()'>
+        {% for p in products %}
+          <div class="relative text-center shadow-md pb-5 group">
+            {% if p.discount %}
+              <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-0.5 rounded">{{ p.discount }}</span>
+            {% endif %}
+      
+            <img src="{{ p.img }}" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="{{ p.name }}">
+            <h4 class="font-medium text-gray-800">{{ p.name }}</h4>
 
-        <div class="text-center shadow-md pb-5 group">
-          <img src="/assets/images/card-2.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
-          <h4 class="font-medium text-gray-800">Angel Wing Begonia</h4>
-          <p class="text-green-600 font-semibold">$169.00</p>
-        </div>
-
-        <div class="relative text-center pb-5 shadow-md group">
-          <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-0.5 rounded">13% OFF</span>
-          <img src="/assets/images/card-3.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
-          <h4 class="font-medium text-gray-800">African Violet</h4>
-          <p class="text-green-600 font-semibold">$199.00 <span class="text-gray-400 line-through">$229.00</span></p>
-        </div>
-
-        <div class="text-center shadow-md pb-5 group">
-          <img src="/assets/images/card-4.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
-          <h4 class="font-medium text-gray-800">Beach Spider Lily</h4>
-          <p class="text-green-600 font-semibold">$129.00</p>
-        </div>
-
-        <div class="text-center shadow-md pb-5 group">
-          <img src="/assets/images/card-5.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
-          <h4 class="font-medium text-gray-800">Blushing Bromeliad</h4>
-          <p class="text-green-600 font-semibold">$139.00</p>
-        </div>
-
-        <div class="text-center shadow-md pb-5 group">
-          <img src="/assets/images/card-6.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
-          <h4 class="font-medium text-gray-800">Aluminum Plant</h4>
-          <p class="text-green-600 font-semibold">$179.00</p>
-        </div>
-
-        <div class="text-center shadow-md pb-5 group">
-          <img src="/assets/images/card-7.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
-          <h4 class="font-medium text-gray-800">Bird’s Nest Fern</h4>
-          <p class="text-green-600 font-semibold">$99.00</p>
-        </div>
-
-        <div class="text-center pb-5 shadow-md group">
-          <img src="/assets/images/card-8.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
-          <h4 class="font-medium text-gray-800">Broadleaf Lady Palm</h4>
-          <p class="text-green-600 font-semibold">$59.00</p>
-        </div>
-
-        <div class="text-center pb-5 shadow-md group">
-          <img src="/assets/images/card-9.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="">
-          <h4 class="font-medium text-gray-800">Chinese Evergreen</h4>
-          <p class="text-green-600 font-semibold">$39.00</p>
-        </div>
-      </div>
+            <p class="text-green-600 font-semibold">
+              ${{ p.price }}
+              {% if p.oldPrice %}
+                <span class="text-gray-400 line-through ml-1">${{ p.oldPrice }}</span>
+              {% endif %}
+            </p>
+          </div>
+      {% endfor %}
+    </div>
     </main>
 
     
   </div>  
-  <div class="flex items-end justify-end space-x-2 ">
-      <button class="px-3 py-1 rounded-lg bg-green-600 text-white font-medium">1</button>
-      <button class="px-3 py-1 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">2</button>
-      <button class="px-3 py-1 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">3</button>
-      <button class="px-3 py-1 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">4</button>
-      <button class="px-3 py-1 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100">&gt;</button>
-    </div>
+    <!-- Кнопки -->
+  <div class="flex justify-center gap-4">
+    <button 
+      @click="prevPage" 
+      :disabled="page === 1"
+      class="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
+    >Назад</button>
+
+    <span x-text="page"></span>
+
+    <button 
+      @click="nextPage" 
+      :disabled="page === totalPages"
+      class="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
+    >Вперёд</button>
+  </div>
+</div>
+
+<script>
+  function pagination() {
+    return {
+      data:[],
+      currentData:[],
+      page: 1,
+      perPage: 2,
+      totalPages: 1,
+
+      async init() {
+        const res = await fetch('/data/products.json');
+        this.data = await res.json();
+        this.totalPages = Math.ceil(this.data.length / this.perPage);
+        this.update();
+    },
+  }
+</script>

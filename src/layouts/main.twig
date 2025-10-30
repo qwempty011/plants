@@ -3,33 +3,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{{ title }} | {{ appName }}</title>
-    {# <link rel="stylesheet" href="/src/styles/main.css" /> #}
   </head>
   <body class="max-w-[1200px] m-auto font-Montserrat text-xl font-regular">
-    {% block content %}
-      {% include '../components/home/hero.twig' %}
-    {% endblock %}
-
-    {% block content %}
-      {% include '../components/home/main-banner.twig' %}
-    {% endblock %}
-
-    {% block content %}
-      {% include '../components/home/ProductsPage.twig' %}
-    {% endblock %}
-
-    {% block content %}
-      {% include '../components/home/section-promo-banners.twig' %}
-    {% endblock %}
-
-    {% block content %}
-      {% include '../components/home/blog-posts.twig' %}
-    {% endblock %}
-
-    {% block content %}
-      {% include '../components/home/footer.twig' %}
-    {% endblock %}
-    {{ block("body") }}
+    {% block body %}{% endblock %}
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

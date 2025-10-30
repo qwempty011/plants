@@ -16,7 +16,6 @@ export default defineConfig(({ command }) => {
     })
 
     return {
-        base: '/plants/', // <-- нужно внутри return!
         plugins: [
             vituum(),
             twig({
@@ -25,6 +24,7 @@ export default defineConfig(({ command }) => {
                 namespaces: {
                     component: resolve(__dirname, './src/components'),
                     layout: resolve(__dirname, './src/layouts'),
+                    data: resolve(__dirname, './src/data'),
                 },
             }),
         ],
