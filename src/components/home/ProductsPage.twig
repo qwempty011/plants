@@ -65,18 +65,7 @@
           <input type="range" x-model="maxValue" :min="min" :max="max"
                  class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
 
-          <style>
-            input[type=range]::-webkit-slider-thumb {
-              appearance: none;
-              height: 20px;
-              width: 20px;
-              border: 3px solid white;
-              border-radius: 9999px;
-              background: #22c55e;
-              cursor: pointer;
-              pointer-events: auto;
-            }
-          </style>
+          
         </div>
 
         <p class="text-sm text-gray-700">
@@ -139,26 +128,13 @@
       </div>
 
       <!-- Product Grid -->
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6"
-      x-data="pagination()" x-init='init()'>
-        {% for p in products %}
-          <div class="relative text-center shadow-md pb-5 group">
-            {% if p.discount %}
-              <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-0.5 rounded">{{ p.discount }}</span>
-            {% endif %}
       
-            <img src="{{ p.img }}" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="{{ p.name }}">
-            <h4 class="font-medium text-gray-800">{{ p.name }}</h4>
 
-            <p class="text-green-600 font-semibold">
-              ${{ p.price }}
-              {% if p.oldPrice %}
-                <span class="text-gray-400 line-through ml-1">${{ p.oldPrice }}</span>
-              {% endif %}
-            </p>
-          </div>
-      {% endfor %}
-    </div>
+      <div class="grid grid-cols-3 gap-6">
+        {% for product in products %}
+          {% include '@component/common/card.twig' with { product: product } %}
+        {% endfor %}
+      </div>
     </main>
 
     
@@ -181,20 +157,3 @@
   </div>
 </div>
 
-<script>
-  function pagination() {
-    return {
-      data:[],
-      currentData:[],
-      page: 1,
-      perPage: 2,
-      totalPages: 1,
-
-      async init() {
-        const res = await fetch('/data/products.json');
-        this.data = await res.json();
-        this.totalPages = Math.ceil(this.data.length / this.perPage);
-        this.update();
-    },
-  }
-</script>
