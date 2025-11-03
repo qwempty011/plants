@@ -11,3 +11,33 @@ input[type=range]::-webkit-slider-thumb {
     cursor: pointer;
     pointer-events: auto;
 }
+
+.embla {
+    overflow: hidden;
+    position: relative;
+}
+
+.embla__viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.embla__container {
+    display: flex;
+    backface-visibility: hidden;
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    position: relative;
+}
+
+.embla__dot {
+    transition: background-color 0.3s ease;
+}
+
+.embla__dot:hover {
+    background-color: #22c55e;
+    /* Tailwind green-500 */
+}
