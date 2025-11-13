@@ -1,8 +1,18 @@
 import '../css/main.css';
+import AsyncAlpine from 'async-alpine';
 import Alpine from 'alpinejs';
-import { emblaCarousel } from "./components/embla"
+Alpine.plugin(AsyncAlpine);
 
+Alpine.asyncData(
+    'embla',
+    () =>
+    import ('./components/embla.js')
+);
 
+Alpine.asyncData(
+    'slider',
+    () =>
+    import ('./components/slider.js')
+);
 
-window.emblaCarousel = emblaCarousel
 Alpine.start();
