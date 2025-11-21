@@ -4,6 +4,8 @@ import twig from '@vituum/vite-plugin-twig'
 import { resolve } from 'path'
 
 export default defineConfig(({ command }) => {
+
+
     // Ловим любые необработанные ошибки Vite на уровне процесса
     process.on('uncaughtException', (err) => {
         console.error('\n\x1b[31m[Vite safe mode]\x1b[0m', err.message)
@@ -16,6 +18,7 @@ export default defineConfig(({ command }) => {
     })
 
     return {
+        base: process.env.NODE_ENV === 'production' ? '/plants/' : '/',
         plugins: [
             vituum(),
             twig({

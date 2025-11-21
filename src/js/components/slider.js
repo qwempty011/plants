@@ -10,12 +10,11 @@ export function slider() {
             cards.forEach(card => {
                 const price = parseInt(card.dataset.price);
                 if (!isNaN(price) && price >= this.minValue && price <= this.maxValue) {
-                    card.style.display = ''; // показываем
+                    card.style.display = '';
                 } else {
-                    card.style.display = 'none'; // скрываем
+                    card.style.display = 'none';
                 }
             })
         }
     }
-
 }
