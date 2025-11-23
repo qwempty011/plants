@@ -1,29 +1,35 @@
 name: Deploy Vite + Twig to GitHub Pages
 
+# Триггерим на пуш в main
 on:
   push:
     branches:
-      - main  # деплой срабатывает при пуше в main
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # Шаг 1: забираем код из репозитория
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Шаг 2: устанавливаем Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # используемая версия Node.js
+          node-version: '20'
 
+      # Шаг 3: устанавливаем зависимости
       - name: Install dependencies
         run: npm ci
 
+      # Шаг 4: билдим проект
       - name: Build project
         run: npm run build
 
+      # Шаг 5: деплой на GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v6
         with:
