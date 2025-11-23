@@ -18,7 +18,7 @@ export default defineConfig(({ command }) => {
     })
 
     return {
-        base: process.env.NODE_ENV === 'production' ? '/plants/' : '/',
+        base: '/plants/',
         plugins: [
             vituum(),
             twig({
