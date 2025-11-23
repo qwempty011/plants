@@ -4,7 +4,7 @@
             "title_big": "Let's Make a<br>Better <span class='text-green-600'>Planet</span>",
             "text": "We are an online plant shop offering a wide range of cheap and trendy plants.",
             "button": "Shop Now",
-            "image": "/assets/images/plants.png"
+            "image": "assets/images/plants.png"
         },
 
         {
@@ -12,7 +12,7 @@
             "title_big": "Let's Make a<br>Better <span class='text-green-600'>Planet</span>",
             "text": "We are an online plant shop offering a wide range of cheap and trendy plants.",
             "button": "Shop Now",
-            "image": "/assets/images/plants.png"
+            "image": "assets/images/plants.png"
         },
 
         {
@@ -20,7 +20,7 @@
             "title_big": "Let's Make a<br>Better <span class='text-green-600'>Planet</span>",
             "text": "We are an online plant shop offering a wide range of cheap and trendy plants.",
             "button": "Shop Now",
-            "image": "/assets/images/plants.png"
+            "image": "assets/images/plants.png"
         }
     ]
 }
