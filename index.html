@@ -1,0 +1,624 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Title from pages/index.json | Project name</title>
+    <script type="module" crossorigin src="/plants/assets/index.twig-c30a8f2b.js"></script>
+    <link rel="stylesheet" href="/plants/assets/index.twig-2c71d393.css">
+  </head>
+  <body class="max-w-[1200px] m-auto font-Montserrat text-xl font-regular">
+    
+  <header class="flex justify-between mt-6 pt-0  font-Montserrat text-xl font-regular border-b-[0.3px]">
+    <img class="w-40 h-9" src="/plants/assets/images/Logo.png" alt=""></img>
+    
+      <ul class="flex gap-12 text-neutral-700 ">
+        <li class="font-bold border-b-[3px] border-green-600 pb-6"><a href="#">Home</a></li>
+        <li class="hover:text-black"><a href="#">Shop</a></li>
+        <li class="hover:text-black"><a href="#">Plant Care</a></li>                      
+        <li class="hover:text-black"><a href="#">Blogs</a></li>
+      </ul>
+      <ul class="flex items-center gap-8">
+        <li><a href="#"><img src="/plants/assets/images/Search.png" alt=""></a></li>
+        <li><a href="#"><img src="/plants/assets/images/Basket.png" alt=""></a></li>
+        <button class="flex gap-1 bg-green-500 hover:bg-green-700 items-center px-4 py-2 text-white rounded-md font-medium" >
+          <img class="w-5 h-5" src="/plants/assets/images/Logout.png" alt="">
+          <p>Login</p>
+        </button>
+      </ul>
+     
+</header>
+  <section class="flex justify-between bg-gray-50 mt-5 pb-5">
+  <div class="embla"
+       x-load
+       x-data="embla">
+    <div class="embla__viewport" x-ref="viewport">
+      <div class="embla__container">
+        
+        
+           <div class="embla__slide flex justify-between items-center flex-[0_0_100%] px-10">
+
+          <div class="flex flex-col gap-2 max-w-[620px] pt-16 text-neutral-700"> 
+              <h3 class="text-sm uppercase tracking-wider font-bold">Welcome to GreenShop</h3> 
+              <h1 class="text-7xl uppercase font-black"> Let's Make a<br>Better <span class='text-green-600'>Planet</span> </h1>
+               
+               
+              <p class="text-sm text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.</p> 
+               
+               
+              <button class="mt-11 uppercase px-7 py-3 text-base text-white bg-green-500 hover:bg-green-700 font-bold rounded-md">
+               Shop Now
+               </button> 
+            </div> 
+               <img src="assets/images/plants.png" alt="Plant" class="w-[400px] h-auto" />
+
+</div> 
+        
+           <div class="embla__slide flex justify-between items-center flex-[0_0_100%] px-10">
+
+          <div class="flex flex-col gap-2 max-w-[620px] pt-16 text-neutral-700"> 
+              <h3 class="text-sm uppercase tracking-wider font-bold">Welcome to GreenShop</h3> 
+              <h1 class="text-7xl uppercase font-black"> Let's Make a<br>Better <span class='text-green-600'>Planet</span> </h1>
+               
+               
+              <p class="text-sm text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.</p> 
+               
+               
+              <button class="mt-11 uppercase px-7 py-3 text-base text-white bg-green-500 hover:bg-green-700 font-bold rounded-md">
+               Shop Now
+               </button> 
+            </div> 
+               <img src="assets/images/plants.png" alt="Plant" class="w-[400px] h-auto" />
+
+</div> 
+        
+           <div class="embla__slide flex justify-between items-center flex-[0_0_100%] px-10">
+
+          <div class="flex flex-col gap-2 max-w-[620px] pt-16 text-neutral-700"> 
+              <h3 class="text-sm uppercase tracking-wider font-bold">Welcome to GreenShop</h3> 
+              <h1 class="text-7xl uppercase font-black"> Let's Make a<br>Better <span class='text-green-600'>Planet</span> </h1>
+               
+               
+              <p class="text-sm text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.</p> 
+               
+               
+              <button class="mt-11 uppercase px-7 py-3 text-base text-white bg-green-500 hover:bg-green-700 font-bold rounded-md">
+               Shop Now
+               </button> 
+            </div> 
+               <img src="assets/images/plants.png" alt="Plant" class="w-[400px] h-auto" />
+
+</div> 
+        
+
+      </div>
+    </div> 
+    
+    <div class="embla__dots flex gap-4 justify-center items-center">
+      <template x-for='(dot, i) in dots'  :key='i'>
+        <button @click='select(i)'
+                :class="selected === i ? 'bg-green-500' : 'bg-gray-300'"
+                class="w-3 h-3 rounded-full transition-all"></button>
+      </template>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<div class="flex px-10 py-8 gap-8">
+
+    <!-- ===== LEFT SIDEBAR ===== -->
+    <aside class="w-64 shrink-0 space-y-10 bg-gray-50">
+
+      <!-- Categories -->
+      <div>
+        <h3 class="font-bold text-gray-900 mb-4 text-xl">Categories</h3>
+        <ul class="space-y-3 text-base font-bold text-gray-700 px-7">
+          <li class="text-green-600 font-semibold cursor-pointer flex justify-between">
+          <span>House Plants</span>
+          <span class="font-normal">(33)</span>
+          </li>
+
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Potter Plants</span>
+            <span class="font-normal">(12)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Seeds</span>
+            <span class="font-normal">(65)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Small Plants</span>
+            <span class="font-normal">(39)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Big Plants</span>
+            <span class="font-normal">(23)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Succulents</span>
+            <span class="font-normal">(17)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Terrariums </span>
+            <span class="font-normal">(19)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Gardening</span>
+            <span class="font-normal">(13)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Accessories</span>
+            <span class="font-normal">(18)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Price Range -->
+      <div x-data="slider()" 
+           x-load
+            class="space-y-3">
+        <h3 class="font-semibold text-gray-900 text-lg">Price Range</h3>
+
+        <div class="relative h-1 ">
+          <!-- Зеленая линия между ползунками -->
+          <div class="absolute top-1/2 -translate-y-1/2 w-full h-1 bg-green-100 rounded-full"></div>
+          <div class="absolute top-1/2 -translate-y-1/2 h-1 bg-green-500 rounded-full"
+               :style="{ left: ((minValue - min) / (max - min) * 100) + '%', 
+                        width: ((maxValue - minValue) / (max - min) * 100) + '%' }">
+          </div>
+
+          <!-- Диапазон -->
+              <input type="range" 
+              x-model.number="minValue" 
+              :min="min" 
+              :max="max" 
+              @input="filterCards()"
+              class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
+              <input type="range" 
+              x-model.number="maxValue" 
+              :min="min" 
+              :max="max"
+              @input="filterCards()" 
+              class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
+        </div>
+
+        <p>
+          Price:
+          <span class="font-medium text-green-600">
+            $<span x-text="minValue"></span>
+          </span>
+          -
+          <span class="font-medium text-green-600">
+            $<span x-text="maxValue"></span>
+          </span> 
+        </p>
+
+        <button 
+        class="bg-green-600 text-white font-semibold px-4 py-2 w-full rounded-md hover:bg-green-700 transition">
+          Filter
+        </button>
+      </div>
+
+      <!-- Size -->
+      <div>
+        <h3 class="font-bold text-gray-900 mb-4 text-xl ">Size</h3>
+        <ul class="space-y-3 text-base font-bold px-7 text-gray-700">
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Small</span>
+            <span class="font-normal">(119)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Medium</span>
+            <span class="font-normal">(86)</span>
+          </li>
+          <li class="hover:text-green-600 cursor-pointer flex justify-between">
+            <span>Large</span>
+            <span class="font-normal">(78)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sale Banner -->
+      <div class="bg-green-100 text-center py-6 rounded-lg">
+        <h2 class="text-3xl font-extrabold text-green-600 mb-1">Super Sale</h2>
+        <p class="text-gray-700 text-sm mb-2">UP TO 75% OFF</p>
+        <img src="plant-sale.png" alt="Sale Banner" class="w-32 mx-auto">
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="flex-1">
+
+      <!-- Top Bar -->
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex space-x-8 font-medium text-gray-700 text-base">
+          <a href="#" class="text-green-600 border-b-2 border-green-600 pb-1">All Plants</a>
+          <a href="#" class="hover:text-green-600">New Arrivals</a>
+          <a href="#" class="hover:text-green-600">Sale</a> 
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-gray-700">
+          <label for="sort">Sort by:</label>
+          <select id="sort" class="border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-1 focus:ring-green-500">
+            <option>Default sorting</option>
+            <option>Price: low to high</option>
+            <option>Price: high to low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      
+
+      <div class="grid grid-cols-3 gap-6" id="cardsContainer" x-data>
+        
+        <div
+        class="card  transition-opacity duration-300"
+        data-price="119">
+          <div class="text-center shadow-md pb-5 group">
+    <img src="assets/images/card-1.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Barberton Daisy">
+    <h4 class="font-medium text-gray-800">Barberton Daisy</h4>
+    <p class="text-green-600 font-semibold">$119</p>
+</div>
+        </div>
+        
+        <div
+        class="card  transition-opacity duration-300"
+        data-price="169">
+          <div class="text-center shadow-md pb-5 group">
+    <img src="assets/images/card-2.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Angel Wing Begonia">
+    <h4 class="font-medium text-gray-800">Angel Wing Begonia</h4>
+    <p class="text-green-600 font-semibold">$169</p>
+</div>
+        </div>
+        
+        <div
+        class="card  transition-opacity duration-300"
+        data-price="199">
+          <div class="text-center shadow-md pb-5 group">
+    <img src="assets/images/card-3.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="African Violet">
+    <h4 class="font-medium text-gray-800">African Violet</h4>
+    <p class="text-green-600 font-semibold">$199</p>
+</div>
+        </div>
+        
+        <div
+        class="card  transition-opacity duration-300"
+        data-price="129">
+          <div class="text-center shadow-md pb-5 group">
+    <img src="assets/images/card-4.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Beach Spider Lily">
+    <h4 class="font-medium text-gray-800">Beach Spider Lily</h4>
+    <p class="text-green-600 font-semibold">$129</p>
+</div>
+        </div>
+        
+        <div
+        class="card  transition-opacity duration-300"
+        data-price="139">
+          <div class="text-center shadow-md pb-5 group">
+    <img src="assets/images/card-5.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Blushing Bromeliad">
+    <h4 class="font-medium text-gray-800">Blushing Bromeliad</h4>
+    <p class="text-green-600 font-semibold">$139</p>
+</div>
+        </div>
+        
+        <div
+        class="card  transition-opacity duration-300"
+        data-price="179">
+          <div class="text-center shadow-md pb-5 group">
+    <img src="assets/images/card-6.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Aluminum Plant">
+    <h4 class="font-medium text-gray-800">Aluminum Plant</h4>
+    <p class="text-green-600 font-semibold">$179</p>
+</div>
+        </div>
+        
+        <div
+        class="card  transition-opacity duration-300"
+        data-price="99">
+          <div class="text-center shadow-md pb-5 group">
+    <img src="assets/images/card-7.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Bird’s Nest Fern">
+    <h4 class="font-medium text-gray-800">Bird’s Nest Fern</h4>
+    <p class="text-green-600 font-semibold">$99</p>
+</div>
+        </div>
+        
+        <div
+        class="card  transition-opacity duration-300"
+        data-price="59">
+          <div class="text-center shadow-md pb-5 group">
+    <img src="assets/images/card-8.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Broadleaf Lady Palm">
+    <h4 class="font-medium text-gray-800">Broadleaf Lady Palm</h4>
+    <p class="text-green-600 font-semibold">$59</p>
+</div>
+        </div>
+        
+        <div
+        class="card  transition-opacity duration-300"
+        data-price="39">
+          <div class="text-center shadow-md pb-5 group">
+    <img src="assets/images/card-9.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Chinese Evergreen">
+    <h4 class="font-medium text-gray-800">Chinese Evergreen</h4>
+    <p class="text-green-600 font-semibold">$39</p>
+</div>
+        </div>
+        
+      </div>
+    </main>
+
+    
+  </div>  
+    <!-- Кнопки -->
+  <div class="flex justify-center gap-4">
+    <button 
+      @click="prevPage" 
+      :disabled="page === 1"
+      class="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
+    >Назад</button>
+
+    <span x-text="page"></span>
+
+    <button 
+      @click="nextPage" 
+      :disabled="page === totalPages"
+      class="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
+    >Вперёд</button>
+  </div>
+</div>
+
+ 
+  
+    <div class="flex justify-between mt-64  font-black tracking-wider">
+        <div class="flex justify-between shadow-md items-center">
+            <div class="">
+                <img  src="/plants/assets/images/banner-img-1.png" alt="">
+            </div>
+            <div class="flex flex-col items-center gap-4 p-2 text-3xl text-neutral-700">
+                <h2>Summer cactus <br>& succulents</h2>
+                <p class="text-sm font-normal max-w-72 tracking-wider">We are an online plant shop offering a wide range of cheap and trendy plants</p>
+                <button class="text-lg font-medium px-4 py-2 rounded-xl text-white bg-green-500 hover:bg-green-700">Find More -></button>
+            </div>
+        </div>
+
+        <div class="flex justify-between shadow-md items-center">
+            <div >
+                <img src="/plants/assets/images/banner-img-2.png" alt="">
+            </div>
+            <div class="flex flex-col items-center gap-4 text-3xl text-neutral-700">
+                <h2>Styling Trends <br>& much more</h2>
+                <p class="text-sm font-normal max-w-72 tracking-wider">We are an online plant shop offering a wide range of cheap and trendy plants</p>
+                <button class="text-lg font-medium px-4 py-2 rounded-xl text-white bg-green-500 hover:bg-green-700">Find More -></button>
+            </div>
+        </div>
+    </div>
+
+  <div class="my-44">
+    <div class="text-center text-neutral-700">
+        <h2 class="text-3xl font-bold tracking-wider">Our Blog Posts</h2>
+        <p class="text-sm text-gray-500 font-normal ">We are an online plant shop offering a wide range of cheap and trendy plants.</p>
+    </div>
+    <div class="flex justify-between text-sm font-medium mt-9 text-neutral-700 tracking-wider">
+        <div class="flex flex-col gap-2 max-w-72 bg-gray-50">
+            <img src="/plants/assets/images/blog-post-1.png" alt="">
+            <div class="flex flex-col gap-2 px-4 pb-3">
+                <p class="text-green-500">September 12 I Read in 6 minutes</p>
+                <h4 class="text-xl font-bold tracking-widest">Cactus & Succulent Care Tips</h4>
+                <p class="text-gray-500">Cacti are succulents are easy care plants for any home or patio.</p>
+                <a class="text-xl hover:text-green-500" href="#">Read more -></a>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-2 max-w-72">
+            <img src="/plants/assets/images/blog-post-2.png" alt="">
+            <div class="flex flex-col gap-2 px-4 pb-3">
+                <p class="text-green-500">September 12 I Read in 6 minutes</p>
+                <h4 class="text-xl font-bold tracking-widest">Top 10 Succulents for Your Home</h4>
+                <p class="text-gray-500">Best in hanging baskets. Prefers medium to high light.</p>
+                <a class="text-xl hover:text-green-500" href="#">Read more -></a>
+            </div>
+        </div>
+
+        <div class=" flex flex-col gap-2 max-w-72">
+            <img src="/plants/assets/images/blog-post-3.png" alt="">
+            <div class="flex flex-col gap-2 px-4 pb-3">
+                <p class="text-green-500">September 13  I Read in 2 minutes</p>
+                <h4 class="text-xl font-bold tracking-widest">Cacti & Succulent Care Tips</h4>
+                <p class="text-gray-500">Cacti and succulents thrive in containers and because most are..</p>
+                <a class="text-xl hover:text-green-500" href="#">Read more -></a>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-2 max-w-72">
+            <img src="/plants/assets/images/blog-post-4.jpg" alt="">
+            <div class="flex flex-col gap-2 px-4 pb-3">
+                <p class="text-green-500">September 15  I Read in 3 minutes</p>
+                <h4 class="text-xl font-bold tracking-widest">Best Houseplants Room by Room</h4>
+                <p class="text-gray-500">The benefits of houseplants are endless. In addition to..</p>
+                <a class="text-xl hover:text-green-500" href="#">Read more -></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <footer>
+<!--Top section-->
+    <div class="flex justify-between bg-gray-50 p-6 border-b-2">
+        <div class="text-xl font-bold text-neutral-700 max-w-52">
+
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-4 ">
+                <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                </svg>
+            </div>
+
+            <h2>Garden Care</h2>
+            <p class="text-sm font-normal text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.    </p>
+        </div>
+
+        <div class="text-xl font-bold text-neutral-700 max-w-52">
+
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+            </div>
+
+            <h2>Plant Renovation</h2>
+            <p class="text-sm font-normal text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.    </p>
+        </div>
+
+        <div class="text-xl font-bold text-neutral-700 max-w-52">
+
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+            </div>
+
+            <h2>Watering Graden</h2>
+            <p class="text-sm font-normal text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.    </p>
+        </div>
+
+        <div class="flex flex-col justify-center max-w-[350px]">
+            <h3 class="font-bold text-xl mb-4 text-neutral-700">Would you like to join newsletters?</h3>
+                <div class="flex mb-4">
+                    <input type="email" placeholder="enter your email address..." class="flex-1 px-4 py-2 border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-green-600">
+                    <button class="bg-green-600 text-white px-6 py-2  font-semibold hover:bg-green-700">Join</button>
+                </div>
+            <p class="text-sm text-gray-500">We usually post offers and challenges in newsletter. We're your online houseplant destination. We offer a wide range of houseplants and accessories shipped directly from our (green)house to yours!</p>
+        </div>
+    </div>
+
+    <!--divider-->
+
+    <div class="flex gap-20 items-center text-lg font-normal text-neutral-700 bg-green-50 py-9 px-6">
+        <div>
+            <img src="/plants/assets/images/Logo.png" alt="">
+        </div>
+
+            <a class="hover:text-green-700" href="#">70 West Buckingham Ave. Farmingdale, NY 11735</a>
+            
+            <a class="hover:text-green-700" href="mailto:contact@greenshop.com">contact@greenshop.com</a>
+            
+            <a class="hover:text-green-700" href="tel:+88 01911 717 490">+88 01911 717 490</a>    
+              
+    </div>
+    <!--Footer links-->
+
+    <div class="flex justify-between py-8 px-6 bg-gray-50 border-y-2">
+        <div class="flex flex-col gap-2">
+            <h3>My Account</h3>
+            <ul class="text-lg text-neutral-700 flex flex-col gap-2">
+                <li class="hover:text-black"><a href="#">My Account</a></li>
+                <li class="hover:text-black"><a href="#">Our stores</a></li>
+                <li class="hover:text-black"><a href="#">Contact us</a></li>
+                <li class="hover:text-black"><a href="#">Career</a></li>
+                <li class="hover:text-black"><a href="#">Specials</a></li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <h3>Help & Guide</h3>
+            <ul class="text-lg text-neutral-700 flex flex-col gap-2">
+                <li class="hover:text-black"><a href="#">Help Center</a></li>
+                <li class="hover:text-black"><a href="#">How to Buy</a></li>
+                <li class="hover:text-black"><a href="#">Shipping & Delivery</a></li>
+                <li class="hover:text-black"><a href="#">Product Policy</a></li>
+                <li class="hover:text-black"><a href="#">How to Return</a></li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <h3>Categories</h3>
+            <ul class="text-lg text-neutral-700 flex flex-col gap-2">
+                <li class="hover:text-black"><a href="#">House Plants</a></li>
+                <li class="hover:text-black"><a href="#">Potter Plants</a></li>
+                <li class="hover:text-black"><a href="#">Seeds</a></li>
+                <li class="hover:text-black"><a href="#">Small Plants</a></li>
+                <li class="hover:text-black"><a href="#">Accessories</a></li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col  justify-between">
+
+            
+            <div>
+            <h2>Social Media</h2>
+                <div class="flex gap-4 mt-4">
+                    <!-- Facebook -->
+                    <a href="#" class="p-3 border border-green-300 rounded-xl hover:bg-green-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.8h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#" class="p-3 border border-green-300 rounded-xl hover:bg-green-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 4a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.5-.9a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Twitter -->
+                    <a href="#" class="p-3 border border-green-300 rounded-xl hover:bg-green-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.1 1.5A4.4 4.4 0 0 0 22.4.4a9 9 0 0 1-2.8 1A4.5 4.5 0 0 0 11 5.2a12.8 12.8 0 0 1-9.3-4.7A4.5 4.5 0 0 0 3 9a4.4 4.4 0 0 1-2-.6v.1a4.5 4.5 0 0 0 3.6 4.4 4.6 4.6 0 0 1-2 .1 4.5 4.5 0 0 0 4.2 3.1A9 9 0 0 1 1 19a12.7 12.7 0 0 0 6.9 2"/>
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="#" class="p-3 border border-green-300 rounded-xl hover:bg-green-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.7v2.2h.1c.5-.9 1.8-2.2 3.8-2.2 4.1 0 4.8 2.7 4.8 6.2V24h-4v-7.8c0-1.9 0-4.3-2.6-4.3s-3 2-3 4.1V24h-4V8z"/>
+                        </svg>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a href="#" class="p-3 border border-green-300 rounded-xl hover:bg-green-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.6 3.2H4.4C2.4 3.2 1 4.6 1 6.6v10.8c0 2 1.4 3.4 3.4 3.4h15.2c2 0 3.4-1.4 3.4-3.4V6.6c0-2-1.4-3.4-3.4-3.4zM10 16V8l6 4-6 4z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            
+
+            <div>
+                <h2>We accept</h2>
+
+                <div class="mt-4">
+                <img src="/plants/assets/images/footer-pay.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-gray-50">
+        <h2 class="text-center text-neutral-700 py-4">© 2021 GreenShop. All Rights Reserved.</h2>
+    </div>
+</footer>
+
+ 
+
+    
+    
+  </body>
+</html>

@@ -1,0 +1,1 @@
+function t(){return{min:39,max:300,minValue:39,maxValue:300,filterCards(){document.querySelectorAll("#cardsContainer .card").forEach(e=>{const a=parseInt(e.dataset.price);!isNaN(a)&&a>=this.minValue&&a<=this.maxValue?e.style.display="":e.style.display="none"})}}}export{t as slider};
