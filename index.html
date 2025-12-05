@@ -3,24 +3,42 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Title from pages/index.json | Project name</title>
-    <script type="module" crossorigin src="/plants/assets/index.twig-c30a8f2b.js"></script>
-    <link rel="stylesheet" href="/plants/assets/index.twig-2c71d393.css">
+    <script type="module" crossorigin src="/plants/assets/index.twig-0ad9c1fc.js"></script>
+    <link rel="stylesheet" href="/plants/assets/index.twig-e5d17a7b.css">
   </head>
   <body class="max-w-[1200px] m-auto font-Montserrat text-xl font-regular">
     
-  <header class="flex justify-between mt-6 pt-0  font-Montserrat text-xl font-regular border-b-[0.3px]">
+  <header class="flex justify-between mt-6 pt-0  font-Montserrat text-xl font-regular border-b-[0.3px]"
+        x-data>
     <img class="w-40 h-9" src="/plants/assets/images/Logo.png" alt=""></img>
     
-      <ul class="flex gap-12 text-neutral-700 ">
-        <li class="font-bold border-b-[3px] border-green-600 pb-6"><a href="#">Home</a></li>
-        <li class="hover:text-black"><a href="#">Shop</a></li>
-        <li class="hover:text-black"><a href="#">Plant Care</a></li>                      
-        <li class="hover:text-black"><a href="#">Blogs</a></li>
+      <ul class="flex gap-12 text-neutral-700 "
+          x-data="{active: 'home'}">
+        <li @click="active = 'home'"
+            class="hover:text-black"
+            :class="{ 'border-b-[3px]  border-green-600 text-green-600' : active === 'home' }"><a href="#">Home</a>
+        </li>
+
+        <li @click="active = 'shop'"
+            class="hover:text-black"
+            :class="{ 'border-b-[3px]  border-green-600 text-green-600' : active === 'shop' }"><a href="#">Shop</a>
+        </li>
+
+        <li @click="active = 'plantCare'"
+            class="hover:text-black"
+            :class="{ 'border-b-[3px]  border-green-600 text-green-600' : active === 'plantCare' }"><a href="#">Plant Care</a>
+        </li>
+
+        <li @click="active= 'blogs'"
+            class="hover:text-black"
+            :class="{ 'border-b-[3px]  border-green-600 text-green-600' : active === 'blogs' }"><a href="#">Blogs</a>
+        </li>
       </ul>
       <ul class="flex items-center gap-8">
         <li><a href="#"><img src="/plants/assets/images/Search.png" alt=""></a></li>
         <li><a href="#"><img src="/plants/assets/images/Basket.png" alt=""></a></li>
-        <button class="flex gap-1 bg-green-500 hover:bg-green-700 items-center px-4 py-2 text-white rounded-md font-medium" >
+        <button class="flex gap-1 bg-green-500 hover:bg-green-700 items-center px-4 py-2 text-white rounded-md font-medium" 
+                @click="$dispatch('auth-open', { mode: 'login' })">
           <img class="w-5 h-5" src="/plants/assets/images/Logout.png" alt="">
           <p>Login</p>
         </button>
@@ -245,7 +263,9 @@
     </aside>
 
     <!-- ===== MAIN CONTENT ===== -->
-    <main class="flex-1">
+    <div class="flex-1"
+         x-data="filter()"
+         x-load>
 
       <!-- Top Bar -->
       <div class="flex items-center justify-between mb-8">
@@ -257,10 +277,12 @@
 
         <div class="flex items-center gap-2 text-sm text-gray-700">
           <label for="sort">Sort by:</label>
-          <select id="sort" class="border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-1 focus:ring-green-500">
-            <option>Default sorting</option>
-            <option>Price: low to high</option>
-            <option>Price: high to low</option>
+          <select id="sort" class="border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-1 focus:ring-green-500"
+                  x-model="sortMode"
+                  @change="sortItems()">
+            <option value="default">Default sorting</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
           </select>
         </div>
       </div>
@@ -269,117 +291,127 @@
       
 
       <div class="grid grid-cols-3 gap-6" id="cardsContainer" x-data>
+
         
-        <div
+        <div  
         class="card  transition-opacity duration-300"
         data-price="119">
+
           <div class="text-center shadow-md pb-5 group">
     <img src="assets/images/card-1.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Barberton Daisy">
     <h4 class="font-medium text-gray-800">Barberton Daisy</h4>
     <p class="text-green-600 font-semibold">$119</p>
 </div>
+          
         </div>
         
-        <div
+        <div  
         class="card  transition-opacity duration-300"
         data-price="169">
+
           <div class="text-center shadow-md pb-5 group">
     <img src="assets/images/card-2.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Angel Wing Begonia">
     <h4 class="font-medium text-gray-800">Angel Wing Begonia</h4>
     <p class="text-green-600 font-semibold">$169</p>
 </div>
+          
         </div>
         
-        <div
+        <div  
         class="card  transition-opacity duration-300"
         data-price="199">
+
           <div class="text-center shadow-md pb-5 group">
     <img src="assets/images/card-3.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="African Violet">
     <h4 class="font-medium text-gray-800">African Violet</h4>
     <p class="text-green-600 font-semibold">$199</p>
 </div>
+          
         </div>
         
-        <div
+        <div  
         class="card  transition-opacity duration-300"
         data-price="129">
+
           <div class="text-center shadow-md pb-5 group">
     <img src="assets/images/card-4.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Beach Spider Lily">
     <h4 class="font-medium text-gray-800">Beach Spider Lily</h4>
     <p class="text-green-600 font-semibold">$129</p>
 </div>
+          
         </div>
         
-        <div
+        <div  
         class="card  transition-opacity duration-300"
         data-price="139">
+
           <div class="text-center shadow-md pb-5 group">
     <img src="assets/images/card-5.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Blushing Bromeliad">
     <h4 class="font-medium text-gray-800">Blushing Bromeliad</h4>
     <p class="text-green-600 font-semibold">$139</p>
 </div>
+          
         </div>
         
-        <div
+        <div  
         class="card  transition-opacity duration-300"
         data-price="179">
+
           <div class="text-center shadow-md pb-5 group">
     <img src="assets/images/card-6.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Aluminum Plant">
     <h4 class="font-medium text-gray-800">Aluminum Plant</h4>
     <p class="text-green-600 font-semibold">$179</p>
 </div>
+          
         </div>
         
-        <div
+        <div  
         class="card  transition-opacity duration-300"
         data-price="99">
+
           <div class="text-center shadow-md pb-5 group">
     <img src="assets/images/card-7.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Bird’s Nest Fern">
     <h4 class="font-medium text-gray-800">Bird’s Nest Fern</h4>
     <p class="text-green-600 font-semibold">$99</p>
 </div>
+          
         </div>
         
-        <div
+        <div  
         class="card  transition-opacity duration-300"
         data-price="59">
+
           <div class="text-center shadow-md pb-5 group">
     <img src="assets/images/card-8.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Broadleaf Lady Palm">
     <h4 class="font-medium text-gray-800">Broadleaf Lady Palm</h4>
     <p class="text-green-600 font-semibold">$59</p>
 </div>
+          
         </div>
         
-        <div
+        <div  
         class="card  transition-opacity duration-300"
         data-price="39">
+
           <div class="text-center shadow-md pb-5 group">
     <img src="assets/images/card-9.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Chinese Evergreen">
     <h4 class="font-medium text-gray-800">Chinese Evergreen</h4>
     <p class="text-green-600 font-semibold">$39</p>
 </div>
+          
         </div>
         
+
       </div>
-    </main>
+    </div>
 
     
   </div>  
     <!-- Кнопки -->
-  <div class="flex justify-center gap-4">
-    <button 
-      @click="prevPage" 
-      :disabled="page === 1"
-      class="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
-    >Назад</button>
-
-    <span x-text="page"></span>
-
-    <button 
-      @click="nextPage" 
-      :disabled="page === totalPages"
-      class="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
-    >Вперёд</button>
+  <div class="flex justify-center gap-4 mt-4">
+    <button @click="prevPage()" :disabled="page === 1">Назад</button>
+    <span x-text="page + ' / ' + totalPages"></span>
+    <button @click="nextPage()" :disabled="page === totalPages">Вперёд</button>
   </div>
 </div>
 
@@ -617,6 +649,164 @@
 </footer>
 
  
+
+  <div 
+    x-data="{ open:false, mode:'login' }"
+    x-on:auth-open.window="
+        open = true;
+        mode = $event.detail.mode;
+    "
+    x-show="open"
+    x-transition
+    class="fixed inset-0 bg-black/50 flex items-center  justify-center"
+>
+
+    <div class="relative bg-white w-full max-w-[500px] rounded-xl shadow-xl p-10 flex flex-col items-center text-neutral-700">
+
+        <!-- закрыть -->
+        <button 
+            @click="open = false" 
+            class="absolute top-4 right-4 text-2xl leading-none"
+        >
+            ×
+        </button>
+
+        <!-- вкладки -->
+        <div class="flex gap-4 mb-8 text-xl font-medium">
+            <button 
+                @click="mode = 'login'"
+                class=""
+                :class="mode === 'login' ? 'text-green-600' : 'text-neutral-700'"
+            >
+                Login
+            </button>
+
+            <button 
+                @click="mode = 'register'"
+                class=""
+                :class="mode === 'register' ? 'text-green-600' : 'text-neutral-700'"
+            >
+                Register
+            </button>
+        </div>
+
+        <!-- контент -->
+        <div class="w-full flex flex-col items-center">
+            <template x-if="mode === 'login'">
+                <div class="m-auto flex flex-col items-center w-full max-w-[360px] text-center gap-6">
+
+    <h3 class="text-sm text-neutral-600">
+        Enter your username and password to login.
+    </h3>
+
+    <!-- Inputs -->
+    <div class="flex flex-col gap-4 w-full">
+        <input 
+            type="email" 
+            placeholder="email@example.com"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-green-600"
+        >
+
+        <input 
+            type="password" 
+            placeholder="password"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-green-600"
+        >
+
+        <p class="text-sm text-green-600 cursor-pointer text-right">
+            Forgot Password?
+        </p>
+    </div>
+
+    <!-- Login button -->
+    <button class="bg-green-600 text-white w-full py-2 rounded-lg hover:bg-green-700 transition">
+        Login
+    </button>
+
+    <p class="text-sm text-neutral-500">Or login with</p>
+
+    <!-- Social buttons -->
+    <div class="flex flex-col gap-3 w-full">
+
+        <button class="border flex items-center justify-center gap-3 border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition">
+            <img class="w-5 h-5" src="/assets/images/google.png" alt="">
+            <p>Login with Google</p>
+        </button>
+
+        <button class="border flex items-center justify-center gap-3 border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition">
+            <img class="w-5 h-5" src="/assets/images/facebook.png" alt="">
+            <p>Login with Facebook</p>
+        </button>
+
+    </div>
+
+</div>
+            </template>
+
+            <template x-if="mode === 'register'">
+                <div class="m-auto flex flex-col items-center w-full max-w-[360px] text-center gap-6">
+
+    <h3 class="text-sm text-neutral-600">
+        Enter your email and password to register.
+    </h3>
+
+    <!-- Inputs -->
+    <div class="flex flex-col gap-4 w-full">
+        <input 
+            type="email" 
+            placeholder="email@example.com"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-green-600"
+        >
+
+        <input 
+            type="email" 
+            placeholder="Enter your email address"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-green-600"
+        >
+
+        <input 
+            type="password" 
+            placeholder="password"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-green-600"
+        >
+
+        <input 
+            type="password" 
+            placeholder="Confirm Password"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-green-600"
+        >
+
+    </div>
+
+    <!-- Login button -->
+    <button class="bg-green-600 text-white w-full py-2 rounded-lg hover:bg-green-700 transition">
+        Login
+    </button>
+
+    <p class="text-sm text-neutral-500">Or register with</p>
+
+    <!-- Social buttons -->
+    <div class="flex flex-col gap-3 w-full">
+
+        <button class="border flex items-center justify-center gap-3 border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition">
+            <img class="w-5 h-5" src="/assets/images/google.png" alt="">
+            <p>Login with Google</p>
+        </button>
+
+        <button class="border flex items-center justify-center gap-3 border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition">
+            <img class="w-5 h-5" src="/assets/images/facebook.png" alt="">
+            <p>Login with Facebook</p>
+        </button>
+
+    </div>
+
+</div>
+
+            </template>
+        </div>
+
+    </div>
+</div> 
 
     
     
