@@ -4,17 +4,14 @@ export function filter() {
         sortedItems: [],
         sortMode: 'default',
         container: null,
-        page: 1,
-        perPage: 9,
-        totalPages: 1,
+
 
         init() {
             this.container = document.getElementById('cardsContainer');
             this.items = Array.from(this.container.children);
             this.sortedItems = [...this.items];
 
-            this.updatePagination();
-            this.renderPage();
+
         },
 
         sortItems() {
