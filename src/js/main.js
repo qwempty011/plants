@@ -15,4 +15,9 @@ Alpine.asyncData(
     import ('./components/slider.js')
 );
 
+Alpine.asyncData(
+    'filter',
+    () =>
+    import ('./components/filter.js')
+)
 Alpine.start();

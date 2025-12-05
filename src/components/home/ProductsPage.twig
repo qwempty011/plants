@@ -122,7 +122,9 @@
     </aside>
 
     <!-- ===== MAIN CONTENT ===== -->
-    <main class="flex-1">
+    <div class="flex-1"
+         x-data="filter()"
+         x-load>
 
       <!-- Top Bar -->
       <div class="flex items-center justify-between mb-8">
@@ -134,10 +136,12 @@
 
         <div class="flex items-center gap-2 text-sm text-gray-700">
           <label for="sort">Sort by:</label>
-          <select id="sort" class="border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-1 focus:ring-green-500">
-            <option>Default sorting</option>
-            <option>Price: low to high</option>
-            <option>Price: high to low</option>
+          <select id="sort" class="border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-1 focus:ring-green-500"
+                  x-model="sortMode"
+                  @change="sortItems()">
+            <option value="default">Default sorting</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
           </select>
         </div>
       </div>
@@ -146,33 +150,27 @@
       
 
       <div class="grid grid-cols-3 gap-6" id="cardsContainer" x-data>
+
         {% for product in products %}
-        <div
+        <div  
         class="card  transition-opacity duration-300"
         data-price="{{ product.price }}">
+
           {% include '@component/common/card.twig' with { product: product } %}
+          
         </div>
         {% endfor %}
+
       </div>
-    </main>
+    </div>
 
     
   </div>  
     <!-- Кнопки -->
-  <div class="flex justify-center gap-4">
-    <button 
-      @click="prevPage" 
-      :disabled="page === 1"
-      class="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
-    >Назад</button>
-
-    <span x-text="page"></span>
-
-    <button 
-      @click="nextPage" 
-      :disabled="page === totalPages"
-      class="px-3 py-1 bg-gray-700 text-white rounded disabled:opacity-50"
-    >Вперёд</button>
+  <div class="flex justify-center gap-4 mt-4">
+    <button @click="prevPage()" :disabled="page === 1">Назад</button>
+    <span x-text="page + ' / ' + totalPages"></span>
+    <button @click="nextPage()" :disabled="page === totalPages">Вперёд</button>
   </div>
 </div>
 

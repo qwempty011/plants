@@ -1,0 +1,53 @@
+<div 
+    x-data="{ open:false, mode:'login' }"
+    x-on:auth-open.window="
+        open = true;
+        mode = $event.detail.mode;
+    "
+    x-show="open"
+    x-transition
+    class="fixed inset-0 bg-black/50 flex items-center  justify-center"
+>
+
+    <div class="relative bg-white w-full max-w-[500px] rounded-xl shadow-xl p-10 flex flex-col items-center text-neutral-700">
+
+        <!-- закрыть -->
+        <button 
+            @click="open = false" 
+            class="absolute top-4 right-4 text-2xl leading-none"
+        >
+            ×
+        </button>
+
+        <!-- вкладки -->
+        <div class="flex gap-4 mb-8 text-xl font-medium">
+            <button 
+                @click="mode = 'login'"
+                class=""
+                :class="mode === 'login' ? 'text-green-600' : 'text-neutral-700'"
+            >
+                Login
+            </button>
+
+            <button 
+                @click="mode = 'register'"
+                class=""
+                :class="mode === 'register' ? 'text-green-600' : 'text-neutral-700'"
+            >
+                Register
+            </button>
+        </div>
+
+        <!-- контент -->
+        <div class="w-full flex flex-col items-center">
+            <template x-if="mode === 'login'">
+                {% include '@component/common/auth/login.twig' %}
+            </template>
+
+            <template x-if="mode === 'register'">
+                {% include '@component/common/auth/register.twig' %}
+            </template>
+        </div>
+
+    </div>
+</div>
