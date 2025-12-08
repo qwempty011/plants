@@ -168,9 +168,9 @@
   </div>  
     <!-- Кнопки -->
   <div class="flex justify-center gap-4 mt-4">
-    <button @click="prevPage()" :disabled="page === 1">Назад</button>
+    <button @click="prevPage" :disabled="page === 1">Назад</button>
     <span x-text="page + ' / ' + totalPages"></span>
-    <button @click="nextPage()" :disabled="page === totalPages">Вперёд</button>
+    <button @click="nextPage" :disabled="page === totalPages">Вперёд</button>
   </div>
 </div>
 
