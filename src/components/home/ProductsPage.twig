@@ -1,8 +1,8 @@
 
-<div class="flex px-10 py-8 gap-8">
+<div class="flex px-10 py-8 font-roboto gap-8">
 
     <!-- ===== LEFT SIDEBAR ===== -->
-    <aside class="w-64 shrink-0 space-y-10 bg-gray-50">
+    <aside class="w-64 shrink-0 space-y-10 px-3 py-4 bg-gray-50">
 
       <!-- Categories -->
       <div>
@@ -134,11 +134,14 @@
           <a href="#" class="hover:text-green-600">Sale</a> 
         </div>
 
-        <div class="flex items-center gap-2 text-sm text-gray-700">
-          <label for="sort">Sort by:</label>
-          <select id="sort" class="border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-1 focus:ring-green-500"
-                  x-model="sortMode"
-                  @change="sortItems()">
+        <div class="flex items-center gap-3 text-sm text-gray-700">
+          <label for="sort" class="font-medium">Sort by:</label>
+          <select
+            id="sort"
+            class="rounded-md  bg-white py-1.5 px-3 text-sm "
+            x-model="sortMode"
+            @change="sortItems()"
+          >
             <option value="default">Default sorting</option>
             <option value="low">Price: low to high</option>
             <option value="high">Price: high to low</option>

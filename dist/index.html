@@ -3,12 +3,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Title from pages/index.json | Project name</title>
-    <script type="module" crossorigin src="/plants/assets/index.twig-08f8304d.js"></script>
-    <link rel="stylesheet" href="/plants/assets/index.twig-e5d17a7b.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/plants/assets/index.twig-36adb6df.js"></script>
+    <link rel="stylesheet" href="/plants/assets/index.twig-040310a2.css">
   </head>
-  <body class="max-w-[1200px] m-auto font-Montserrat text-xl font-regular">
+  <body class="max-w-[1200px] m-auto text-xl font-regular font-roboto">
     
-  <header class="flex justify-between mt-6 pt-0  font-Montserrat text-xl font-regular border-b-[0.3px]"
+  <header class="flex justify-between mt-6 pt-0 font-roboto text-xl font-regular border-b-[0.3px]"
         x-data>
     <img class="w-40 h-9" src="/plants/assets/images/Logo.png" alt=""></img>
     
@@ -34,7 +37,7 @@
             :class="{ 'border-b-[3px]  border-green-600 text-green-600' : active === 'blogs' }"><a href="#">Blogs</a>
         </li>
       </ul>
-      <ul class="flex items-center gap-8">
+      <ul class="flex items-center gap-8 mb-3">
         <li><a href="#"><img src="/plants/assets/images/Search.png" alt=""></a></li>
         <li><a href="#"><img src="/plants/assets/images/Basket.png" alt=""></a></li>
         <button class="flex gap-1 bg-green-500 hover:bg-green-700 items-center px-4 py-2 text-white rounded-md font-medium" 
@@ -45,7 +48,7 @@
       </ul>
      
 </header>
-  <section class="flex justify-between bg-gray-50 mt-5 pb-5">
+  <section class="flex justify-between font-roboto bg-gray-50 mt-5 pb-5">
   <div class="embla"
        x-load
        x-data="embla">
@@ -53,7 +56,7 @@
       <div class="embla__container">
         
         
-           <div class="embla__slide flex justify-between items-center flex-[0_0_100%] px-10">
+           <div class="embla__slide flex justify-between items-center font-roboto flex-[0_0_100%] px-10">
 
           <div class="flex flex-col gap-2 max-w-[620px] pt-16 text-neutral-700"> 
               <h3 class="text-sm uppercase tracking-wider font-bold">Welcome to GreenShop</h3> 
@@ -63,15 +66,15 @@
               <p class="text-sm text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.</p> 
                
                
-              <button class="mt-11 uppercase px-7 py-3 text-base text-white bg-green-500 hover:bg-green-700 font-bold rounded-md">
-               Shop Now
-               </button> 
+              <button class="mt-11 uppercase px-8 py-2 text-base text-white bg-green-500 hover:bg-green-700 font-bold rounded-md w-max">
+                  Shop Now
+              </button> 
             </div> 
                <img src="assets/images/plants.png" alt="Plant" class="w-[400px] h-auto" />
 
 </div> 
         
-           <div class="embla__slide flex justify-between items-center flex-[0_0_100%] px-10">
+           <div class="embla__slide flex justify-between items-center font-roboto flex-[0_0_100%] px-10">
 
           <div class="flex flex-col gap-2 max-w-[620px] pt-16 text-neutral-700"> 
               <h3 class="text-sm uppercase tracking-wider font-bold">Welcome to GreenShop</h3> 
@@ -81,15 +84,15 @@
               <p class="text-sm text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.</p> 
                
                
-              <button class="mt-11 uppercase px-7 py-3 text-base text-white bg-green-500 hover:bg-green-700 font-bold rounded-md">
-               Shop Now
-               </button> 
+              <button class="mt-11 uppercase px-8 py-2 text-base text-white bg-green-500 hover:bg-green-700 font-bold rounded-md w-max">
+                  Shop Now
+              </button> 
             </div> 
                <img src="assets/images/plants.png" alt="Plant" class="w-[400px] h-auto" />
 
 </div> 
         
-           <div class="embla__slide flex justify-between items-center flex-[0_0_100%] px-10">
+           <div class="embla__slide flex justify-between items-center font-roboto flex-[0_0_100%] px-10">
 
           <div class="flex flex-col gap-2 max-w-[620px] pt-16 text-neutral-700"> 
               <h3 class="text-sm uppercase tracking-wider font-bold">Welcome to GreenShop</h3> 
@@ -99,9 +102,9 @@
               <p class="text-sm text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.</p> 
                
                
-              <button class="mt-11 uppercase px-7 py-3 text-base text-white bg-green-500 hover:bg-green-700 font-bold rounded-md">
-               Shop Now
-               </button> 
+              <button class="mt-11 uppercase px-8 py-2 text-base text-white bg-green-500 hover:bg-green-700 font-bold rounded-md w-max">
+                  Shop Now
+              </button> 
             </div> 
                <img src="assets/images/plants.png" alt="Plant" class="w-[400px] h-auto" />
 
@@ -111,7 +114,7 @@
       </div>
     </div> 
     
-    <div class="embla__dots flex gap-4 justify-center items-center">
+    <div class="embla__dots mt-2 flex gap-4 justify-center items-center">
       <template x-for='(dot, i) in dots'  :key='i'>
         <button @click='select(i)'
                 :class="selected === i ? 'bg-green-500' : 'bg-gray-300'"
@@ -140,10 +143,10 @@
 
 
   
-<div class="flex px-10 py-8 gap-8">
+<div class="flex px-10 py-8 font-roboto gap-8">
 
     <!-- ===== LEFT SIDEBAR ===== -->
-    <aside class="w-64 shrink-0 space-y-10 bg-gray-50">
+    <aside class="w-64 shrink-0 space-y-10 px-3 py-4 bg-gray-50">
 
       <!-- Categories -->
       <div>
@@ -275,11 +278,14 @@
           <a href="#" class="hover:text-green-600">Sale</a> 
         </div>
 
-        <div class="flex items-center gap-2 text-sm text-gray-700">
-          <label for="sort">Sort by:</label>
-          <select id="sort" class="border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-1 focus:ring-green-500"
-                  x-model="sortMode"
-                  @change="sortItems()">
+        <div class="flex items-center gap-3 text-sm text-gray-700">
+          <label for="sort" class="font-medium">Sort by:</label>
+          <select
+            id="sort"
+            class="rounded-md  bg-white py-1.5 px-3 text-sm "
+            x-model="sortMode"
+            @change="sortItems()"
+          >
             <option value="default">Default sorting</option>
             <option value="low">Price: low to high</option>
             <option value="high">Price: high to low</option>
@@ -297,10 +303,23 @@
         class="card  transition-opacity duration-300"
         data-price="119">
 
-          <div class="text-center shadow-md pb-5 group">
-    <img src="assets/images/card-1.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Barberton Daisy">
+          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+  
+  
+
+  
+  <img src="assets/images/card-1.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Barberton Daisy">
+  
+  
+  <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Barberton Daisy</h4>
-    <p class="text-green-600 font-semibold">$119</p>
+    
+    
+    <div class="flex items-center gap-2 mt-1">
+      <p class="text-green-600 font-semibold">$119</p>
+      
+    </div>
+  </div>
 </div>
           
         </div>
@@ -309,10 +328,23 @@
         class="card  transition-opacity duration-300"
         data-price="169">
 
-          <div class="text-center shadow-md pb-5 group">
-    <img src="assets/images/card-2.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Angel Wing Begonia">
+          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+  
+  
+
+  
+  <img src="assets/images/card-2.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Angel Wing Begonia">
+  
+  
+  <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Angel Wing Begonia</h4>
-    <p class="text-green-600 font-semibold">$169</p>
+    
+    
+    <div class="flex items-center gap-2 mt-1">
+      <p class="text-green-600 font-semibold">$169</p>
+      
+    </div>
+  </div>
 </div>
           
         </div>
@@ -321,10 +353,29 @@
         class="card  transition-opacity duration-300"
         data-price="199">
 
-          <div class="text-center shadow-md pb-5 group">
-    <img src="assets/images/card-3.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="African Violet">
+          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+  
+  
+    <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
+      13% OFF
+    </span>
+  
+
+  
+  <img src="assets/images/card-3.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="African Violet">
+  
+  
+  <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">African Violet</h4>
-    <p class="text-green-600 font-semibold">$199</p>
+    
+    
+    <div class="flex items-center gap-2 mt-1">
+      <p class="text-green-600 font-semibold">$199</p>
+      
+        <p class="text-gray-400 line-through font-semibold">$229</p>
+      
+    </div>
+  </div>
 </div>
           
         </div>
@@ -333,10 +384,23 @@
         class="card  transition-opacity duration-300"
         data-price="129">
 
-          <div class="text-center shadow-md pb-5 group">
-    <img src="assets/images/card-4.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Beach Spider Lily">
+          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+  
+  
+
+  
+  <img src="assets/images/card-4.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Beach Spider Lily">
+  
+  
+  <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Beach Spider Lily</h4>
-    <p class="text-green-600 font-semibold">$129</p>
+    
+    
+    <div class="flex items-center gap-2 mt-1">
+      <p class="text-green-600 font-semibold">$129</p>
+      
+    </div>
+  </div>
 </div>
           
         </div>
@@ -345,10 +409,23 @@
         class="card  transition-opacity duration-300"
         data-price="139">
 
-          <div class="text-center shadow-md pb-5 group">
-    <img src="assets/images/card-5.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Blushing Bromeliad">
+          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+  
+  
+
+  
+  <img src="assets/images/card-5.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Blushing Bromeliad">
+  
+  
+  <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Blushing Bromeliad</h4>
-    <p class="text-green-600 font-semibold">$139</p>
+    
+    
+    <div class="flex items-center gap-2 mt-1">
+      <p class="text-green-600 font-semibold">$139</p>
+      
+    </div>
+  </div>
 </div>
           
         </div>
@@ -357,10 +434,23 @@
         class="card  transition-opacity duration-300"
         data-price="179">
 
-          <div class="text-center shadow-md pb-5 group">
-    <img src="assets/images/card-6.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Aluminum Plant">
+          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+  
+  
+
+  
+  <img src="assets/images/card-6.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Aluminum Plant">
+  
+  
+  <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Aluminum Plant</h4>
-    <p class="text-green-600 font-semibold">$179</p>
+    
+    
+    <div class="flex items-center gap-2 mt-1">
+      <p class="text-green-600 font-semibold">$179</p>
+      
+    </div>
+  </div>
 </div>
           
         </div>
@@ -369,10 +459,23 @@
         class="card  transition-opacity duration-300"
         data-price="99">
 
-          <div class="text-center shadow-md pb-5 group">
-    <img src="assets/images/card-7.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Bird’s Nest Fern">
+          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+  
+  
+
+  
+  <img src="assets/images/card-7.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Bird’s Nest Fern">
+  
+  
+  <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Bird’s Nest Fern</h4>
-    <p class="text-green-600 font-semibold">$99</p>
+    
+    
+    <div class="flex items-center gap-2 mt-1">
+      <p class="text-green-600 font-semibold">$99</p>
+      
+    </div>
+  </div>
 </div>
           
         </div>
@@ -381,10 +484,23 @@
         class="card  transition-opacity duration-300"
         data-price="59">
 
-          <div class="text-center shadow-md pb-5 group">
-    <img src="assets/images/card-8.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Broadleaf Lady Palm">
+          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+  
+  
+
+  
+  <img src="assets/images/card-8.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Broadleaf Lady Palm">
+  
+  
+  <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Broadleaf Lady Palm</h4>
-    <p class="text-green-600 font-semibold">$59</p>
+    
+    
+    <div class="flex items-center gap-2 mt-1">
+      <p class="text-green-600 font-semibold">$59</p>
+      
+    </div>
+  </div>
 </div>
           
         </div>
@@ -393,10 +509,23 @@
         class="card  transition-opacity duration-300"
         data-price="39">
 
-          <div class="text-center shadow-md pb-5 group">
-    <img src="assets/images/card-9.jpg" class="mx-auto mb-3 rounded-lg transition-transform group-hover:scale-105" alt="Chinese Evergreen">
+          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+  
+  
+
+  
+  <img src="assets/images/card-9.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Chinese Evergreen">
+  
+  
+  <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Chinese Evergreen</h4>
-    <p class="text-green-600 font-semibold">$39</p>
+    
+    
+    <div class="flex items-center gap-2 mt-1">
+      <p class="text-green-600 font-semibold">$39</p>
+      
+    </div>
+  </div>
 </div>
           
         </div>
@@ -417,15 +546,15 @@
 
  
   
-    <div class="flex justify-between mt-64  font-black tracking-wider">
+    <div class="flex font-roboto justify-between mt-64  font-black tracking-wider">
         <div class="flex justify-between shadow-md items-center">
             <div class="">
                 <img  src="/plants/assets/images/banner-img-1.png" alt="">
             </div>
-            <div class="flex flex-col items-center gap-4 p-2 text-3xl text-neutral-700">
+            <div class="flex flex-col mr-7 text-end items-end gap-4 p-2 text-3xl text-neutral-700">
                 <h2>Summer cactus <br>& succulents</h2>
                 <p class="text-sm font-normal max-w-72 tracking-wider">We are an online plant shop offering a wide range of cheap and trendy plants</p>
-                <button class="text-lg font-medium px-4 py-2 rounded-xl text-white bg-green-500 hover:bg-green-700">Find More -></button>
+                <button class="text-lg font-medium px-4 py-2 rounded-xl text-white bg-green-500 hover:bg-green-700">Find More <span>&#10140;</span></button>
             </div>
         </div>
 
@@ -433,15 +562,15 @@
             <div >
                 <img src="/plants/assets/images/banner-img-2.png" alt="">
             </div>
-            <div class="flex flex-col items-center gap-4 text-3xl text-neutral-700">
+            <div class="flex flex-col mr-7 text-end items-end gap-4 text-3xl text-neutral-700">
                 <h2>Styling Trends <br>& much more</h2>
                 <p class="text-sm font-normal max-w-72 tracking-wider">We are an online plant shop offering a wide range of cheap and trendy plants</p>
-                <button class="text-lg font-medium px-4 py-2 rounded-xl text-white bg-green-500 hover:bg-green-700">Find More -></button>
+                <button class="text-lg font-medium px-4 py-2 rounded-xl text-white bg-green-500 hover:bg-green-700">Find More <span>&#10140;</span></button>
             </div>
         </div>
     </div>
 
-  <div class="my-44">
+  <div class="my-44 font-roboto">
     <div class="text-center text-neutral-700">
         <h2 class="text-3xl font-bold tracking-wider">Our Blog Posts</h2>
         <p class="text-sm text-gray-500 font-normal ">We are an online plant shop offering a wide range of cheap and trendy plants.</p>
@@ -453,7 +582,7 @@
                 <p class="text-green-500">September 12 I Read in 6 minutes</p>
                 <h4 class="text-xl font-bold tracking-widest">Cactus & Succulent Care Tips</h4>
                 <p class="text-gray-500">Cacti are succulents are easy care plants for any home or patio.</p>
-                <a class="text-xl hover:text-green-500" href="#">Read more -></a>
+                <a class="text-xl hover:text-green-500" href="#">Read more <span>&#10140;</span></a>
             </div>
         </div>
 
@@ -463,7 +592,7 @@
                 <p class="text-green-500">September 12 I Read in 6 minutes</p>
                 <h4 class="text-xl font-bold tracking-widest">Top 10 Succulents for Your Home</h4>
                 <p class="text-gray-500">Best in hanging baskets. Prefers medium to high light.</p>
-                <a class="text-xl hover:text-green-500" href="#">Read more -></a>
+                <a class="text-xl hover:text-green-500" href="#">Read more <span>&#10140;</span></a>
             </div>
         </div>
 
@@ -473,7 +602,7 @@
                 <p class="text-green-500">September 13  I Read in 2 minutes</p>
                 <h4 class="text-xl font-bold tracking-widest">Cacti & Succulent Care Tips</h4>
                 <p class="text-gray-500">Cacti and succulents thrive in containers and because most are..</p>
-                <a class="text-xl hover:text-green-500" href="#">Read more -></a>
+                <a class="text-xl hover:text-green-500" href="#">Read more <span>&#10140;</span></a>
             </div>
         </div>
 
@@ -483,13 +612,13 @@
                 <p class="text-green-500">September 15  I Read in 3 minutes</p>
                 <h4 class="text-xl font-bold tracking-widest">Best Houseplants Room by Room</h4>
                 <p class="text-gray-500">The benefits of houseplants are endless. In addition to..</p>
-                <a class="text-xl hover:text-green-500" href="#">Read more -></a>
+                <a class="text-xl hover:text-green-500" href="#">Read more <span>&#10140;</span></a>
             </div>
         </div>
     </div>
 </div>
 
-  <footer>
+  <footer class="font-roboto">
 <!--Top section-->
     <div class="flex justify-between bg-gray-50 p-6 border-b-2">
         <div class="text-xl font-bold text-neutral-700 max-w-52">
@@ -675,7 +804,7 @@
         <div class="flex gap-4 mb-8 text-xl font-medium">
             <button 
                 @click="mode = 'login'"
-                class=""
+                class=" border-r-2 border-gray-300 pr-4"
                 :class="mode === 'login' ? 'text-green-600' : 'text-neutral-700'"
             >
                 Login

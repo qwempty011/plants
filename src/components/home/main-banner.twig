@@ -1,4 +1,4 @@
-<section class="flex justify-between bg-gray-50 mt-5 pb-5">
+<section class="flex justify-between font-roboto bg-gray-50 mt-5 pb-5">
   <div class="embla"
        x-load
        x-data="embla">
@@ -12,7 +12,7 @@
       </div>
     </div> 
     
-    <div class="embla__dots flex gap-4 justify-center items-center">
+    <div class="embla__dots mt-2 flex gap-4 justify-center items-center">
       <template x-for='(dot, i) in dots'  :key='i'>
         <button @click='select(i)'
                 :class="selected === i ? 'bg-green-500' : 'bg-gray-300'"
