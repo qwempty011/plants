@@ -6,38 +6,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/plants/assets/index.twig-36adb6df.js"></script>
-    <link rel="stylesheet" href="/plants/assets/index.twig-040310a2.css">
+    <script type="module" crossorigin src="/plants/assets/index.twig-2aa81b44.js"></script>
+    <link rel="stylesheet" href="/plants/assets/index.twig-475c0cb4.css">
   </head>
   <body class="max-w-[1200px] m-auto text-xl font-regular font-roboto">
     
-  <header class="flex justify-between mt-6 pt-0 font-roboto text-xl font-regular border-b-[0.3px]"
+  <header class="flex justify-between items-center mt-6 pt-0 font-roboto text-xl font-regular  border-b-[0.3px]"
         x-data>
     <img class="w-40 h-9" src="/plants/assets/images/Logo.png" alt=""></img>
     
-      <ul class="flex gap-12 text-neutral-700 "
+      <ul class="flex gap-12 items-center text-neutral-700 "
           x-data="{active: 'home'}">
         <li @click="active = 'home'"
-            class="hover:text-black"
-            :class="{ 'border-b-[3px]  border-green-600 text-green-600' : active === 'home' }"><a href="#">Home</a>
+            class=""
+            :class="{ 'border-b-[3px] border-green-600  ' : active === 'home' }"><a href="#">Home</a>
         </li>
 
         <li @click="active = 'shop'"
-            class="hover:text-black"
-            :class="{ 'border-b-[3px]  border-green-600 text-green-600' : active === 'shop' }"><a href="#">Shop</a>
+            class=""
+            :class="{ 'border-b-[3px]  border-green-600 ' : active === 'shop' }"><a href="#">Shop</a>
         </li>
 
         <li @click="active = 'plantCare'"
-            class="hover:text-black"
-            :class="{ 'border-b-[3px]  border-green-600 text-green-600' : active === 'plantCare' }"><a href="#">Plant Care</a>
+            class=""
+            :class="{ 'border-b-[3px]  border-green-600 ' : active === 'plantCare' }"><a href="#">Plant Care</a>
         </li>
 
         <li @click="active= 'blogs'"
-            class="hover:text-black"
-            :class="{ 'border-b-[3px]  border-green-600 text-green-600' : active === 'blogs' }"><a href="#">Blogs</a>
+            class=""
+            :class="{ 'border-b-[3px]  border-green-600 ' : active === 'blogs' }"><a href="#">Blogs</a>
         </li>
       </ul>
-      <ul class="flex items-center gap-8 mb-3">
+      <ul class="flex items-center gap-8 ">
         <li><a href="#"><img src="/plants/assets/images/Search.png" alt=""></a></li>
         <li><a href="#"><img src="/plants/assets/images/Basket.png" alt=""></a></li>
         <button class="flex gap-1 bg-green-500 hover:bg-green-700 items-center px-4 py-2 text-white rounded-md font-medium" 
@@ -143,51 +143,51 @@
 
 
   
-<div class="flex px-10 py-8 font-roboto gap-8">
+<div class="flex  py-8 font-roboto gap-8">
 
     <!-- ===== LEFT SIDEBAR ===== -->
-    <aside class="w-64 shrink-0 space-y-10 px-3 py-4 bg-gray-50">
+    <aside class="w-80 shrink-0 space-y-10 px-3 py-4 bg-gray-50">
 
       <!-- Categories -->
       <div>
-        <h3 class="font-bold text-gray-900 mb-4 text-xl">Categories</h3>
-        <ul class="space-y-3 text-base font-bold text-gray-700 px-7">
-          <li class="text-green-600 font-semibold cursor-pointer flex justify-between">
+        <h3 class="font-bold text-neutral-700 mb-4 text-lg">Categories</h3>
+        <ul class="space-y-3 text-base font-normal text-neutral-600 px-7">
+          <li class="text-green-600 cursor-pointer flex justify-between">
           <span>House Plants</span>
-          <span class="font-normal">(33)</span>
+          <span >(33)</span>
           </li>
 
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Potter Plants</span>
-            <span class="font-normal">(12)</span>
+            <span >(12)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Seeds</span>
-            <span class="font-normal">(65)</span>
+            <span >(65)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Small Plants</span>
-            <span class="font-normal">(39)</span>
+            <span >(39)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Big Plants</span>
-            <span class="font-normal">(23)</span>
+            <span >(23)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Succulents</span>
-            <span class="font-normal">(17)</span>
+            <span >(17)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Terrariums </span>
-            <span class="font-normal">(19)</span>
+            <span >(19)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Gardening</span>
-            <span class="font-normal">(13)</span>
+            <span >(13)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Accessories</span>
-            <span class="font-normal">(18)</span>
+            <span >(18)</span>
           </li>
         </ul>
       </div>
@@ -195,74 +195,75 @@
       <!-- Price Range -->
       <div x-data="slider()" 
            x-load
-            class="space-y-3">
-        <h3 class="font-semibold text-gray-900 text-lg">Price Range</h3>
+            class="">
+        <h3 class="font-bold text-neutral-700  text-lg">Price Range</h3>
 
-        <div class="relative h-1 ">
-          <!-- Зеленая линия между ползунками -->
-          <div class="absolute top-1/2 -translate-y-1/2 w-full h-1 bg-green-100 rounded-full"></div>
-          <div class="absolute top-1/2 -translate-y-1/2 h-1 bg-green-500 rounded-full"
-               :style="{ left: ((minValue - min) / (max - min) * 100) + '%', 
-                        width: ((maxValue - minValue) / (max - min) * 100) + '%' }">
+        <div class="px-7 space-y-3 mt-7">
+        
+          <div class="relative  h-1 ">
+            <!-- Зеленая линия между ползунками -->
+            <div class="absolute top-1/2 -translate-y-1/2 w-full h-1 bg-green-100 rounded-full"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 h-1 bg-green-500 rounded-full"
+                :style="{ left: ((minValue - min) / (max - min) * 100) + '%', 
+                          width: ((maxValue - minValue) / (max - min) * 100) + '%' }">
+            </div>
+
+            <!-- Диапазон -->
+                <input type="range" 
+                x-model.number="minValue" 
+                :min="min" 
+                :max="max" 
+                @input="filterCards()"
+                class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
+                <input type="range" 
+                x-model.number="maxValue" 
+                :min="min" 
+                :max="max"
+                @input="filterCards()" 
+                class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
           </div>
 
-          <!-- Диапазон -->
-              <input type="range" 
-              x-model.number="minValue" 
-              :min="min" 
-              :max="max" 
-              @input="filterCards()"
-              class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
-              <input type="range" 
-              x-model.number="maxValue" 
-              :min="min" 
-              :max="max"
-              @input="filterCards()" 
-              class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
+          <p class="text-base font-normal text-neutral-600">
+            Price:
+            <span class="font-bold text-green-600">
+              $<span x-text="minValue"></span>
+            </span>
+            -
+            <span class="font-bold text-green-600">
+              $<span x-text="maxValue"></span>
+            </span> 
+          </p>
+
+          <button 
+          class="bg-green-600 w-max text-white font-bold px-6 py-2 text-base rounded-md hover:bg-green-700 transition">
+            Filter
+          </button>
         </div>
-
-        <p>
-          Price:
-          <span class="font-medium text-green-600">
-            $<span x-text="minValue"></span>
-          </span>
-          -
-          <span class="font-medium text-green-600">
-            $<span x-text="maxValue"></span>
-          </span> 
-        </p>
-
-        <button 
-        class="bg-green-600 text-white font-semibold px-4 py-2 w-full rounded-md hover:bg-green-700 transition">
-          Filter
-        </button>
       </div>
-
       <!-- Size -->
       <div>
-        <h3 class="font-bold text-gray-900 mb-4 text-xl ">Size</h3>
-        <ul class="space-y-3 text-base font-bold px-7 text-gray-700">
+        <h3 class="font-bold text-neutral-700  text-lg ">Size</h3>
+        <ul class="space-y-3 text-base font-normal text-neutral-600 px-7">
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Small</span>
-            <span class="font-normal">(119)</span>
+            <span >(119)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Medium</span>
-            <span class="font-normal">(86)</span>
+            <span >(86)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Large</span>
-            <span class="font-normal">(78)</span>
+            <span >(78)</span>
           </li>
         </ul>
       </div>
 
       <!-- Sale Banner -->
-      <div class="bg-green-100 text-center py-6 rounded-lg">
-        <h2 class="text-3xl font-extrabold text-green-600 mb-1">Super Sale</h2>
-        <p class="text-gray-700 text-sm mb-2">UP TO 75% OFF</p>
-        <img src="plant-sale.png" alt="Sale Banner" class="w-32 mx-auto">
-      </div>
+     
+        
+        <img src="/plants/assets/images/sale-banner.jpg" alt="Sale Banner" class="">
+      
     </aside>
 
     <!-- ===== MAIN CONTENT ===== -->
@@ -299,21 +300,60 @@
       <div class="grid grid-cols-3 gap-6" id="cardsContainer" x-data>
 
         
-        <div  
+        <a  href="#"
         class="card  transition-opacity duration-300"
         data-price="119">
 
-          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
   
   
 
-  
-  <img src="assets/images/card-1.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Barberton Daisy">
-  
-  
+  <div class="bg-gray-50 h-72 max relative">
+
+    <img src="assets/images/card-1.png"
+         class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
+         alt="Barberton Daisy">
+
+    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
+                opacity-0 translate-y-3
+                group-hover:opacity-100 group-hover:translate-y-0
+                transition-all duration-300">
+
+      <!-- 1. Cart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+
+      </div>
+
+      <!-- 2. Heart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </svg>
+
+      </div>
+
+      <!-- 3. Eye -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Barberton Daisy</h4>
-    
     
     <div class="flex items-center gap-2 mt-1">
       <p class="text-green-600 font-semibold">$119</p>
@@ -322,23 +362,62 @@
   </div>
 </div>
           
-        </div>
+        </a>
         
-        <div  
+        <a  href="#"
         class="card  transition-opacity duration-300"
         data-price="169">
 
-          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
   
   
 
-  
-  <img src="assets/images/card-2.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Angel Wing Begonia">
-  
-  
+  <div class="bg-gray-50 h-72 max relative">
+
+    <img src="assets/images/card-2.png"
+         class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
+         alt="Angel Wing Begonia">
+
+    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
+                opacity-0 translate-y-3
+                group-hover:opacity-100 group-hover:translate-y-0
+                transition-all duration-300">
+
+      <!-- 1. Cart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+
+      </div>
+
+      <!-- 2. Heart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </svg>
+
+      </div>
+
+      <!-- 3. Eye -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Angel Wing Begonia</h4>
-    
     
     <div class="flex items-center gap-2 mt-1">
       <p class="text-green-600 font-semibold">$169</p>
@@ -347,13 +426,13 @@
   </div>
 </div>
           
-        </div>
+        </a>
         
-        <div  
+        <a  href="#"
         class="card  transition-opacity duration-300"
         data-price="199">
 
-          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
   
   
     <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
@@ -361,13 +440,52 @@
     </span>
   
 
-  
-  <img src="assets/images/card-3.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="African Violet">
-  
-  
+  <div class="bg-gray-50 h-72 max relative">
+
+    <img src="assets/images/card-3.png"
+         class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
+         alt="African Violet">
+
+    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
+                opacity-0 translate-y-3
+                group-hover:opacity-100 group-hover:translate-y-0
+                transition-all duration-300">
+
+      <!-- 1. Cart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+
+      </div>
+
+      <!-- 2. Heart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </svg>
+
+      </div>
+
+      <!-- 3. Eye -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">African Violet</h4>
-    
     
     <div class="flex items-center gap-2 mt-1">
       <p class="text-green-600 font-semibold">$199</p>
@@ -378,23 +496,62 @@
   </div>
 </div>
           
-        </div>
+        </a>
         
-        <div  
+        <a  href="#"
         class="card  transition-opacity duration-300"
         data-price="129">
 
-          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
   
   
 
-  
-  <img src="assets/images/card-4.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Beach Spider Lily">
-  
-  
+  <div class="bg-gray-50 h-72 max relative">
+
+    <img src="assets/images/card-4.png"
+         class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
+         alt="Beach Spider Lily">
+
+    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
+                opacity-0 translate-y-3
+                group-hover:opacity-100 group-hover:translate-y-0
+                transition-all duration-300">
+
+      <!-- 1. Cart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+
+      </div>
+
+      <!-- 2. Heart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </svg>
+
+      </div>
+
+      <!-- 3. Eye -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Beach Spider Lily</h4>
-    
     
     <div class="flex items-center gap-2 mt-1">
       <p class="text-green-600 font-semibold">$129</p>
@@ -403,23 +560,62 @@
   </div>
 </div>
           
-        </div>
+        </a>
         
-        <div  
+        <a  href="#"
         class="card  transition-opacity duration-300"
         data-price="139">
 
-          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
   
   
 
-  
-  <img src="assets/images/card-5.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Blushing Bromeliad">
-  
-  
+  <div class="bg-gray-50 h-72 max relative">
+
+    <img src="assets/images/card-5.png"
+         class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
+         alt="Blushing Bromeliad">
+
+    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
+                opacity-0 translate-y-3
+                group-hover:opacity-100 group-hover:translate-y-0
+                transition-all duration-300">
+
+      <!-- 1. Cart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+
+      </div>
+
+      <!-- 2. Heart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </svg>
+
+      </div>
+
+      <!-- 3. Eye -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Blushing Bromeliad</h4>
-    
     
     <div class="flex items-center gap-2 mt-1">
       <p class="text-green-600 font-semibold">$139</p>
@@ -428,23 +624,62 @@
   </div>
 </div>
           
-        </div>
+        </a>
         
-        <div  
+        <a  href="#"
         class="card  transition-opacity duration-300"
         data-price="179">
 
-          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
   
   
 
-  
-  <img src="assets/images/card-6.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Aluminum Plant">
-  
-  
+  <div class="bg-gray-50 h-72 max relative">
+
+    <img src="assets/images/card-6.png"
+         class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
+         alt="Aluminum Plant">
+
+    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
+                opacity-0 translate-y-3
+                group-hover:opacity-100 group-hover:translate-y-0
+                transition-all duration-300">
+
+      <!-- 1. Cart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+
+      </div>
+
+      <!-- 2. Heart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </svg>
+
+      </div>
+
+      <!-- 3. Eye -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Aluminum Plant</h4>
-    
     
     <div class="flex items-center gap-2 mt-1">
       <p class="text-green-600 font-semibold">$179</p>
@@ -453,23 +688,62 @@
   </div>
 </div>
           
-        </div>
+        </a>
         
-        <div  
+        <a  href="#"
         class="card  transition-opacity duration-300"
         data-price="99">
 
-          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
   
   
 
-  
-  <img src="assets/images/card-7.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Bird’s Nest Fern">
-  
-  
+  <div class="bg-gray-50 h-72 max relative">
+
+    <img src="assets/images/card-7.png"
+         class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
+         alt="Bird’s Nest Fern">
+
+    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
+                opacity-0 translate-y-3
+                group-hover:opacity-100 group-hover:translate-y-0
+                transition-all duration-300">
+
+      <!-- 1. Cart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+
+      </div>
+
+      <!-- 2. Heart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </svg>
+
+      </div>
+
+      <!-- 3. Eye -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Bird’s Nest Fern</h4>
-    
     
     <div class="flex items-center gap-2 mt-1">
       <p class="text-green-600 font-semibold">$99</p>
@@ -478,23 +752,62 @@
   </div>
 </div>
           
-        </div>
+        </a>
         
-        <div  
+        <a  href="#"
         class="card  transition-opacity duration-300"
         data-price="59">
 
-          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
   
   
 
-  
-  <img src="assets/images/card-8.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Broadleaf Lady Palm">
-  
-  
+  <div class="bg-gray-50 h-72 max relative">
+
+    <img src="assets/images/card-8.png"
+         class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
+         alt="Broadleaf Lady Palm">
+
+    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
+                opacity-0 translate-y-3
+                group-hover:opacity-100 group-hover:translate-y-0
+                transition-all duration-300">
+
+      <!-- 1. Cart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+
+      </div>
+
+      <!-- 2. Heart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </svg>
+
+      </div>
+
+      <!-- 3. Eye -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Broadleaf Lady Palm</h4>
-    
     
     <div class="flex items-center gap-2 mt-1">
       <p class="text-green-600 font-semibold">$59</p>
@@ -503,23 +816,62 @@
   </div>
 </div>
           
-        </div>
+        </a>
         
-        <div  
+        <a  href="#"
         class="card  transition-opacity duration-300"
         data-price="39">
 
-          <div class="relative shadow-md pb-5 group text-lg rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
   
   
 
-  
-  <img src="assets/images/card-9.jpg" class="mx-auto mb-3 max-h-[250px] rounded-lg transition-transform " alt="Chinese Evergreen">
-  
-  
+  <div class="bg-gray-50 h-72 max relative">
+
+    <img src="assets/images/card-9.png"
+         class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
+         alt="Chinese Evergreen">
+
+    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
+                opacity-0 translate-y-3
+                group-hover:opacity-100 group-hover:translate-y-0
+                transition-all duration-300">
+
+      <!-- 1. Cart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+
+      </div>
+
+      <!-- 2. Heart -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </svg>
+
+      </div>
+
+      <!-- 3. Eye -->
+      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-gray-600 hover:stroke-green-600 transition"
+             fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <div class="text-left px-3">
     <h4 class="font-medium text-gray-800">Chinese Evergreen</h4>
-    
     
     <div class="flex items-center gap-2 mt-1">
       <p class="text-green-600 font-semibold">$39</p>
@@ -528,7 +880,7 @@
   </div>
 </div>
           
-        </div>
+        </a>
         
 
       </div>
@@ -546,10 +898,10 @@
 
  
   
-    <div class="flex font-roboto justify-between mt-64  font-black tracking-wider">
-        <div class="flex justify-between shadow-md items-center">
+    <div class="flex font-roboto justify-between mt-64 gap-8 font-black tracking-wider">
+        <div class="flex justify-between bg-gray-50 items-center">
             <div class="">
-                <img  src="/plants/assets/images/banner-img-1.png" alt="">
+                <img  src="/plants/assets/images/card-5.png" alt="">
             </div>
             <div class="flex flex-col mr-7 text-end items-end gap-4 p-2 text-3xl text-neutral-700">
                 <h2>Summer cactus <br>& succulents</h2>
@@ -558,9 +910,9 @@
             </div>
         </div>
 
-        <div class="flex justify-between shadow-md items-center">
+        <div class="flex justify-between bg-gray-50 items-center">
             <div >
-                <img src="/plants/assets/images/banner-img-2.png" alt="">
+                <img src="/plants/assets/images/card-3.png" alt="">
             </div>
             <div class="flex flex-col mr-7 text-end items-end gap-4 text-3xl text-neutral-700">
                 <h2>Styling Trends <br>& much more</h2>
@@ -580,39 +932,39 @@
             <img src="/plants/assets/images/blog-post-1.png" alt="">
             <div class="flex flex-col gap-2 px-4 pb-3">
                 <p class="text-green-500">September 12 I Read in 6 minutes</p>
-                <h4 class="text-xl font-bold tracking-widest">Cactus & Succulent Care Tips</h4>
+                <h4 class="text-xl font-bold ">Cactus & Succulent Care Tips</h4>
                 <p class="text-gray-500">Cacti are succulents are easy care plants for any home or patio.</p>
-                <a class="text-xl hover:text-green-500" href="#">Read more <span>&#10140;</span></a>
+                <a class="text-sm font-medium hover:text-green-500" href="#">Read more <span>&#10140;</span></a>
             </div>
         </div>
 
-        <div class="flex flex-col gap-2 max-w-72">
+        <div class="flex flex-col gap-2 max-w-72 bg-gray-50">
             <img src="/plants/assets/images/blog-post-2.png" alt="">
             <div class="flex flex-col gap-2 px-4 pb-3">
                 <p class="text-green-500">September 12 I Read in 6 minutes</p>
-                <h4 class="text-xl font-bold tracking-widest">Top 10 Succulents for Your Home</h4>
-                <p class="text-gray-500">Best in hanging baskets. Prefers medium to high light.</p>
-                <a class="text-xl hover:text-green-500" href="#">Read more <span>&#10140;</span></a>
+                <h4 class="text-xl font-bold ">Top 10 Succulents for Your Home</h4>
+                <p class="text-gray-500 ">Best in hanging baskets. Prefers medium to high light.</p>
+                <a class="text-sm font-medium hover:text-green-500" href="#">Read more <span>&#10140;</span></a>
             </div>
         </div>
 
-        <div class=" flex flex-col gap-2 max-w-72">
+        <div class=" flex flex-col gap-2 max-w-72 bg-gray-50">
             <img src="/plants/assets/images/blog-post-3.png" alt="">
             <div class="flex flex-col gap-2 px-4 pb-3">
                 <p class="text-green-500">September 13  I Read in 2 minutes</p>
-                <h4 class="text-xl font-bold tracking-widest">Cacti & Succulent Care Tips</h4>
+                <h4 class="text-xl font-bold ">Cacti & Succulent Care Tips</h4>
                 <p class="text-gray-500">Cacti and succulents thrive in containers and because most are..</p>
-                <a class="text-xl hover:text-green-500" href="#">Read more <span>&#10140;</span></a>
+                <a class="text-sm font-medium hover:text-green-500" href="#">Read more <span>&#10140;</span></a>
             </div>
         </div>
 
-        <div class="flex flex-col gap-2 max-w-72">
+        <div class="flex flex-col gap-2 max-w-72 bg-gray-50">
             <img src="/plants/assets/images/blog-post-4.jpg" alt="">
             <div class="flex flex-col gap-2 px-4 pb-3">
                 <p class="text-green-500">September 15  I Read in 3 minutes</p>
-                <h4 class="text-xl font-bold tracking-widest">Best Houseplants Room by Room</h4>
+                <h4 class="text-xl font-bold ">Best Houseplants Room by Room</h4>
                 <p class="text-gray-500">The benefits of houseplants are endless. In addition to..</p>
-                <a class="text-xl hover:text-green-500" href="#">Read more <span>&#10140;</span></a>
+                <a class="text-sm font-medium hover:text-green-500" href="#">Read more <span>&#10140;</span></a>
             </div>
         </div>
     </div>

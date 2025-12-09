@@ -1,49 +1,49 @@
 
-<div class="flex px-10 py-8 font-roboto gap-8">
+<div class="flex  py-8 font-roboto gap-8">
 
     <!-- ===== LEFT SIDEBAR ===== -->
-    <aside class="w-64 shrink-0 space-y-10 px-3 py-4 bg-gray-50">
+    <aside class="w-80 shrink-0 space-y-10 px-3 py-4 bg-gray-50">
 
       <!-- Categories -->
       <div>
-        <h3 class="font-bold text-gray-900 mb-4 text-xl">Categories</h3>
-        <ul class="space-y-3 text-base font-bold text-gray-700 px-7">
-          <li class="text-green-600 font-semibold cursor-pointer flex justify-between">
+        <h3 class="font-bold text-neutral-700 mb-4 text-lg">Categories</h3>
+        <ul class="space-y-3 text-base font-normal text-neutral-600 px-7">
+          <li class="text-green-600 cursor-pointer flex justify-between">
           <span>House Plants</span>
-          <span class="font-normal">(33)</span>
+          <span >(33)</span>
           </li>
 
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Potter Plants</span>
-            <span class="font-normal">(12)</span>
+            <span >(12)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Seeds</span>
-            <span class="font-normal">(65)</span>
+            <span >(65)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Small Plants</span>
-            <span class="font-normal">(39)</span>
+            <span >(39)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Big Plants</span>
-            <span class="font-normal">(23)</span>
+            <span >(23)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Succulents</span>
-            <span class="font-normal">(17)</span>
+            <span >(17)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Terrariums </span>
-            <span class="font-normal">(19)</span>
+            <span >(19)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Gardening</span>
-            <span class="font-normal">(13)</span>
+            <span >(13)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Accessories</span>
-            <span class="font-normal">(18)</span>
+            <span >(18)</span>
           </li>
         </ul>
       </div>
@@ -51,74 +51,75 @@
       <!-- Price Range -->
       <div x-data="slider()" 
            x-load
-            class="space-y-3">
-        <h3 class="font-semibold text-gray-900 text-lg">Price Range</h3>
+            class="">
+        <h3 class="font-bold text-neutral-700  text-lg">Price Range</h3>
 
-        <div class="relative h-1 ">
-          <!-- Зеленая линия между ползунками -->
-          <div class="absolute top-1/2 -translate-y-1/2 w-full h-1 bg-green-100 rounded-full"></div>
-          <div class="absolute top-1/2 -translate-y-1/2 h-1 bg-green-500 rounded-full"
-               :style="{ left: ((minValue - min) / (max - min) * 100) + '%', 
-                        width: ((maxValue - minValue) / (max - min) * 100) + '%' }">
+        <div class="px-7 space-y-3 mt-7">
+        
+          <div class="relative  h-1 ">
+            <!-- Зеленая линия между ползунками -->
+            <div class="absolute top-1/2 -translate-y-1/2 w-full h-1 bg-green-100 rounded-full"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 h-1 bg-green-500 rounded-full"
+                :style="{ left: ((minValue - min) / (max - min) * 100) + '%', 
+                          width: ((maxValue - minValue) / (max - min) * 100) + '%' }">
+            </div>
+
+            <!-- Диапазон -->
+                <input type="range" 
+                x-model.number="minValue" 
+                :min="min" 
+                :max="max" 
+                @input="filterCards()"
+                class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
+                <input type="range" 
+                x-model.number="maxValue" 
+                :min="min" 
+                :max="max"
+                @input="filterCards()" 
+                class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
           </div>
 
-          <!-- Диапазон -->
-              <input type="range" 
-              x-model.number="minValue" 
-              :min="min" 
-              :max="max" 
-              @input="filterCards()"
-              class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
-              <input type="range" 
-              x-model.number="maxValue" 
-              :min="min" 
-              :max="max"
-              @input="filterCards()" 
-              class="absolute w-full h-[4px] bg-transparent appearance-none pointer-events-none" />
+          <p class="text-base font-normal text-neutral-600">
+            Price:
+            <span class="font-bold text-green-600">
+              $<span x-text="minValue"></span>
+            </span>
+            -
+            <span class="font-bold text-green-600">
+              $<span x-text="maxValue"></span>
+            </span> 
+          </p>
+
+          <button 
+          class="bg-green-600 w-max text-white font-bold px-6 py-2 text-base rounded-md hover:bg-green-700 transition">
+            Filter
+          </button>
         </div>
-
-        <p>
-          Price:
-          <span class="font-medium text-green-600">
-            $<span x-text="minValue"></span>
-          </span>
-          -
-          <span class="font-medium text-green-600">
-            $<span x-text="maxValue"></span>
-          </span> 
-        </p>
-
-        <button 
-        class="bg-green-600 text-white font-semibold px-4 py-2 w-full rounded-md hover:bg-green-700 transition">
-          Filter
-        </button>
       </div>
-
       <!-- Size -->
       <div>
-        <h3 class="font-bold text-gray-900 mb-4 text-xl ">Size</h3>
-        <ul class="space-y-3 text-base font-bold px-7 text-gray-700">
+        <h3 class="font-bold text-neutral-700  text-lg ">Size</h3>
+        <ul class="space-y-3 text-base font-normal text-neutral-600 px-7">
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Small</span>
-            <span class="font-normal">(119)</span>
+            <span >(119)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Medium</span>
-            <span class="font-normal">(86)</span>
+            <span >(86)</span>
           </li>
           <li class="hover:text-green-600 cursor-pointer flex justify-between">
             <span>Large</span>
-            <span class="font-normal">(78)</span>
+            <span >(78)</span>
           </li>
         </ul>
       </div>
 
       <!-- Sale Banner -->
-      <div class="bg-green-100 text-center py-6 rounded-lg">
-        <h2 class="text-3xl font-extrabold text-green-600 mb-1">Super Sale</h2>
-        <p class="text-gray-700 text-sm mb-2">UP TO 75% OFF</p>
-        <img src="plant-sale.png" alt="Sale Banner" class="w-32 mx-auto">
-      </div>
+     
+        
+        <img src="/assets/images/sale-banner.jpg" alt="Sale Banner" class="">
+      
     </aside>
 
     <!-- ===== MAIN CONTENT ===== -->
@@ -155,13 +156,13 @@
       <div class="grid grid-cols-3 gap-6" id="cardsContainer" x-data>
 
         {% for product in products %}
-        <div  
+        <a  href="#"
         class="card  transition-opacity duration-300"
         data-price="{{ product.price }}">
 
           {% include '@component/common/card.twig' with { product: product } %}
           
-        </div>
+        </a>
         {% endfor %}
 
       </div>
