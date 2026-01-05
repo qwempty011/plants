@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <base href="/plants">
+    
     <script type="module" crossorigin src="/plants/assets/main-6e7c3780.js"></script>
     <link rel="stylesheet" href="/plants/assets/main-bd9e8063.css">
   </head>
@@ -24,22 +24,22 @@
           x-data="{ path: window.location.pathname }">
 
         <li class="pb-6"
-            :class="{ 'border-b-[3px] border-green-600': path === '/' || path === '/index.html' }">
+            :class="{ 'border-b-[3px] border-green-600': path === '/' || path === 'index.html' }">
           <a href="/index.html">Home</a>
         </li>
 
         <li class="pb-6"
-            :class="{ 'border-b-[3px] border-green-600': path === '/shop.html' || path === '/cart.html' || path === '/checkout.html' }">
+            :class="{ 'border-b-[3px] border-green-600': path === 'shop.html' || path === 'cart.html' || path === 'checkout.html' }">
           <a href="/shop.html">Shop</a>
         </li>
 
         <li class="pb-6"
-            :class="{ 'border-b-[3px] border-green-600': path === '/plant-care.html' }">
+            :class="{ 'border-b-[3px] border-green-600': path === 'plant-care.html' }">
           <a href="/plant-care.html">Plant Care</a>
         </li>
 
         <li class="pb-6"
-            :class="{ 'border-b-[3px] border-green-600': path === '/blogs.html' }">
+            :class="{ 'border-b-[3px] border-green-600': path === 'blogs.html' }">
           <a href="/blogs.html">Blogs</a>
         </li>
 
