@@ -1,0 +1,775 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Title from pages/index.json | Project name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/plants/assets/main-6e7c3780.js"></script>
+    <link rel="stylesheet" href="/plants/assets/main-bd9e8063.css">
+  </head>
+  <body>
+    <div class="max-w-[1200px] mx-auto text-base  font-roboto">
+      <header class="flex justify-between items-start self-center mt-6  pt-0 font-roboto text-xl   border-b"
+        x-data>
+
+    
+      <img class="w-40  h-9" src="/plants/assets/images/Logo.png" alt=""></img>
+        
+    
+    
+      <ul class="flex gap-12 text-neutral-700"
+          x-data="{ path: window.location.pathname }">
+
+        <li class="pb-6"
+            :class="{ 'border-b-[3px] border-green-600': path === '/' || path === '/index.html' }">
+          <a href="/index.html">Home</a>
+        </li>
+
+        <li class="pb-6"
+            :class="{ 'border-b-[3px] border-green-600': path === '/shop.html' || path === '/cart.html' || path === '/checkout.html' }">
+          <a href="/shop.html">Shop</a>
+        </li>
+
+        <li class="pb-6"
+            :class="{ 'border-b-[3px] border-green-600': path === '/plant-care.html' }">
+          <a href="/plant-care.html">Plant Care</a>
+        </li>
+
+        <li class="pb-6"
+            :class="{ 'border-b-[3px] border-green-600': path === '/blogs.html' }">
+          <a href="/blogs.html">Blogs</a>
+        </li>
+
+      </ul>
+      <ul class="flex items-baseline  gap-8 ">
+        <li>
+          <a href="#">
+            <img src="/plants/assets/images/icons/search.svg" alt="">
+          </a>
+        </li>
+        <li>
+            <a href="!#"> 
+              <img src="/plants/assets/images/icons/basket.svg" alt="">
+            </a>
+        </li>
+        <button class="flex gap-1 bg-green-600 hover:bg-green-800 items-center px-4 py-2 text-white rounded-md font-medium" 
+                @click="$dispatch('auth-open', { mode: 'login' })">
+          <img src="/plants/assets/images/icons/logout.svg" alt="">
+          <p>Login</p>
+        </button>
+      </ul>
+     
+</header>
+        
+     <div class="text-neutral-700 mb-52">
+    <div class="my-11">
+        <a href="/index.html" class="font-bold">Home</a>
+        <span class="">/</span>
+        <a href="/shop.html" class="">Shop</a>
+        <span class="">/</span>
+        <span class="">Checkout</span>
+    </div>
+
+    
+
+    <div class="grid grid-cols-3 gap-16 ">
+        <div class=" col-span-2">
+            <form class="max-w-4xl grid grid-cols-2 gap-6">
+                <h2 class=" text-lg col-span-2 font-bold ">
+                     Billing Address
+                </h2>
+
+                <!-- First / Last name -->
+                <div>
+                    <label class="label">First Name <span class="req">*</span></label>
+                    <input type="text" class="input">
+                </div>
+
+                <div>
+                    <label class="label">Last Name <span class="req">*</span></label>
+                    <input type="text" class="input">
+                </div>
+
+                <!-- Country / City -->
+                <div>
+                    <label class="label">Country / Region <span class="req">*</span></label>
+                    <select class="input">
+                    <option>Select a country / region</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="label">Town / City <span class="req">*</span></label>
+                    <input type="text" class="input">
+                </div>
+
+                <!-- Street Address -->
+                <div class="col-span-2">
+                    <label class="label">Street Address <span class="req">*</span></label>
+                    <div class="flex items-center gap-6">
+                        <input
+                        type="text"
+                        class="input mb-3"
+                        placeholder="House number and street name"
+                        >
+                        <input
+                        type="text"
+                        class="input mb-3"
+                        placeholder="Apartment, suite, unit etc. (optional)"
+                        >
+                    </div>
+                    
+                </div>
+
+                <!-- State / Zip -->
+                <div>
+                    <label class="label">State <span class="req">*</span></label>
+                    <select class="input">
+                    <option>Select a state</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="label">Zip <span class="req">*</span></label>
+                    <input type="text" class="input">
+                </div>
+
+                <!-- Email / Phone -->
+                <div>
+                    <label class="label">Email address <span class="req">*</span></label>
+                    <input type="email" class="input">
+                </div>
+
+                <div>
+                    <label class="label">Phone Number <span class="req">*</span></label>
+                    <div class="flex gap-3">
+                    <select class="input w-24 shrink-0">
+                        <option>+966</option>
+                    </select>
+                    
+                    </div>
+                </div>
+
+                <!-- Checkbox -->
+                <div class="col-span-2">
+                    <div>
+                        <label class="flex items-center gap-2 text-sm cursor-pointer">
+                        <input type="checkbox" class="accent-green-600">
+                        Ship to a different address?
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Order notes -->
+                <div class="col-span-1">
+                    <label class="label">Order notes (optional)</label>
+                    <textarea class="input h-32 resize-none"></textarea>
+                </div>
+
+                </form>
+
+            
+        </div>
+
+
+        <div class="">
+            <h2 class="text-lg col-span-2 font-bold mb-6">Your Order</h2>
+
+            <div class="flex justify-between font-medium pb-3 border-b border-green-100">
+                <h3>Products</h3>
+                <h3 class="pr-4">Subtotal</h3>
+            </div>
+
+            <div class="">
+                
+                <div class="flex justify-between items-center bg-gray-50 mt-3 pr-4">
+
+                    <div class=" flex items-center">
+                    <img src="/plants/assets/images/card-1.png" alt="Barberton Daisy" class="size-[70px]">
+                    <div class="">
+                        <h3 class="font-medium">Barberton Daisy</h3>
+                        <p class="text-sm text-gray-500">SKU: 1995751877966</p>
+                    </div>
+                    </div>
+
+                    <div class="flex items-center ">
+                    
+                    <span class="text-sm text-gray-500">(x 2)</span>
+                    
+                    </div>
+
+                    <div class="flex items-center gap-5 justify-between">
+                    <span class="font-bold text-green-600">$238.00</span>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center bg-gray-50 mt-3 pr-4">
+
+                    <div class=" flex items-center">
+                    <img src="/plants/assets/images/card-5.png" alt="Barberton Daisy" class="size-[70px]">
+                    <div class="">
+                        <h3 class="font-medium">Blushing Bromeliad</h3>
+                        <p class="text-sm text-gray-500">SKU: 19957518757065</p>
+                    </div>
+                    </div>
+
+                    <div class="flex items-center ">
+                    
+                    <span class="text-sm text-gray-500">(x 6)</span>
+                    
+                    </div>
+
+                    <div class="flex items-center gap-5 justify-between">
+                    <span class="font-bold text-green-600">$834.00</span>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center bg-gray-50 mt-3 pr-4">
+
+                    <div class=" flex items-center">
+                    <img src="/plants/assets/images/card-6.png" alt="Barberton Daisy" class="size-[70px]">
+                    <div class="">
+                        <h3 class="font-medium">Aluminum Plant</h3>
+                        <p class="text-sm text-gray-500">SKU: 1995751877786</p>
+                    </div>
+                    </div>
+
+                    <div class="flex items-center ">
+                    
+                    <span class="text-sm text-gray-500">(x 9)</span>
+                    
+                    </div>
+
+                    <div class="flex items-center gap-5 justify-between">
+                    <span class="font-bold text-green-600">$1,611.00</span>
+                    </div>
+                </div>
+                
+                <div class="my-5 text-sm text-end">
+                    <p>Have a coupon code?<a href="#" class="text-green-600">Click here</a> </p>  
+                </div>
+            </div>
+
+            <div class="">
+                <div class="flex flex-col gap-5 max-w-[75%] ml-auto">
+                    <div class="flex flex-col gap-3">
+                        <div class="flex justify-between">
+                            <span class="text-[15px]">Subtotal</span>
+                            <span class="text-lg font-medium">$2,683.00</span>
+                        </div>
+                        <div class="text-[15px] flex justify-between">
+                            <span class="">Coupon Discount</span>
+                            <span class="">(-) 00.00</span>
+                        </div>
+                        <div class="">
+                            <div class="flex justify-between">
+                                <span class="text-[15px]">Shipping</span>
+                                <span class="text-lg font-medium">$16.00</span>
+                            </div>
+                                
+                            <div class="text-end text-[12px] text-green-600">
+                                <a href="#" class="">View shipping charge</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold">Total</span>
+                        <span class="text-lg font-bold text-green-600">$2,699.00</span>
+                    </div>
+
+                    <div class="" x-data>
+                        <h3 class="text-lg font-bold mb-3">Payment Method</h3>
+
+                        <div class="flex flex-col gap-3">
+                            <!-- Card / PayPal -->
+                            <label class="flex items-center gap-4 border rounded-lg px-3 py-2 cursor-pointer">
+                                <input type="radio" name="payment" class="accent-green-600">
+                                <div class="flex items-center gap-3">
+                                    <img src="/plants/assets/images/footer-pay.png" class="h-6" alt="">                        
+                                </div>
+                            </label>
+
+                            <!-- Bank transfer -->
+                            <label class="flex items-center gap-4 border rounded-lg px-4 py-3 cursor-pointer">
+                                <input type="radio" name="payment" class="accent-green-600">
+                                <span>Direct bank transfer</span>
+                            </label>
+
+                            <!-- Cash on delivery -->
+                            <label class="flex items-center gap-4 border-2 border-green-600 rounded-lg px-4 py-3 cursor-pointer">
+                                <input type="radio" name="payment" checked class="accent-green-600">
+                                <span>Cash on delivery</span>
+                            </label>
+                        </div>
+
+                        <button class="btn btn-lg mt-14" @click="$dispatch('checkout-open', { mode: 'checkout' })">Place Order</button>
+                    </div> 
+
+                </div>        
+            </div>
+
+         </div>
+
+
+         
+    </div>
+    
+</div> 
+     <div
+    x-data="{ open:false, mode:'checkout' }"
+    x-cloak
+    x-on:checkout-open.window="
+        open = true;
+        mode = $event.detail.mode;
+    "
+    x-show="open"
+    x-transition.opacity
+    @click.self="open = false"
+    @keydown.escape.window="open = false"
+    class="fixed inset-0 bg-black/50  flex items-center justify-center z-50  "
+>
+    <div class="bg-white rounded-lg min-w-[500px] max-w-xl border-b-8 border-green-600 text-neutral-700">
+        <div class="flex flex-col bg-green-600/5 items-center  gap-4 pb-4 pt-7">
+            <img src="/plants/assets/images/thank-you.png" alt="">
+            <p>Your order has been received</p>
+        </div>
+
+        <div class="grid grid-cols-4 gap-6 text-sm border-b p-6 mb-6">
+            <div class="border-r ">
+                <h4>Order Number</h4>
+                <p class="font-bold">19586687</p>
+            </div>
+            <div class="border-r">
+                <h4>Date</h4>
+                <p class="font-bold">15 Sep, 2021</p>
+            </div>
+            <div class="border-r">
+                <h4>Total</h4>
+                <p class="font-bold">2,699.00</p>
+            </div>
+            <div class="">
+                <h4>Payment Method</h4>
+                <p class="font-bold">Cash on delivery</p>
+            </div>
+        </div>
+
+        <div class="px-6">
+            <h3 class="font-bold text-base">Order Details</h3>
+
+            <div class="grid grid-cols-4 text-base font-medium border-b border-green-600/50">
+                <div class="col-span-2">Products</div>
+                <div class="">Qty</div>
+                <div class="">Subtotal</div>
+            </div>
+
+            <div class="border-b border-green-600/50">
+                
+                <div class="grid grid-cols-4  items-center bg-gray-50 mt-3 pr-4">
+
+                    <div class=" col-span-2 flex items-center">
+                    <img src="/plants/assets/images/card-1.png" alt="Barberton Daisy" class="size-[70px]">
+                    <div class="">
+                        <h3 class="font-medium">Barberton Daisy</h3>
+                        <p class="text-sm text-gray-500">SKU: 1995751877966</p>
+                    </div>
+                    </div>
+
+                    <div class=" items-center ">
+                    
+                    <span class="text-sm text-gray-500">(x 2)</span>
+                    
+                    </div>
+
+                    <div class="flex items-center gap-5 justify-between">
+                    <span class="font-bold text-green-600">$238.00</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-4 items-center bg-gray-50 mt-3 pr-4">
+
+                    <div class="col-span-2 flex items-center">
+                    <img src="/plants/assets/images/card-5.png" alt="Barberton Daisy" class="size-[70px]">
+                    <div class="">
+                        <h3 class="font-medium">Blushing Bromeliad</h3>
+                        <p class="text-sm text-gray-500">SKU: 19957518757065</p>
+                    </div>
+                    </div>
+
+                    <div class="flex items-center ">
+                    
+                    <span class="text-sm text-gray-500">(x 6)</span>
+                    
+                    </div>
+
+                    <div class="flex items-center gap-5 justify-between">
+                    <span class="font-bold text-green-600">$834.00</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-4 items-center bg-gray-50 mt-3 pr-4">
+
+                    <div class="col-span-2 flex items-center">
+                    <img src="/plants/assets/images/card-6.png" alt="Barberton Daisy" class="size-[70px]">
+                    <div class="">
+                        <h3 class="font-medium">Aluminum Plant</h3>
+                        <p class="text-sm text-gray-500">SKU: 1995751877786</p>
+                    </div>
+                    </div>
+
+                    <div class="flex items-center ">
+                    
+                    <span class="text-sm text-gray-500">(x 9)</span>
+                    
+                    </div>
+
+                    <div class="flex items-center gap-5 justify-between">
+                    <span class="font-bold text-green-600">$1,611.00</span>
+                    </div>
+                </div>
+                
+                <div class="max-w-[75%] ml-auto flex flex-col gap-6 my-5">
+                    <div class="flex justify-between">
+                        <h3>Shiping</h3>
+                        <h3 class="text-lg font-medium">$16.00</h3>
+                    </div>
+                    <div class="flex justify-between">
+                        <h3 class="text-base font-bold">Total</h3>
+                        <h3 class="text-green-600 font-bold text-lg">$2,699.00</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-11 py-5 items-center">
+                <p class="text-center">Your order is currently being processed. You will receive an order confirmation email shortly with the expected delivery date for your items.</p>
+                <button class="btn btn-primary">Track your order</button>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+      <footer class="">
+<!--Top section-->
+    <div class="flex justify-between bg-gray-50 p-6 border-b-2">
+        <div class="text-xl font-bold text-neutral-700 max-w-52">
+
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-4 ">
+                <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                </svg>
+            </div>
+
+            <h2>Garden Care</h2>
+            <p class="text-sm font-normal text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.    </p>
+        </div>
+
+        <div class="text-xl font-bold text-neutral-700 max-w-52">
+
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+            </div>
+
+            <h2>Plant Renovation</h2>
+            <p class="text-sm font-normal text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.    </p>
+        </div>
+
+        <div class="text-xl font-bold text-neutral-700 max-w-52">
+
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+            </div>
+
+            <h2>Watering Graden</h2>
+            <p class="text-sm font-normal text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.    </p>
+        </div>
+
+        <div class="flex flex-col justify-center max-w-[350px]">
+            <h3 class="font-bold text-xl mb-4 text-neutral-700">Would you like to join newsletters?</h3>
+                <div class="flex mb-4">
+                    <input type="email" placeholder="enter your email address..." class="flex-1 px-4 py-2 border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-green-600">
+                    <button class="bg-green-600 text-white px-6 py-2  font-semibold hover:bg-green-700">Join</button>
+                </div>
+            <p class="text-sm text-gray-500">We usually post offers and challenges in newsletter. We're your online houseplant destination. We offer a wide range of houseplants and accessories shipped directly from our (green)house to yours!</p>
+        </div>
+    </div>
+
+    <!--divider-->
+
+    <div class="flex gap-20 items-center text-lg font-normal text-neutral-700 bg-green-50 py-9 px-6">
+        <div>
+            <img src="/plants/assets/images/Logo.png" alt="">
+        </div>
+
+            <a class="hover:text-green-700" href="#">70 West Buckingham Ave. Farmingdale, NY 11735</a>
+            
+            <a class="hover:text-green-700" href="mailto:contact@greenshop.com">contact@greenshop.com</a>
+            
+            <a class="hover:text-green-700" href="tel:+88 01911 717 490">+88 01911 717 490</a>    
+              
+    </div>
+    <!--Footer links-->
+
+    <div class="flex justify-between py-8 px-6 bg-gray-50 border-y-2">
+        <div class="flex flex-col gap-2">
+            <h3>My Account</h3>
+            <ul class="text-lg text-neutral-700 flex flex-col gap-2">
+                <li class="hover:text-black"><a href="#">My Account</a></li>
+                <li class="hover:text-black"><a href="#">Our stores</a></li>
+                <li class="hover:text-black"><a href="#">Contact us</a></li>
+                <li class="hover:text-black"><a href="#">Career</a></li>
+                <li class="hover:text-black"><a href="#">Specials</a></li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <h3>Help & Guide</h3>
+            <ul class="text-lg text-neutral-700 flex flex-col gap-2">
+                <li class="hover:text-black"><a href="#">Help Center</a></li>
+                <li class="hover:text-black"><a href="#">How to Buy</a></li>
+                <li class="hover:text-black"><a href="#">Shipping & Delivery</a></li>
+                <li class="hover:text-black"><a href="#">Product Policy</a></li>
+                <li class="hover:text-black"><a href="#">How to Return</a></li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <h3>Categories</h3>
+            <ul class="text-lg text-neutral-700 flex flex-col gap-2">
+                <li class="hover:text-black"><a href="#">House Plants</a></li>
+                <li class="hover:text-black"><a href="#">Potter Plants</a></li>
+                <li class="hover:text-black"><a href="#">Seeds</a></li>
+                <li class="hover:text-black"><a href="#">Small Plants</a></li>
+                <li class="hover:text-black"><a href="#">Accessories</a></li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col  justify-between">
+
+            
+            <div>
+            <h2>Social Media</h2>
+                <div class="flex gap-4 mt-4">
+                    <!-- Facebook -->
+                    <a href="#" class="p-3 border border-green-300 rounded-xl hover:bg-green-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.8h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#" class="p-3 border border-green-300 rounded-xl hover:bg-green-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 4a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.5-.9a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Twitter -->
+                    <a href="#" class="p-3 border border-green-300 rounded-xl hover:bg-green-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.1 1.5A4.4 4.4 0 0 0 22.4.4a9 9 0 0 1-2.8 1A4.5 4.5 0 0 0 11 5.2a12.8 12.8 0 0 1-9.3-4.7A4.5 4.5 0 0 0 3 9a4.4 4.4 0 0 1-2-.6v.1a4.5 4.5 0 0 0 3.6 4.4 4.6 4.6 0 0 1-2 .1 4.5 4.5 0 0 0 4.2 3.1A9 9 0 0 1 1 19a12.7 12.7 0 0 0 6.9 2"/>
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="#" class="p-3 border border-green-300 rounded-xl hover:bg-green-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.7v2.2h.1c.5-.9 1.8-2.2 3.8-2.2 4.1 0 4.8 2.7 4.8 6.2V24h-4v-7.8c0-1.9 0-4.3-2.6-4.3s-3 2-3 4.1V24h-4V8z"/>
+                        </svg>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a href="#" class="p-3 border border-green-300 rounded-xl hover:bg-green-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.6 3.2H4.4C2.4 3.2 1 4.6 1 6.6v10.8c0 2 1.4 3.4 3.4 3.4h15.2c2 0 3.4-1.4 3.4-3.4V6.6c0-2-1.4-3.4-3.4-3.4zM10 16V8l6 4-6 4z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            
+
+            <div>
+                <h2>We accept</h2>
+
+                <div class="mt-4">
+                <img src="/plants/assets/images/footer-pay.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-gray-50">
+        <h2 class="text-center text-neutral-700 py-4">© 2021 GreenShop. All Rights Reserved.</h2>
+    </div>
+</footer>
+
+
+    </div>
+      <div 
+    x-data="{ open:false, mode:'login' }"
+    x-on:auth-open.window="
+        open = true;
+        mode = $event.detail.mode;
+    "
+    x-show="open"
+    x-transition
+    class="fixed inset-0 bg-black/50 flex items-center  justify-center"
+>
+
+    <div class="relative bg-white w-full max-w-[500px] rounded-xl shadow-xl p-10 flex flex-col items-center text-neutral-700">
+
+        <!-- закрыть -->
+        <button 
+            @click="open = false" 
+            class="absolute top-4 right-4 text-2xl leading-none"
+        >
+            ×
+        </button>
+
+        <!-- вкладки -->
+        <div class="flex gap-4 mb-8 text-xl font-medium">
+            <button 
+                @click="mode = 'login'"
+                class=" border-r-2 border-gray-300 pr-4"
+                :class="mode === 'login' ? 'text-green-600' : 'text-neutral-700'"
+            >
+                Login
+            </button>
+
+            <button 
+                @click="mode = 'register'"
+                class=""
+                :class="mode === 'register' ? 'text-green-600' : 'text-neutral-700'"
+            >
+                Register
+            </button>
+        </div>
+
+        <!-- контент -->
+        <div class="w-full flex flex-col items-center">
+            <template x-if="mode === 'login'">
+                <div class="m-auto flex flex-col items-center w-full max-w-[360px] text-center gap-6">
+
+    <h3 class="text-sm text-neutral-600">
+        Enter your username and password to login.
+    </h3>
+
+    <!-- Inputs -->
+    <div class="flex flex-col gap-4 w-full">
+        <input 
+            type="email" 
+            placeholder="email@example.com"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-green-600"
+        >
+
+        <input 
+            type="password" 
+            placeholder="password"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-green-600"
+        >
+
+        <p class="text-sm text-green-600 cursor-pointer text-right">
+            Forgot Password?
+        </p>
+    </div>
+
+    <!-- Login button -->
+    <button class="bg-green-600 text-white w-full py-2 rounded-lg hover:bg-green-700 transition">
+        Login
+    </button>
+
+    <p class="text-sm text-neutral-500">Or login with</p>
+
+    <!-- Social buttons -->
+    <div class="flex flex-col gap-3 w-full">
+
+        <button class="border flex items-center justify-center gap-3 border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition">
+            <img class="w-5 h-5" src="assets/images/google.png" alt="">
+            <p>Login with Google</p>
+        </button>
+
+        <button class="border flex items-center justify-center gap-3 border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition">
+            <img class="w-5 h-5" src="assets/images/facebook.png" alt="">
+            <p>Login with Facebook</p>
+        </button>
+
+    </div>
+
+</div>
+            </template>
+
+            <template x-if="mode === 'register'">
+                <div class="m-auto flex flex-col items-center w-full max-w-[360px] text-center gap-6">
+
+    <h3 class="text-sm text-neutral-600">
+        Enter your email and password to register.
+    </h3>
+
+    <!-- Inputs -->
+    <div class="flex flex-col gap-4 w-full">
+        <input 
+            type="email" 
+            placeholder="email@example.com"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-green-600"
+        >
+
+        <input 
+            type="email" 
+            placeholder="Enter your email address"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-green-600"
+        >
+
+        <input 
+            type="password" 
+            placeholder="password"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-green-600"
+        >
+
+        <input 
+            type="password" 
+            placeholder="Confirm Password"
+            class="border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-green-600"
+        >
+
+    </div>
+
+    <!-- Login button -->
+    <button class="bg-green-600 text-white w-full py-2 rounded-lg hover:bg-green-700 transition">
+        Login
+    </button>
+
+    <p class="text-sm text-neutral-500">Or register with</p>
+
+    <!-- Social buttons -->
+    <div class="flex flex-col gap-3 w-full">
+
+        <button class="border flex items-center justify-center gap-3 border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition">
+            <img class="w-5 h-5" src="assets/images/google.png" alt="">
+            <p>Login with Google</p>
+        </button>
+
+        <button class="border flex items-center justify-center gap-3 border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition">
+            <img class="w-5 h-5" src="assets/images/facebook.png" alt="">
+            <p>Login with Facebook</p>
+        </button>
+
+    </div>
+
+</div>
+
+            </template>
+        </div>
+
+    </div>
+</div>
+
+      
+  </body>
+</html>
