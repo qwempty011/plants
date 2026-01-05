@@ -21,7 +21,7 @@
     
     
       <ul class="flex gap-12 text-neutral-700"
-          x-data="{ path: window.location.pathname }">
+          x-data="{ path: window.location.pathname.replace('/plants', '') }">
 
         <li class="pb-6"
             :class="{ 'border-b-[3px] border-green-600': path === '/' || path === '/index.html' }">
