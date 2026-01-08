@@ -20,26 +20,21 @@
         
     
     
-      <ul class="flex gap-12 text-neutral-700"
-          x-data="{ path: window.location.pathname.replace('/plants', '') }">
+      <ul class="flex gap-12 text-neutral-700">
 
-        <li class="pb-6"
-            :class="{ 'border-b-[3px] border-green-600': path === '/' || path === '/index.html' }">
-          <a href="./index.html">Home</a>
+        <li class="pb-6 ">
+          <a href="./index">Home</a>
         </li>
 
-        <li class="pb-6"
-            :class="{ 'border-b-[3px] border-green-600': path === '/shop.html' || path === '/cart.html' || path === '/checkout.html' }">
+        <li class="pb-6 border-b-[3px] border-green-600">
           <a href="./shop.html">Shop</a>
         </li>
 
-        <li class="pb-6"
-            :class="{ 'border-b-[3px] border-green-600': path === '/plant-care.html' }">
+        <li class="pb-6 ">
           <a href="./plant-care.html">Plant Care</a>
         </li>
 
-        <li class="pb-6"
-            :class="{ 'border-b-[3px] border-green-600': path === '/blogs.html' }">
+        <li class="pb-6 ">
           <a href="./blogs.html">Blogs</a>
         </li>
 
