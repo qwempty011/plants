@@ -1,0 +1,12 @@
+{% extends '@layout/main.twig' %}
+{% set title = pages.index.title %}
+{% set active_menu = 'shop' %}
+{% block body %}
+
+  {% include '@component/shop/product-gallery.twig' %}
+  {% include '@component/shop/products-description.twig' %}
+  {% include '@component/shop/products-slide.twig' %}
+  
+
+
+{% endblock %}

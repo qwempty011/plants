@@ -6,10 +6,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  </head>
-  <body class="max-w-[1200px] m-auto text-xl font-regular font-roboto">
-    {% block body %}{% endblock %}
-    <script type="module" src="/src/js/main.js"></script>
     
+  </head>
+  <body>
+    <div class="max-w-[1200px] mx-auto text-base  font-roboto">
+      {% include '@component/home/header.twig' %}
+        {% block body %}{% endblock %}
+      {% include '@component/home/footer.twig' %}
+    </div>
+      {% include '@component/common/auth/auth-modal.twig' %}
+
+      <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

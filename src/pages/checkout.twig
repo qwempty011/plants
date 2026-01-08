@@ -1,0 +1,7 @@
+{% extends '@layout/main.twig' %}
+{% set title = pages.index.title %}
+{% set active_menu = 'shop' %}
+{% block body %}
+     {% include '@component/checkout/checkout-main.twig' %} 
+     {% include '@component/common/checkout-modal.twig' %}
+{% endblock %}

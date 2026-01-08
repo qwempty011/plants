@@ -1,0 +1,17 @@
+<div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden">
+  
+  <div class="bg-gray-50 h-72 max relative">
+
+    <img src="{{ product.img }}"
+         class="mx-auto mb-3 max-h-64 max-w-56 rounded-lg "
+         alt="{{ product.name }}">
+
+  </div>
+
+  <div class="text-left px-3">
+    <h4 class="font-medium text-gray-800">{{ product.name }}</h4>
+    <div class="flex items-center gap-2 mt-1">
+      <p class="text-green-600 font-semibold">${{ product.price }}</p>
+    </div>
+  </div>
+</div>

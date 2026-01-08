@@ -1,35 +1,44 @@
-<header class="flex justify-between items-center mt-6 pt-0 font-roboto text-xl font-regular  border-b-[0.3px]"
+<header class="flex justify-between items-start self-center mt-6  pt-0 font-roboto text-xl   border-b"
         x-data>
-    <img class="w-40 h-9" src="/assets/images/Logo.png" alt=""></img>
+
     
-      <ul class="flex gap-12 items-center text-neutral-700 "
-          x-data="{active: 'home'}">
-        <li @click="active = 'home'"
-            class=""
-            :class="{ 'border-b-[3px] border-green-600  ' : active === 'home' }"><a href="#">Home</a>
+      <img class="w-40  h-9" src="/assets/images/Logo.png" alt=""></img>
+        
+    
+    
+      <ul class="flex gap-12 text-neutral-700">
+
+        <li class="pb-6 {% if active_menu == 'index' %}border-b-[3px] border-green-600{% endif %}">
+          <a href="./index">Home</a>
         </li>
 
-        <li @click="active = 'shop'"
-            class=""
-            :class="{ 'border-b-[3px]  border-green-600 ' : active === 'shop' }"><a href="#">Shop</a>
+        <li class="pb-6 {% if active_menu == 'shop' %}border-b-[3px] border-green-600{% endif %}">
+          <a href="./shop.html">Shop</a>
         </li>
 
-        <li @click="active = 'plantCare'"
-            class=""
-            :class="{ 'border-b-[3px]  border-green-600 ' : active === 'plantCare' }"><a href="#">Plant Care</a>
+        <li class="pb-6 {% if active_menu == 'plant-care' %}border-b-[3px] border-green-600{% endif %}">
+          <a href="./plant-care.html">Plant Care</a>
         </li>
 
-        <li @click="active= 'blogs'"
-            class=""
-            :class="{ 'border-b-[3px]  border-green-600 ' : active === 'blogs' }"><a href="#">Blogs</a>
+        <li class="pb-6 {% if active_menu == 'blogs' %}border-b-[3px] border-green-600{% endif %}">
+          <a href="./blogs.html">Blogs</a>
         </li>
+
       </ul>
-      <ul class="flex items-center gap-8 ">
-        <li><a href="#"><img src="/assets/images/Search.png" alt=""></a></li>
-        <li><a href="#"><img src="/assets/images/Basket.png" alt=""></a></li>
-        <button class="flex gap-1 bg-green-500 hover:bg-green-700 items-center px-4 py-2 text-white rounded-md font-medium" 
+      <ul class="flex items-baseline  gap-8 ">
+        <li>
+          <a href="#">
+            <img src="/assets/images/icons/search.svg" alt="">
+          </a>
+        </li>
+        <li>
+            <a href="!#"> 
+              <img src="/assets/images/icons/basket.svg" alt="">
+            </a>
+        </li>
+        <button class="flex gap-1 bg-green-600 hover:bg-green-800 items-center px-4 py-2 text-white rounded-md font-medium" 
                 @click="$dispatch('auth-open', { mode: 'login' })">
-          <img class="w-5 h-5" src="/assets/images/Logout.png" alt="">
+          <img src="/assets/images/icons/logout.svg" alt="">
           <p>Login</p>
         </button>
       </ul>

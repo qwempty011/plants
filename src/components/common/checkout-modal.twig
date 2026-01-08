@@ -1,0 +1,132 @@
+<div
+    x-data="{ open:false, mode:'checkout' }"
+    x-cloak
+    x-on:checkout-open.window="
+        open = true;
+        mode = $event.detail.mode;
+    "
+    x-show="open"
+    x-transition.opacity
+    @click.self="open = false"
+    @keydown.escape.window="open = false"
+    class="fixed inset-0 bg-black/50  flex items-center justify-center z-50  "
+>
+    <div class="bg-white rounded-lg min-w-[500px] max-w-xl border-b-8 border-green-600 text-neutral-700">
+        <div class="flex flex-col bg-green-600/5 items-center  gap-4 pb-4 pt-7">
+            <img src="/assets/images/thank-you.png" alt="">
+            <p>Your order has been received</p>
+        </div>
+
+        <div class="grid grid-cols-4 gap-6 text-sm border-b p-6 mb-6">
+            <div class="border-r ">
+                <h4>Order Number</h4>
+                <p class="font-bold">19586687</p>
+            </div>
+            <div class="border-r">
+                <h4>Date</h4>
+                <p class="font-bold">15 Sep, 2021</p>
+            </div>
+            <div class="border-r">
+                <h4>Total</h4>
+                <p class="font-bold">2,699.00</p>
+            </div>
+            <div class="">
+                <h4>Payment Method</h4>
+                <p class="font-bold">Cash on delivery</p>
+            </div>
+        </div>
+
+        <div class="px-6">
+            <h3 class="font-bold text-base">Order Details</h3>
+
+            <div class="grid grid-cols-4 text-base font-medium border-b border-green-600/50">
+                <div class="col-span-2">Products</div>
+                <div class="">Qty</div>
+                <div class="">Subtotal</div>
+            </div>
+
+            <div class="border-b border-green-600/50">
+                
+                <div class="grid grid-cols-4  items-center bg-gray-50 mt-3 pr-4">
+
+                    <div class=" col-span-2 flex items-center">
+                    <img src="/assets/images/card-1.png" alt="Barberton Daisy" class="size-[70px]">
+                    <div class="">
+                        <h3 class="font-medium">Barberton Daisy</h3>
+                        <p class="text-sm text-gray-500">SKU: 1995751877966</p>
+                    </div>
+                    </div>
+
+                    <div class=" items-center ">
+                    
+                    <span class="text-sm text-gray-500">(x 2)</span>
+                    
+                    </div>
+
+                    <div class="flex items-center gap-5 justify-between">
+                    <span class="font-bold text-green-600">$238.00</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-4 items-center bg-gray-50 mt-3 pr-4">
+
+                    <div class="col-span-2 flex items-center">
+                    <img src="/assets/images/card-5.png" alt="Barberton Daisy" class="size-[70px]">
+                    <div class="">
+                        <h3 class="font-medium">Blushing Bromeliad</h3>
+                        <p class="text-sm text-gray-500">SKU: 19957518757065</p>
+                    </div>
+                    </div>
+
+                    <div class="flex items-center ">
+                    
+                    <span class="text-sm text-gray-500">(x 6)</span>
+                    
+                    </div>
+
+                    <div class="flex items-center gap-5 justify-between">
+                    <span class="font-bold text-green-600">$834.00</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-4 items-center bg-gray-50 mt-3 pr-4">
+
+                    <div class="col-span-2 flex items-center">
+                    <img src="/assets/images/card-6.png" alt="Barberton Daisy" class="size-[70px]">
+                    <div class="">
+                        <h3 class="font-medium">Aluminum Plant</h3>
+                        <p class="text-sm text-gray-500">SKU: 1995751877786</p>
+                    </div>
+                    </div>
+
+                    <div class="flex items-center ">
+                    
+                    <span class="text-sm text-gray-500">(x 9)</span>
+                    
+                    </div>
+
+                    <div class="flex items-center gap-5 justify-between">
+                    <span class="font-bold text-green-600">$1,611.00</span>
+                    </div>
+                </div>
+                
+                <div class="max-w-[75%] ml-auto flex flex-col gap-6 my-5">
+                    <div class="flex justify-between">
+                        <h3>Shiping</h3>
+                        <h3 class="text-lg font-medium">$16.00</h3>
+                    </div>
+                    <div class="flex justify-between">
+                        <h3 class="text-base font-bold">Total</h3>
+                        <h3 class="text-green-600 font-bold text-lg">$2,699.00</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-11 py-5 items-center">
+                <p class="text-center">Your order is currently being processed. You will receive an order confirmation email shortly with the expected delivery date for your items.</p>
+                <button class="btn btn-primary">Track your order</button>
+            </div>
+        
+        </div>
+    </div>
+</div>

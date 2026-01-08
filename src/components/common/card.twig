@@ -1,10 +1,6 @@
-<div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
+<div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden">
   
-  {% if product.discount %}
-    <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
-      {{ product.discount }}
-    </span>
-  {% endif %}
+  
 
   <div class="bg-gray-50 h-72 max relative">
 
@@ -12,7 +8,14 @@
          class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
          alt="{{ product.name }}">
 
-    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    {% if product.discount %}
+      <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
+        {{ product.discount }}
+      </span>
+    {% endif %}
+
+
+    
     <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
                 opacity-0 translate-y-3
                 group-hover:opacity-100 group-hover:translate-y-0

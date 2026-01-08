@@ -1,13 +1,11 @@
 {% extends '@layout/main.twig' %}
+
 {% set title = pages.index.title %}
+{% set active_menu = 'index' %}
 
 {% block body %}
-  {% include '@component/home/header.twig' %}
   {% include '@component/home/main-banner.twig' %}
-  {% include '@component/home/ProductsPage.twig' %} 
+  {% include '@component/home/products-page.twig' %} 
   {% include '@component/home/section-promo-banners.twig' %}
-  {% include '@component/home/blog-posts.twig' %}
-  {% include '@component/home/footer.twig' %} 
-
-  {% include '@component/common/auth/auth-modal.twig' %} 
+  {% include '@component/home/blog-posts.twig' %}    
 {% endblock %}

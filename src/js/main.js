@@ -19,5 +19,11 @@ Alpine.asyncData(
     'filter',
     () =>
     import ('./components/filter.js')
+);
+
+Alpine.asyncData(
+    'emblaProducts',
+    () =>
+    import ('./components/products-slide.js')
 )
 Alpine.start();

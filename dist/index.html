@@ -6,48 +6,59 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/plants/assets/index.twig-2aa81b44.js"></script>
-    <link rel="stylesheet" href="/plants/assets/index.twig-475c0cb4.css">
+    
+    <script type="module" crossorigin src="/plants/assets/main-6e7c3780.js"></script>
+    <link rel="stylesheet" href="/plants/assets/main-bd9e8063.css">
   </head>
-  <body class="max-w-[1200px] m-auto text-xl font-regular font-roboto">
-    
-  <header class="flex justify-between items-center mt-6 pt-0 font-roboto text-xl font-regular  border-b-[0.3px]"
+  <body>
+    <div class="max-w-[1200px] mx-auto text-base  font-roboto">
+      <header class="flex justify-between items-start self-center mt-6  pt-0 font-roboto text-xl   border-b"
         x-data>
-    <img class="w-40 h-9" src="/plants/assets/images/Logo.png" alt=""></img>
+
     
-      <ul class="flex gap-12 items-center text-neutral-700 "
-          x-data="{active: 'home'}">
-        <li @click="active = 'home'"
-            class=""
-            :class="{ 'border-b-[3px] border-green-600  ' : active === 'home' }"><a href="#">Home</a>
+      <img class="w-40  h-9" src="/plants/assets/images/Logo.png" alt=""></img>
+        
+    
+    
+      <ul class="flex gap-12 text-neutral-700">
+
+        <li class="pb-6 border-b-[3px] border-green-600">
+          <a href="./index">Home</a>
         </li>
 
-        <li @click="active = 'shop'"
-            class=""
-            :class="{ 'border-b-[3px]  border-green-600 ' : active === 'shop' }"><a href="#">Shop</a>
+        <li class="pb-6 ">
+          <a href="./shop.html">Shop</a>
         </li>
 
-        <li @click="active = 'plantCare'"
-            class=""
-            :class="{ 'border-b-[3px]  border-green-600 ' : active === 'plantCare' }"><a href="#">Plant Care</a>
+        <li class="pb-6 ">
+          <a href="./plant-care.html">Plant Care</a>
         </li>
 
-        <li @click="active= 'blogs'"
-            class=""
-            :class="{ 'border-b-[3px]  border-green-600 ' : active === 'blogs' }"><a href="#">Blogs</a>
+        <li class="pb-6 ">
+          <a href="./blogs.html">Blogs</a>
         </li>
+
       </ul>
-      <ul class="flex items-center gap-8 ">
-        <li><a href="#"><img src="/plants/assets/images/Search.png" alt=""></a></li>
-        <li><a href="#"><img src="/plants/assets/images/Basket.png" alt=""></a></li>
-        <button class="flex gap-1 bg-green-500 hover:bg-green-700 items-center px-4 py-2 text-white rounded-md font-medium" 
+      <ul class="flex items-baseline  gap-8 ">
+        <li>
+          <a href="#">
+            <img src="/plants/assets/images/icons/search.svg" alt="">
+          </a>
+        </li>
+        <li>
+            <a href="!#"> 
+              <img src="/plants/assets/images/icons/basket.svg" alt="">
+            </a>
+        </li>
+        <button class="flex gap-1 bg-green-600 hover:bg-green-800 items-center px-4 py-2 text-white rounded-md font-medium" 
                 @click="$dispatch('auth-open', { mode: 'login' })">
-          <img class="w-5 h-5" src="/plants/assets/images/Logout.png" alt="">
+          <img src="/plants/assets/images/icons/logout.svg" alt="">
           <p>Login</p>
         </button>
       </ul>
      
 </header>
+        
   <section class="flex justify-between font-roboto bg-gray-50 mt-5 pb-5">
   <div class="embla"
        x-load
@@ -66,7 +77,7 @@
               <p class="text-sm text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.</p> 
                
                
-              <button class="mt-11 uppercase px-8 py-2 text-base text-white bg-green-500 hover:bg-green-700 font-bold rounded-md w-max">
+              <button class="mt-11 uppercase btn btn-primary">
                   Shop Now
               </button> 
             </div> 
@@ -84,7 +95,7 @@
               <p class="text-sm text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.</p> 
                
                
-              <button class="mt-11 uppercase px-8 py-2 text-base text-white bg-green-500 hover:bg-green-700 font-bold rounded-md w-max">
+              <button class="mt-11 uppercase btn btn-primary">
                   Shop Now
               </button> 
             </div> 
@@ -102,7 +113,7 @@
               <p class="text-sm text-gray-500">We are an online plant shop offering a wide range of cheap and trendy plants.</p> 
                
                
-              <button class="mt-11 uppercase px-8 py-2 text-base text-white bg-green-500 hover:bg-green-700 font-bold rounded-md w-max">
+              <button class="mt-11 uppercase btn btn-primary">
                   Shop Now
               </button> 
             </div> 
@@ -143,7 +154,7 @@
 
 
   
-<div class="flex  py-8 font-roboto gap-8">
+<div class="flex py-8 gap-8">
 
     <!-- ===== LEFT SIDEBAR ===== -->
     <aside class="w-80 shrink-0 space-y-10 px-3 py-4 bg-gray-50">
@@ -300,11 +311,11 @@
       <div class="grid grid-cols-3 gap-6" id="cardsContainer" x-data>
 
         
-        <a  href="#"
+        <a  href="/plants/shop.html"
         class="card  transition-opacity duration-300"
         data-price="119">
 
-          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden">
   
   
 
@@ -314,7 +325,10 @@
          class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
          alt="Barberton Daisy">
 
-    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    
+
+
+    
     <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
                 opacity-0 translate-y-3
                 group-hover:opacity-100 group-hover:translate-y-0
@@ -364,11 +378,11 @@
           
         </a>
         
-        <a  href="#"
+        <a  href="/plants/shop.html"
         class="card  transition-opacity duration-300"
         data-price="169">
 
-          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden">
   
   
 
@@ -378,7 +392,10 @@
          class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
          alt="Angel Wing Begonia">
 
-    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    
+
+
+    
     <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
                 opacity-0 translate-y-3
                 group-hover:opacity-100 group-hover:translate-y-0
@@ -428,16 +445,12 @@
           
         </a>
         
-        <a  href="#"
+        <a  href="/plants/shop.html"
         class="card  transition-opacity duration-300"
         data-price="199">
 
-          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden">
   
-  
-    <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
-      13% OFF
-    </span>
   
 
   <div class="bg-gray-50 h-72 max relative">
@@ -446,7 +459,14 @@
          class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
          alt="African Violet">
 
-    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    
+      <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
+        13% OFF
+      </span>
+    
+
+
+    
     <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
                 opacity-0 translate-y-3
                 group-hover:opacity-100 group-hover:translate-y-0
@@ -498,11 +518,11 @@
           
         </a>
         
-        <a  href="#"
+        <a  href="/plants/shop.html"
         class="card  transition-opacity duration-300"
         data-price="129">
 
-          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden">
   
   
 
@@ -512,7 +532,10 @@
          class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
          alt="Beach Spider Lily">
 
-    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    
+
+
+    
     <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
                 opacity-0 translate-y-3
                 group-hover:opacity-100 group-hover:translate-y-0
@@ -562,11 +585,11 @@
           
         </a>
         
-        <a  href="#"
+        <a  href="/plants/shop.html"
         class="card  transition-opacity duration-300"
         data-price="139">
 
-          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden">
   
   
 
@@ -576,7 +599,10 @@
          class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
          alt="Blushing Bromeliad">
 
-    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    
+
+
+    
     <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
                 opacity-0 translate-y-3
                 group-hover:opacity-100 group-hover:translate-y-0
@@ -626,11 +652,11 @@
           
         </a>
         
-        <a  href="#"
+        <a  href="/plants/shop.html"
         class="card  transition-opacity duration-300"
         data-price="179">
 
-          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden">
   
   
 
@@ -640,7 +666,10 @@
          class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
          alt="Aluminum Plant">
 
-    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    
+
+
+    
     <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
                 opacity-0 translate-y-3
                 group-hover:opacity-100 group-hover:translate-y-0
@@ -690,11 +719,11 @@
           
         </a>
         
-        <a  href="#"
+        <a  href="/plants/shop.html"
         class="card  transition-opacity duration-300"
         data-price="99">
 
-          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden">
   
   
 
@@ -704,7 +733,10 @@
          class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
          alt="Bird’s Nest Fern">
 
-    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    
+
+
+    
     <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
                 opacity-0 translate-y-3
                 group-hover:opacity-100 group-hover:translate-y-0
@@ -754,11 +786,11 @@
           
         </a>
         
-        <a  href="#"
+        <a  href="/plants/shop.html"
         class="card  transition-opacity duration-300"
         data-price="59">
 
-          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden">
   
   
 
@@ -768,7 +800,10 @@
          class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
          alt="Broadleaf Lady Palm">
 
-    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    
+
+
+    
     <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
                 opacity-0 translate-y-3
                 group-hover:opacity-100 group-hover:translate-y-0
@@ -818,11 +853,11 @@
           
         </a>
         
-        <a  href="#"
+        <a  href="/plants/shop.html"
         class="card  transition-opacity duration-300"
         data-price="39">
 
-          <div class="relative pb-5 group text-lg max-w-[300px] rounded-lg overflow-hidden">
+          <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden">
   
   
 
@@ -832,7 +867,10 @@
          class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
          alt="Chinese Evergreen">
 
-    <!-- SVG кнопки — ПОЯВЛЯЮТСЯ ПРИ НАВЕДЕНИИ -->
+    
+
+
+    
     <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3
                 opacity-0 translate-y-3
                 group-hover:opacity-100 group-hover:translate-y-0
@@ -889,23 +927,25 @@
     
   </div>  
     <!-- Кнопки -->
-  <div class="flex justify-center gap-4 mt-4">
-    <button @click="prevPage" :disabled="page === 1">Назад</button>
-    <span x-text="page + ' / ' + totalPages"></span>
-    <button @click="nextPage" :disabled="page === totalPages">Вперёд</button>
+  <div class="flex justify-end gap-3 mt-4">
+    <button class="w-9 h-9 bg-green-600 text-white rounded-md">1</button>
+    <button class="w-9 h-9 border border-gray-300 rounded-md">2</button>
+    <button class="w-9 h-9 border border-gray-300 rounded-md">3</button>
+    <button class="w-9 h-9 border border-gray-300 rounded-md">4</button>
+    <button class="w-9 h-9 border border-gray-300 rounded-md">></button>
   </div>
-</div>
+
 
  
   
-    <div class="flex font-roboto justify-between mt-64 gap-8 font-black tracking-wider">
+    <div class="flex font-roboto justify-between mt-64 gap-8 w-full font-black ">
         <div class="flex justify-between bg-gray-50 items-center">
             <div class="">
                 <img  src="/plants/assets/images/card-5.png" alt="">
             </div>
             <div class="flex flex-col mr-7 text-end items-end gap-4 p-2 text-3xl text-neutral-700">
                 <h2>Summer cactus <br>& succulents</h2>
-                <p class="text-sm font-normal max-w-72 tracking-wider">We are an online plant shop offering a wide range of cheap and trendy plants</p>
+                <p class="text-sm font-normal max-w-72 ">We are an online plant shop offering a wide range of cheap and trendy plants</p>
                 <button class="text-lg font-medium px-4 py-2 rounded-xl text-white bg-green-500 hover:bg-green-700">Find More <span>&#10140;</span></button>
             </div>
         </div>
@@ -916,18 +956,18 @@
             </div>
             <div class="flex flex-col mr-7 text-end items-end gap-4 text-3xl text-neutral-700">
                 <h2>Styling Trends <br>& much more</h2>
-                <p class="text-sm font-normal max-w-72 tracking-wider">We are an online plant shop offering a wide range of cheap and trendy plants</p>
+                <p class="text-sm font-normal max-w-72 ">We are an online plant shop offering a wide range of cheap and trendy plants</p>
                 <button class="text-lg font-medium px-4 py-2 rounded-xl text-white bg-green-500 hover:bg-green-700">Find More <span>&#10140;</span></button>
             </div>
         </div>
     </div>
 
-  <div class="my-44 font-roboto">
+  <div class="my-44  ">
     <div class="text-center text-neutral-700">
         <h2 class="text-3xl font-bold tracking-wider">Our Blog Posts</h2>
         <p class="text-sm text-gray-500 font-normal ">We are an online plant shop offering a wide range of cheap and trendy plants.</p>
     </div>
-    <div class="flex justify-between text-sm font-medium mt-9 text-neutral-700 tracking-wider">
+    <div class="flex justify-between text-sm font-medium mt-9 text-neutral-700 ">
         <div class="flex flex-col gap-2 max-w-72 bg-gray-50">
             <img src="/plants/assets/images/blog-post-1.png" alt="">
             <div class="flex flex-col gap-2 px-4 pb-3">
@@ -969,8 +1009,9 @@
         </div>
     </div>
 </div>
+    
 
-  <footer class="font-roboto">
+      <footer class="">
 <!--Top section-->
     <div class="flex justify-between bg-gray-50 p-6 border-b-2">
         <div class="text-xl font-bold text-neutral-700 max-w-52">
@@ -1129,9 +1170,9 @@
     </div>
 </footer>
 
- 
 
-  <div 
+    </div>
+      <div 
     x-data="{ open:false, mode:'login' }"
     x-on:auth-open.window="
         open = true;
@@ -1287,9 +1328,8 @@
         </div>
 
     </div>
-</div> 
+</div>
 
-    
-    
+      
   </body>
 </html>
