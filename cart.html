@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
-    <script type="module" crossorigin src="/plants/assets/main-6e7c3780.js"></script>
+    <script type="module" crossorigin src="/plants/assets/main-15b9b954.js"></script>
     <link rel="stylesheet" href="/plants/assets/main-bd9e8063.css">
   </head>
   <body>
@@ -46,7 +46,7 @@
           </a>
         </li>
         <li>
-            <a href="!#"> 
+            <a href="./cart.html"> 
               <img src="/plants/assets/images/icons/basket.svg" alt="">
             </a>
         </li>
@@ -60,7 +60,7 @@
 </header>
         
 
-  <div class="text-neutral-700">
+  <div class="text-neutral-700" x-data="cartPage" x-load>
   <!-- Breadcrumb -->
   <div class="my-11">
     <a href="/index.html" class="font-bold">Home</a>
@@ -73,88 +73,47 @@
   <div class="grid grid-cols-3 gap-20">
     <div class="col-span-2">
       <div class="grid grid-cols-5 pb-3 border-b font-medium border-green-200">
-        <div class="col-span-2">Products</div>
-        <div class="">Price</div>
-        <div class="">Quantity</div>
-        <div class="">Total</div>
+          <div class="col-span-2">Products</div>
+          <div class="">Price</div>
+          <div class="">Quantity</div>
+          <div class="">Total</div>
+          
+      </div>
+
+      <template x-for="item in cart" :key="item.id">
         
-      </div>
+        <!-- Product -->
+        <div class="grid grid-cols-5 gap-4 items-center bg-gray-50 mt-3 pr-6">
+          <div class="col-span-2 flex items-center">
+            <img :src="item.img" alt="Barberton Daisy" class="size-[70px]">
+            <div class="">
+              <h3 class="font-medium" x-text="item.name"></h3>
+              <p class="text-sm text-gray-500">SKU: <span x-text="item.id"></span></p>
+            </div>
+          </div>
 
-      <!-- Product -->
-      <div class="grid grid-cols-5 gap-4 items-center bg-gray-50 mt-3 pr-6">
-        <div class="col-span-2 flex items-center">
-          <img src="/plants/assets/images/card-1.png" alt="Barberton Daisy" class="size-[70px]">
-          <div class="">
-            <h3 class="font-medium">Barberton Daisy</h3>
-            <p class="text-sm text-gray-500">SKU: 1995751877966</p>
+          <div class="text-gray-500 font-medium"><p>$<span x-text="item.price"></span></p></div>
+
+          <div class="flex items-center gap-4">
+            <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl"
+                    @click="decrease(item.id)">-</button>
+            <span class="" x-text="item.qty">$ </span>
+            <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl"
+                    @click="increase(item.id)">+</button>
+          </div>
+
+          <div class="flex items-center gap-5 justify-between">
+            <span class="font-bold text-green-600">$ <span x-text="item.price * item.qty"></span></span>
+            <button class=""
+                    @click="remove(item.id)">
+              <img src="/assets/images/delete.svg" alt="">
+            </button>
           </div>
         </div>
+      </template>
+        
 
-        <div class="text-gray-500 font-medium">$119.00</div>
-
-        <div class="flex items-center gap-4">
-          <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">-</button>
-          <span class="">2</span>
-          <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">+</button>
-        </div>
-
-        <div class="flex items-center gap-5 justify-between">
-          <span class="font-bold text-green-600">$238.00</span>
-          <button class="">
-            <img src="/plants/assets/images/delete.svg" alt="">
-          </button>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-5 gap-4 items-center bg-gray-50 mt-3 pr-6">
-        <div class="col-span-2 flex items-center">
-          <img src="/plants/assets/images/card-5.png" alt="Barberton Daisy" class="size-[70px]">
-          <div class="">
-            <h3 class="font-medium">Blushing Bromeliad</h3>
-            <p class="text-sm text-gray-500">SKU: 19957518757065</p>
-          </div>
-        </div>
-
-        <div class="text-gray-500 font-medium">$139.00</div>
-
-        <div class="flex items-center gap-4">
-          <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">-</button>
-          <span class="">6</span>
-          <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">+</button>
-        </div>
-
-        <div class="flex items-center gap-5 justify-between">
-          <span class="font-bold text-green-600">$834.00</span>
-          <button class="">
-            <img src="/plants/assets/images/delete.svg" alt="">
-          </button>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-5 gap-4 items-center bg-gray-50 mt-3 pr-6">
-        <div class="col-span-2 flex items-center">
-          <img src="/plants/assets/images/card-6.png" alt="Barberton Daisy" class="size-[70px]">
-          <div class="">
-            <h3 class="font-medium">Aluminum Plant</h3>
-            <p class="text-sm text-gray-500">SKU: 1995751877786</p>
-          </div>
-        </div>
-
-        <div class="text-gray-500 font-medium">$179.00</div>
-
-        <div class="flex items-center gap-4">
-          <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">-</button>
-          <span class="">9</span>
-          <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">+</button>
-        </div>
-
-        <div class="flex items-center gap-5 justify-between">
-          <span class="font-bold text-green-600">$1,611.00</span>
-          <button class="">
-            <img src="/plants/assets/images/delete.svg" alt="">
-          </button>
-        </div>
-      </div>
+      
     </div>
 
     <!-- Cart Totals -->
@@ -174,7 +133,7 @@
             <div class="flex flex-col gap-4">
               <div class="flex justify-between">
                 <span class="text-[15px]">Subtotal</span>
-                <span class="text-lg font-medium">$2,683.00</span>
+                <span class="text-lg font-medium">$ <span x-text="subTotal"></span></span>
               </div>
               <div class="text-[15px] flex justify-between">
                 <span class="">Coupon Discount</span>
@@ -196,7 +155,7 @@
 
             <div class="flex justify-between">
               <span class="font-bold">Total</span>
-              <span class="text-lg font-bold text-green-600">$2,699.00</span>
+              <span class="text-lg font-bold text-green-600">$ <span x-text="total"></span></span>
             </div>
 
             <button class="btn-lg"><a href="./checkout.html">Proceed To Checkout</a></button>
