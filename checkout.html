@@ -170,7 +170,9 @@
         </div>
 
 
-        <div class="">
+        <div class=""
+             x-data="cartPage"
+             x-load>
             <h2 class="text-lg col-span-2 font-bold mb-6">Your Order</h2>
 
             <div class="flex justify-between font-medium pb-3 border-b border-green-100">
@@ -179,69 +181,30 @@
             </div>
 
             <div class="">
+                <template x-for="item in cart" :key="item.id">
+                    <div class="flex justify-between items-center bg-gray-50 mt-3 pr-4">
+
+                        <div class=" flex items-center">
+                        <img :src="item.img" alt="item.name" class="size-[70px]">
+                        <div class="">
+                            <h3 class="font-medium" x-text="item.name"></h3>
+                            <p class="text-sm text-gray-500">SKU:<span x-text="item.id"></span></p>
+                        </div>
+                        </div>
+
+                        <div class="flex items-center ">
+                        
+                        <span class="text-sm text-gray-500" x-text="'('+ 'x' + item.qty + ')'"></span>
+                        
+                        </div>
+
+                        <div class="flex items-center gap-5 justify-between">
+                        <span class="font-bold text-green-600" x-text="'$'+item.price * item.qty"></span>
+                        </div>
+                    </div>
+                </template>
                 
-                <div class="flex justify-between items-center bg-gray-50 mt-3 pr-4">
 
-                    <div class=" flex items-center">
-                    <img src="/plants/assets/images/card-1.png" alt="Barberton Daisy" class="size-[70px]">
-                    <div class="">
-                        <h3 class="font-medium">Barberton Daisy</h3>
-                        <p class="text-sm text-gray-500">SKU: 1995751877966</p>
-                    </div>
-                    </div>
-
-                    <div class="flex items-center ">
-                    
-                    <span class="text-sm text-gray-500">(x 2)</span>
-                    
-                    </div>
-
-                    <div class="flex items-center gap-5 justify-between">
-                    <span class="font-bold text-green-600">$238.00</span>
-                    </div>
-                </div>
-
-                <div class="flex justify-between items-center bg-gray-50 mt-3 pr-4">
-
-                    <div class=" flex items-center">
-                    <img src="/plants/assets/images/card-5.png" alt="Barberton Daisy" class="size-[70px]">
-                    <div class="">
-                        <h3 class="font-medium">Blushing Bromeliad</h3>
-                        <p class="text-sm text-gray-500">SKU: 19957518757065</p>
-                    </div>
-                    </div>
-
-                    <div class="flex items-center ">
-                    
-                    <span class="text-sm text-gray-500">(x 6)</span>
-                    
-                    </div>
-
-                    <div class="flex items-center gap-5 justify-between">
-                    <span class="font-bold text-green-600">$834.00</span>
-                    </div>
-                </div>
-
-                <div class="flex justify-between items-center bg-gray-50 mt-3 pr-4">
-
-                    <div class=" flex items-center">
-                    <img src="/plants/assets/images/card-6.png" alt="Barberton Daisy" class="size-[70px]">
-                    <div class="">
-                        <h3 class="font-medium">Aluminum Plant</h3>
-                        <p class="text-sm text-gray-500">SKU: 1995751877786</p>
-                    </div>
-                    </div>
-
-                    <div class="flex items-center ">
-                    
-                    <span class="text-sm text-gray-500">(x 9)</span>
-                    
-                    </div>
-
-                    <div class="flex items-center gap-5 justify-between">
-                    <span class="font-bold text-green-600">$1,611.00</span>
-                    </div>
-                </div>
                 
                 <div class="my-5 text-sm text-end">
                     <p>Have a coupon code?<a href="#" class="text-green-600">Click here</a> </p>  
@@ -253,7 +216,7 @@
                     <div class="flex flex-col gap-3">
                         <div class="flex justify-between">
                             <span class="text-[15px]">Subtotal</span>
-                            <span class="text-lg font-medium">$2,683.00</span>
+                            <span class="text-lg font-medium" x-text=" '$' + subTotal + '.00'"></span>
                         </div>
                         <div class="text-[15px] flex justify-between">
                             <span class="">Coupon Discount</span>
@@ -273,7 +236,7 @@
 
                     <div class="flex justify-between items-center">
                         <span class="font-bold">Total</span>
-                        <span class="text-lg font-bold text-green-600">$2,699.00</span>
+                        <span class="text-lg font-bold text-green-600" x-text=" '$' + total + '.00'"></span>
                     </div>
 
                     <div class="" x-data>
@@ -327,7 +290,9 @@
     @keydown.escape.window="open = false"
     class="fixed inset-0 bg-black/50  flex items-center justify-center z-50  "
 >
-    <div class="bg-white rounded-lg min-w-[500px] max-w-xl border-b-8 border-green-600 text-neutral-700">
+    <div class="bg-white rounded-lg min-w-[500px] max-w-xl border-b-8 border-green-600 text-neutral-700"
+         x-data="cartPage"
+         x-load>
         <div class="flex flex-col bg-green-600/5 items-center  gap-4 pb-4 pt-7">
             <img src="/plants/assets/images/thank-you.png" alt="">
             <p>Your order has been received</p>
@@ -344,7 +309,7 @@
             </div>
             <div class="border-r">
                 <h4>Total</h4>
-                <p class="font-bold">2,699.00</p>
+                <p class="font-bold" x-text="total + '.00'"></p>
             </div>
             <div class="">
                 <h4>Payment Method</h4>
@@ -362,69 +327,31 @@
             </div>
 
             <div class="border-b border-green-600/50">
+                <template x-for="item in cart" :key="item.id">
+                    <div class="grid grid-cols-4  items-center bg-gray-50 mt-3 pr-4">
+
+                        <div class=" col-span-2 flex items-center">
+                        <img :src="item.img" alt="item.name" class="size-[70px]">
+                        <div class="">
+                            <h3 class="font-medium" x-text="item.name">Barberton Daisy</h3>
+                            <p class="text-sm text-gray-500" >SKU: <span x-text="item.id"></span></p>
+                        </div>
+                        </div>
+
+                        <div class=" items-center ">
+                        
+                        <span class="text-sm text-gray-500" x-text="'('+ 'x' + item.qty + ')'">(x 2)</span>
+                        
+                        </div>
+
+                        <div class="flex items-center gap-5 justify-between">
+                        <span class="font-bold text-green-600" x-text="'$' + item.price * item.qty + '.00'"></span>
+                        </div>
+                    </div>
+                </template>
                 
-                <div class="grid grid-cols-4  items-center bg-gray-50 mt-3 pr-4">
 
-                    <div class=" col-span-2 flex items-center">
-                    <img src="/plants/assets/images/card-1.png" alt="Barberton Daisy" class="size-[70px]">
-                    <div class="">
-                        <h3 class="font-medium">Barberton Daisy</h3>
-                        <p class="text-sm text-gray-500">SKU: 1995751877966</p>
-                    </div>
-                    </div>
-
-                    <div class=" items-center ">
-                    
-                    <span class="text-sm text-gray-500">(x 2)</span>
-                    
-                    </div>
-
-                    <div class="flex items-center gap-5 justify-between">
-                    <span class="font-bold text-green-600">$238.00</span>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-4 items-center bg-gray-50 mt-3 pr-4">
-
-                    <div class="col-span-2 flex items-center">
-                    <img src="/plants/assets/images/card-5.png" alt="Barberton Daisy" class="size-[70px]">
-                    <div class="">
-                        <h3 class="font-medium">Blushing Bromeliad</h3>
-                        <p class="text-sm text-gray-500">SKU: 19957518757065</p>
-                    </div>
-                    </div>
-
-                    <div class="flex items-center ">
-                    
-                    <span class="text-sm text-gray-500">(x 6)</span>
-                    
-                    </div>
-
-                    <div class="flex items-center gap-5 justify-between">
-                    <span class="font-bold text-green-600">$834.00</span>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-4 items-center bg-gray-50 mt-3 pr-4">
-
-                    <div class="col-span-2 flex items-center">
-                    <img src="/plants/assets/images/card-6.png" alt="Barberton Daisy" class="size-[70px]">
-                    <div class="">
-                        <h3 class="font-medium">Aluminum Plant</h3>
-                        <p class="text-sm text-gray-500">SKU: 1995751877786</p>
-                    </div>
-                    </div>
-
-                    <div class="flex items-center ">
-                    
-                    <span class="text-sm text-gray-500">(x 9)</span>
-                    
-                    </div>
-
-                    <div class="flex items-center gap-5 justify-between">
-                    <span class="font-bold text-green-600">$1,611.00</span>
-                    </div>
-                </div>
+                
                 
                 <div class="max-w-[75%] ml-auto flex flex-col gap-6 my-5">
                     <div class="flex justify-between">
@@ -433,7 +360,7 @@
                     </div>
                     <div class="flex justify-between">
                         <h3 class="text-base font-bold">Total</h3>
-                        <h3 class="text-green-600 font-bold text-lg">$2,699.00</h3>
+                        <h3 class="text-green-600 font-bold text-lg" x-text="'$'+total+'.00'"></h3>
                     </div>
                 </div>
             </div>

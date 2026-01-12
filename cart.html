@@ -85,7 +85,7 @@
         <!-- Product -->
         <div class="grid grid-cols-5 gap-4 items-center bg-gray-50 mt-3 pr-6">
           <div class="col-span-2 flex items-center">
-            <img :src="item.img" alt="Barberton Daisy" class="size-[70px]">
+            <img :src="item.img" alt="item.name" class="size-[70px]">
             <div class="">
               <h3 class="font-medium" x-text="item.name"></h3>
               <p class="text-sm text-gray-500">SKU: <span x-text="item.id"></span></p>
@@ -97,7 +97,7 @@
           <div class="flex items-center gap-4">
             <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl"
                     @click="decrease(item.id)">-</button>
-            <span class="" x-text="item.qty">$ </span>
+            <span class="" x-text="item.qty"> </span>
             <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl"
                     @click="increase(item.id)">+</button>
           </div>
