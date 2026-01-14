@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
-    <script type="module" crossorigin src="/plants/assets/main-15b9b954.js"></script>
-    <link rel="stylesheet" href="/plants/assets/main-bd9e8063.css">
+    <script type="module" crossorigin src="/plants/assets/main-121eb46e.js"></script>
+    <link rel="stylesheet" href="/plants/assets/main-9637ec56.css">
   </head>
   <body>
     <div class="max-w-[1200px] mx-auto text-base  font-roboto">
@@ -39,16 +39,28 @@
         </li>
 
       </ul>
-      <ul class="flex items-baseline  gap-8 ">
+      <ul class="flex items-baseline  gap-8 "
+          x-data
+          x-load
+          >
         <li>
           <a href="#">
             <img src="/plants/assets/images/icons/search.svg" alt="">
           </a>
         </li>
-        <li>
-            <a href="./cart.html"> 
-              <img src="/plants/assets/images/icons/basket.svg" alt="">
-            </a>
+        <li class="relative">
+          <a href="./cart.html"> 
+            <img src="/plants/assets/images/icons/basket.svg" alt="">
+          </a>
+
+          <p
+            class="absolute -top-[5px] -right-[7px] z-30
+                  bg-green-600 text-white text-[10px]
+                  w-5 aspect-square rounded-full
+                  flex items-center justify-center
+                  leading-none border-2 border-white"
+            x-text="$store.cart.qtySum">
+          </p>
         </li>
         <button class="flex gap-1 bg-green-600 hover:bg-green-800 items-center px-4 py-2 text-white rounded-md font-medium" 
                 @click="$dispatch('auth-open', { mode: 'login' })">
@@ -316,14 +328,9 @@
         data-price="119">
 
           <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden"
-    x-data="cartItem({
-       id: '1',
-       name: 'Barberton Daisy',
-       price: 119,
-       img: 'assets/images/card-1.png',
-       quantity: 1
-        })"
-        x-load>
+    x-data
+    x-load
+    x-init="$store.cart">
   
 
   <div class="bg-gray-50 h-72 max relative">
@@ -345,7 +352,13 @@
 
       <!-- 1. Cart -->
       <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="addToCart()"
+              @click="$store.cart.addToCart({
+                      id: '1',
+                      name: 'Barberton Daisy',
+                      price: 119,
+                      img: 'assets/images/card-1.png',
+                      qty: 1
+                  })"
               >
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
              fill="none" stroke-width="2" viewBox="0 0 24 24">
@@ -394,14 +407,9 @@
         data-price="169">
 
           <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden"
-    x-data="cartItem({
-       id: '2',
-       name: 'Angel Wing Begonia',
-       price: 169,
-       img: 'assets/images/card-2.png',
-       quantity: 1
-        })"
-        x-load>
+    x-data
+    x-load
+    x-init="$store.cart">
   
 
   <div class="bg-gray-50 h-72 max relative">
@@ -423,7 +431,13 @@
 
       <!-- 1. Cart -->
       <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="addToCart()"
+              @click="$store.cart.addToCart({
+                      id: '2',
+                      name: 'Angel Wing Begonia',
+                      price: 169,
+                      img: 'assets/images/card-2.png',
+                      qty: 1
+                  })"
               >
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
              fill="none" stroke-width="2" viewBox="0 0 24 24">
@@ -472,14 +486,9 @@
         data-price="199">
 
           <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden"
-    x-data="cartItem({
-       id: '3',
-       name: 'African Violet',
-       price: 199,
-       img: 'assets/images/card-3.png',
-       quantity: 1
-        })"
-        x-load>
+    x-data
+    x-load
+    x-init="$store.cart">
   
 
   <div class="bg-gray-50 h-72 max relative">
@@ -505,7 +514,13 @@
 
       <!-- 1. Cart -->
       <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="addToCart()"
+              @click="$store.cart.addToCart({
+                      id: '3',
+                      name: 'African Violet',
+                      price: 199,
+                      img: 'assets/images/card-3.png',
+                      qty: 1
+                  })"
               >
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
              fill="none" stroke-width="2" viewBox="0 0 24 24">
@@ -556,14 +571,9 @@
         data-price="129">
 
           <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden"
-    x-data="cartItem({
-       id: '4',
-       name: 'Beach Spider Lily',
-       price: 129,
-       img: 'assets/images/card-4.png',
-       quantity: 1
-        })"
-        x-load>
+    x-data
+    x-load
+    x-init="$store.cart">
   
 
   <div class="bg-gray-50 h-72 max relative">
@@ -585,7 +595,13 @@
 
       <!-- 1. Cart -->
       <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="addToCart()"
+              @click="$store.cart.addToCart({
+                      id: '4',
+                      name: 'Beach Spider Lily',
+                      price: 129,
+                      img: 'assets/images/card-4.png',
+                      qty: 1
+                  })"
               >
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
              fill="none" stroke-width="2" viewBox="0 0 24 24">
@@ -634,14 +650,9 @@
         data-price="139">
 
           <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden"
-    x-data="cartItem({
-       id: '5',
-       name: 'Blushing Bromeliad',
-       price: 139,
-       img: 'assets/images/card-5.png',
-       quantity: 1
-        })"
-        x-load>
+    x-data
+    x-load
+    x-init="$store.cart">
   
 
   <div class="bg-gray-50 h-72 max relative">
@@ -663,7 +674,13 @@
 
       <!-- 1. Cart -->
       <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="addToCart()"
+              @click="$store.cart.addToCart({
+                      id: '5',
+                      name: 'Blushing Bromeliad',
+                      price: 139,
+                      img: 'assets/images/card-5.png',
+                      qty: 1
+                  })"
               >
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
              fill="none" stroke-width="2" viewBox="0 0 24 24">
@@ -712,14 +729,9 @@
         data-price="179">
 
           <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden"
-    x-data="cartItem({
-       id: '6',
-       name: 'Aluminum Plant',
-       price: 179,
-       img: 'assets/images/card-6.png',
-       quantity: 1
-        })"
-        x-load>
+    x-data
+    x-load
+    x-init="$store.cart">
   
 
   <div class="bg-gray-50 h-72 max relative">
@@ -741,7 +753,13 @@
 
       <!-- 1. Cart -->
       <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="addToCart()"
+              @click="$store.cart.addToCart({
+                      id: '6',
+                      name: 'Aluminum Plant',
+                      price: 179,
+                      img: 'assets/images/card-6.png',
+                      qty: 1
+                  })"
               >
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
              fill="none" stroke-width="2" viewBox="0 0 24 24">
@@ -790,14 +808,9 @@
         data-price="99">
 
           <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden"
-    x-data="cartItem({
-       id: '7',
-       name: 'Bird’s Nest Fern',
-       price: 99,
-       img: 'assets/images/card-7.png',
-       quantity: 1
-        })"
-        x-load>
+    x-data
+    x-load
+    x-init="$store.cart">
   
 
   <div class="bg-gray-50 h-72 max relative">
@@ -819,7 +832,13 @@
 
       <!-- 1. Cart -->
       <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="addToCart()"
+              @click="$store.cart.addToCart({
+                      id: '7',
+                      name: 'Bird’s Nest Fern',
+                      price: 99,
+                      img: 'assets/images/card-7.png',
+                      qty: 1
+                  })"
               >
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
              fill="none" stroke-width="2" viewBox="0 0 24 24">
@@ -868,14 +887,9 @@
         data-price="59">
 
           <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden"
-    x-data="cartItem({
-       id: '8',
-       name: 'Broadleaf Lady Palm',
-       price: 59,
-       img: 'assets/images/card-8.png',
-       quantity: 1
-        })"
-        x-load>
+    x-data
+    x-load
+    x-init="$store.cart">
   
 
   <div class="bg-gray-50 h-72 max relative">
@@ -897,7 +911,13 @@
 
       <!-- 1. Cart -->
       <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="addToCart()"
+              @click="$store.cart.addToCart({
+                      id: '8',
+                      name: 'Broadleaf Lady Palm',
+                      price: 59,
+                      img: 'assets/images/card-8.png',
+                      qty: 1
+                  })"
               >
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
              fill="none" stroke-width="2" viewBox="0 0 24 24">
@@ -946,14 +966,9 @@
         data-price="39">
 
           <div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden"
-    x-data="cartItem({
-       id: '9',
-       name: 'Chinese Evergreen',
-       price: 39,
-       img: 'assets/images/card-9.png',
-       quantity: 1
-        })"
-        x-load>
+    x-data
+    x-load
+    x-init="$store.cart">
   
 
   <div class="bg-gray-50 h-72 max relative">
@@ -975,7 +990,13 @@
 
       <!-- 1. Cart -->
       <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="addToCart()"
+              @click="$store.cart.addToCart({
+                      id: '9',
+                      name: 'Chinese Evergreen',
+                      price: 39,
+                      img: 'assets/images/card-9.png',
+                      qty: 1
+                  })"
               >
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
              fill="none" stroke-width="2" viewBox="0 0 24 24">

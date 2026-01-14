@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
-    <script type="module" crossorigin src="/plants/assets/main-15b9b954.js"></script>
-    <link rel="stylesheet" href="/plants/assets/main-bd9e8063.css">
+    <script type="module" crossorigin src="/plants/assets/main-121eb46e.js"></script>
+    <link rel="stylesheet" href="/plants/assets/main-9637ec56.css">
   </head>
   <body>
     <div class="max-w-[1200px] mx-auto text-base  font-roboto">
@@ -39,16 +39,28 @@
         </li>
 
       </ul>
-      <ul class="flex items-baseline  gap-8 ">
+      <ul class="flex items-baseline  gap-8 "
+          x-data
+          x-load
+          >
         <li>
           <a href="#">
             <img src="/plants/assets/images/icons/search.svg" alt="">
           </a>
         </li>
-        <li>
-            <a href="./cart.html"> 
-              <img src="/plants/assets/images/icons/basket.svg" alt="">
-            </a>
+        <li class="relative">
+          <a href="./cart.html"> 
+            <img src="/plants/assets/images/icons/basket.svg" alt="">
+          </a>
+
+          <p
+            class="absolute -top-[5px] -right-[7px] z-30
+                  bg-green-600 text-white text-[10px]
+                  w-5 aspect-square rounded-full
+                  flex items-center justify-center
+                  leading-none border-2 border-white"
+            x-text="$store.cart.qtySum">
+          </p>
         </li>
         <button class="flex gap-1 bg-green-600 hover:bg-green-800 items-center px-4 py-2 text-white rounded-md font-medium" 
                 @click="$dispatch('auth-open', { mode: 'login' })">
@@ -60,7 +72,7 @@
 </header>
         
 
-  <div class="text-neutral-700" x-data="cartPage" x-load>
+  <div class="text-neutral-700" x-data x-load>
   <!-- Breadcrumb -->
   <div class="my-11">
     <a href="/index.html" class="font-bold">Home</a>
@@ -80,35 +92,40 @@
           
       </div>
 
-      <template x-for="item in cart" :key="item.id">
-        
-        <!-- Product -->
+      <template x-for="item in $store.cart.items" :key="item.id">
         <div class="grid grid-cols-5 gap-4 items-center bg-gray-50 mt-3 pr-6">
+          
+          <!-- Product info -->
           <div class="col-span-2 flex items-center">
-            <img :src="item.img" alt="item.name" class="size-[70px]">
+            <img :src="item.img" :alt="item.name" class="w-[70px]">
             <div class="">
               <h3 class="font-medium" x-text="item.name"></h3>
               <p class="text-sm text-gray-500">SKU: <span x-text="item.id"></span></p>
             </div>
           </div>
 
-          <div class="text-gray-500 font-medium"><p>$<span x-text="item.price"></span></p></div>
+          <!-- Price -->
+          <div class="text-gray-500 font-medium">
+            $<span x-text="item.price"></span>
+          </div>
 
+          <!-- Quantity -->
           <div class="flex items-center gap-4">
             <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl"
-                    @click="decrease(item.id)">-</button>
-            <span class="" x-text="item.qty"> </span>
+                    @click="$store.cart.decrease(item.id)">-</button>
+            <span x-text="item.qty"></span>
             <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl"
-                    @click="increase(item.id)">+</button>
+                    @click="$store.cart.increase(item.id)">+</button>
           </div>
 
+          <!-- Total & Remove -->
           <div class="flex items-center gap-5 justify-between">
             <span class="font-bold text-green-600">$ <span x-text="item.price * item.qty"></span></span>
-            <button class=""
-                    @click="remove(item.id)">
-              <img src="/assets/images/delete.svg" alt="">
+            <button @click="$store.cart.remove(item.id)">
+              <img src="./assets/images/delete.svg" alt="Remove item">
             </button>
           </div>
+
         </div>
       </template>
         
@@ -133,7 +150,7 @@
             <div class="flex flex-col gap-4">
               <div class="flex justify-between">
                 <span class="text-[15px]">Subtotal</span>
-                <span class="text-lg font-medium">$ <span x-text="subTotal"></span></span>
+                <span class="text-lg font-medium" x-text="'$' + $store.cart.subTotal"></span>
               </div>
               <div class="text-[15px] flex justify-between">
                 <span class="">Coupon Discount</span>
@@ -155,7 +172,7 @@
 
             <div class="flex justify-between">
               <span class="font-bold">Total</span>
-              <span class="text-lg font-bold text-green-600">$ <span x-text="total"></span></span>
+              <span class="text-lg font-bold text-green-600" x-text="'$' + $store.cart.total"></span>
             </div>
 
             <button class="btn-lg"><a href="./checkout.html">Proceed To Checkout</a></button>
