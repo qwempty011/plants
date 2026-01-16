@@ -2,49 +2,58 @@
     "products": [{
             "img": "assets/images/card-1.png",
             "name": "Barberton Daisy",
-            "price": 119
+            "price": 119,
+            "id": 1
         },
         {
             "img": "assets/images/card-2.png",
             "name": "Angel Wing Begonia",
-            "price": 169
+            "price": 169,
+            "id": 2
         },
         {
             "img": "assets/images/card-3.png",
             "name": "African Violet",
             "price": 199,
             "oldPrice": 229,
-            "discount": "13% OFF"
+            "discount": "13% OFF",
+            "id": 3
         },
         {
             "img": "assets/images/card-4.png",
             "name": "Beach Spider Lily",
-            "price": 129
+            "price": 129,
+            "id": 4
         },
         {
             "img": "assets/images/card-5.png",
             "name": "Blushing Bromeliad",
-            "price": 139
+            "price": 139,
+            "id": 5
         },
         {
             "img": "assets/images/card-6.png",
             "name": "Aluminum Plant",
-            "price": 179
+            "price": 179,
+            "id": 6
         },
         {
             "img": "assets/images/card-7.png",
             "name": "Bird’s Nest Fern",
-            "price": 99
+            "price": 99,
+            "id": 7
         },
         {
             "img": "assets/images/card-8.png",
             "name": "Broadleaf Lady Palm",
-            "price": 59
+            "price": 59,
+            "id": 8
         },
         {
             "img": "assets/images/card-9.png",
             "name": "Chinese Evergreen",
-            "price": 39
+            "price": 39,
+            "id": 9
         }
 
     ]

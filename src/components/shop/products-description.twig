@@ -1,10 +1,24 @@
-<div class="text-sm text-gray-500 mb-32">
-    <div class="text-lg flex items-center border-b border-green-100 gap-8 ">
-        <h3 class="font-bold text-green-600 p-3 border-b-4 border-green-600">Product Description</h3>
-        <h3>Reviews (19)</h3>
+<div class="text-sm text-gray-500 mb-32"
+     x-data="{ activeTab: 'description' }">
+    <div class="text-lg flex items-center border-b border-green-100 gap-8">
+        <h3 
+            @click="activeTab = 'description'"
+            class="font-bold p-3 border-b-4 cursor-pointer transition-colors"
+            :class="activeTab === 'description' ? 'text-green-600 border-green-600' : 'text-gray-500 border-transparent'"
+        >
+            Product Description
+        </h3>
+        <h3 
+            @click="activeTab = 'reviews'"
+            class="font-bold p-3 border-b-4 cursor-pointer transition-colors"
+            :class="activeTab === 'reviews' ? 'text-green-600 border-green-600' : 'text-gray-500 border-transparent'"
+        >
+            Reviews (19)
+        </h3>
     </div>
 
-    <div class="flex flex-col gap-5 mt-5">
+    
+    <div x-show="activeTab === 'description'" class="flex flex-col gap-5 mt-5">
         <p>
         The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help 
         elevate your plants off the ground. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero 
@@ -31,6 +45,10 @@
             <p>The ceramic cylinder planters come with a wooden stand to help elevate your plants off the ground. The ceramic cylinder planters come with a wooden stand to help 
             elevate your plants off the ground. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
+    </div>
+
     
+    <div x-show="activeTab === 'reviews'" class="flex flex-col gap-5 mt-5">
+        
     </div>
 </div>

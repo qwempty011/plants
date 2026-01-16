@@ -49,7 +49,7 @@
       </div>
 
       <!-- Price Range -->
-      <div x-data="slider()" 
+      <div x-data="slider" 
            x-load
             class="">
         <h3 class="font-bold text-neutral-700  text-lg">Price Range</h3>
@@ -124,7 +124,7 @@
 
     <!-- ===== MAIN CONTENT ===== -->
     <div class="flex-1"
-         x-data="filter()"
+         x-data="filter"
          x-load>
 
       <!-- Top Bar -->
@@ -153,16 +153,16 @@
       <!-- Product Grid -->
       
 
-      <div class="grid grid-cols-3 gap-6" id="cardsContainer" x-data>
+      <div class="grid grid-cols-3 gap-6" id="cardsContainer" >
 
         {% for product in products %}
-        <a  href="/plants/shop.html"
+        <div  href="./shop.html"
         class="card  transition-opacity duration-300"
         data-price="{{ product.price }}">
 
           {% include '@component/common/card.twig' with { product: product } %}
           
-        </a>
+        </div>
         {% endfor %}
 
       </div>

@@ -1,4 +1,4 @@
-<div class="text-neutral-700">
+<div class="text-neutral-700" x-data x-load>
   <!-- Breadcrumb -->
   <div class="my-11">
     <a href="/index.html" class="font-bold">Home</a>
@@ -11,88 +11,52 @@
   <div class="grid grid-cols-3 gap-20">
     <div class="col-span-2">
       <div class="grid grid-cols-5 pb-3 border-b font-medium border-green-200">
-        <div class="col-span-2">Products</div>
-        <div class="">Price</div>
-        <div class="">Quantity</div>
-        <div class="">Total</div>
+          <div class="col-span-2">Products</div>
+          <div class="">Price</div>
+          <div class="">Quantity</div>
+          <div class="">Total</div>
+          
+      </div>
+
+      <template x-for="item in $store.cart.items" :key="item.id">
+        <div class="grid grid-cols-5 gap-4 items-center bg-gray-50 mt-3 pr-6">
+          
+          <!-- Product info -->
+          <div class="col-span-2 flex items-center">
+            <img :src="item.img" :alt="item.name" class="w-[70px]">
+            <div class="">
+              <h3 class="font-medium" x-text="item.name"></h3>
+              <p class="text-sm text-gray-500">SKU: <span x-text="item.id"></span></p>
+            </div>
+          </div>
+
+          <!-- Price -->
+          <div class="text-gray-500 font-medium">
+            $<span x-text="item.price"></span>
+          </div>
+
+          <!-- Quantity -->
+          <div class="flex items-center gap-4">
+            <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl"
+                    @click="$store.cart.decrease(item.id)">-</button>
+            <span x-text="item.qty"></span>
+            <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl"
+                    @click="$store.cart.increase(item.id)">+</button>
+          </div>
+
+          <!-- Total & Remove -->
+          <div class="flex items-center gap-5 justify-between">
+            <span class="font-bold text-green-600">$ <span x-text="item.price * item.qty"></span></span>
+            <button @click="$store.cart.remove(item.id)">
+              <img src="./assets/images/delete.svg" alt="Remove item">
+            </button>
+          </div>
+
+        </div>
+      </template>
         
-      </div>
 
-      <!-- Product -->
-      <div class="grid grid-cols-5 gap-4 items-center bg-gray-50 mt-3 pr-6">
-        <div class="col-span-2 flex items-center">
-          <img src="/assets/images/card-1.png" alt="Barberton Daisy" class="size-[70px]">
-          <div class="">
-            <h3 class="font-medium">Barberton Daisy</h3>
-            <p class="text-sm text-gray-500">SKU: 1995751877966</p>
-          </div>
-        </div>
-
-        <div class="text-gray-500 font-medium">$119.00</div>
-
-        <div class="flex items-center gap-4">
-          <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">-</button>
-          <span class="">2</span>
-          <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">+</button>
-        </div>
-
-        <div class="flex items-center gap-5 justify-between">
-          <span class="font-bold text-green-600">$238.00</span>
-          <button class="">
-            <img src="/assets/images/delete.svg" alt="">
-          </button>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-5 gap-4 items-center bg-gray-50 mt-3 pr-6">
-        <div class="col-span-2 flex items-center">
-          <img src="/assets/images/card-5.png" alt="Barberton Daisy" class="size-[70px]">
-          <div class="">
-            <h3 class="font-medium">Blushing Bromeliad</h3>
-            <p class="text-sm text-gray-500">SKU: 19957518757065</p>
-          </div>
-        </div>
-
-        <div class="text-gray-500 font-medium">$139.00</div>
-
-        <div class="flex items-center gap-4">
-          <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">-</button>
-          <span class="">6</span>
-          <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">+</button>
-        </div>
-
-        <div class="flex items-center gap-5 justify-between">
-          <span class="font-bold text-green-600">$834.00</span>
-          <button class="">
-            <img src="/assets/images/delete.svg" alt="">
-          </button>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-5 gap-4 items-center bg-gray-50 mt-3 pr-6">
-        <div class="col-span-2 flex items-center">
-          <img src="/assets/images/card-6.png" alt="Barberton Daisy" class="size-[70px]">
-          <div class="">
-            <h3 class="font-medium">Aluminum Plant</h3>
-            <p class="text-sm text-gray-500">SKU: 1995751877786</p>
-          </div>
-        </div>
-
-        <div class="text-gray-500 font-medium">$179.00</div>
-
-        <div class="flex items-center gap-4">
-          <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">-</button>
-          <span class="">9</span>
-          <button class="aspect-[21.7/25] w-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">+</button>
-        </div>
-
-        <div class="flex items-center gap-5 justify-between">
-          <span class="font-bold text-green-600">$1,611.00</span>
-          <button class="">
-            <img src="/assets/images/delete.svg" alt="">
-          </button>
-        </div>
-      </div>
+      
     </div>
 
     <!-- Cart Totals -->
@@ -112,7 +76,7 @@
             <div class="flex flex-col gap-4">
               <div class="flex justify-between">
                 <span class="text-[15px]">Subtotal</span>
-                <span class="text-lg font-medium">$2,683.00</span>
+                <span class="text-lg font-medium" x-text="'$' + $store.cart.subTotal"></span>
               </div>
               <div class="text-[15px] flex justify-between">
                 <span class="">Coupon Discount</span>
@@ -134,7 +98,7 @@
 
             <div class="flex justify-between">
               <span class="font-bold">Total</span>
-              <span class="text-lg font-bold text-green-600">$2,699.00</span>
+              <span class="text-lg font-bold text-green-600" x-text="'$' + $store.cart.total"></span>
             </div>
 
             <button class="btn-lg"><a href="./checkout.html">Proceed To Checkout</a></button>

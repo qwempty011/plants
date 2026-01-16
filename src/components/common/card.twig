@@ -1,12 +1,16 @@
-<div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden">
-  
+<div class="relative pb-5 group text-lg max-w-[300px] flex-none rounded-lg overflow-hidden"
+    x-data
+    x-load
+    x-init="$store.cart">
   
 
   <div class="bg-gray-50 h-72 max relative">
-
-    <img src="{{ product.img }}"
-         class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
-         alt="{{ product.name }}">
+    <a href="./shop.html">
+      <img src="{{ product.img }}"
+          class="mx-auto mb-3 max-h-64 max-w-64 rounded-lg "
+          alt="{{ product.name }}">
+    </a>
+    
 
     {% if product.discount %}
       <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
@@ -22,13 +26,21 @@
                 transition-all duration-300">
 
       <!-- 1. Cart -->
-      <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">
+      <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
+              @click="$store.cart.addToCart({
+                      id: '{{ product.id }}',
+                      name: '{{ product.name }}',
+                      price: {{ product.price }},
+                      img: '{{ product.img }}',
+                      qty: 1
+                  })"
+              >
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
              fill="none" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
         </svg>
-
-      </div>
+      </button>
+      
 
       <!-- 2. Heart -->
       <div class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer">

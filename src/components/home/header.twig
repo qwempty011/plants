@@ -1,8 +1,10 @@
 <header class="flex justify-between items-start self-center mt-6  pt-0 font-roboto text-xl   border-b"
         x-data>
 
-    
-      <img class="w-40  h-9" src="/assets/images/Logo.png" alt=""></img>
+      <a href="/index.html">
+        <img class="w-40  h-9" src="/assets/images/logo.svg" alt=""></img>
+      </a>
+      
         
     
     
@@ -25,16 +27,28 @@
         </li>
 
       </ul>
-      <ul class="flex items-baseline  gap-8 ">
+      <ul class="flex items-baseline  gap-8 "
+          x-data
+          x-load
+          >
         <li>
           <a href="#">
             <img src="/assets/images/icons/search.svg" alt="">
           </a>
         </li>
-        <li>
-            <a href="!#"> 
-              <img src="/assets/images/icons/basket.svg" alt="">
-            </a>
+        <li class="relative">
+          <a href="./cart.html"> 
+            <img src="/assets/images/icons/basket.svg" alt="">
+          </a>
+
+          <p
+            class="absolute -top-[5px] -right-[7px] z-30
+                  bg-green-600 text-white text-[10px]
+                  w-5 aspect-square rounded-full
+                  flex items-center justify-center
+                  leading-none border-2 border-white"
+            x-text="$store.cart.qtySum">
+          </p>
         </li>
         <button class="flex gap-1 bg-green-600 hover:bg-green-800 items-center px-4 py-2 text-white rounded-md font-medium" 
                 @click="$dispatch('auth-open', { mode: 'login' })">

@@ -73,3 +73,33 @@ input[type=range]::-webkit-slider-thumb {
     background-color: #22c55e;
     /* Tailwind green-500 */
 }
+
+.gallery-container {
+    display: flex;
+    gap: 28px;
+}
+
+.main-carousel {
+    background: #f9fafb;
+    padding: 24px;
+}
+
+.embla {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.embla__container {
+    display: flex;
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+.embla__slide img {
+    width: 384px;
+    height: 384px;
+    object-fit: cover;
+}
