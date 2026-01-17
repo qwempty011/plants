@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
-    <script type="module" crossorigin src="/plants/assets/main-2b420098.js"></script>
-    <link rel="stylesheet" href="/plants/assets/main-7577e479.css">
+    <script type="module" crossorigin src="/plants/assets/main-72737d91.js"></script>
+    <link rel="stylesheet" href="/plants/assets/main-feed5316.css">
   </head>
   <body>
     <div class="max-w-[1200px] mx-auto text-base  font-roboto">
@@ -353,18 +353,32 @@
                 transition-all duration-300">
 
       <!-- 1. Cart -->
-      <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="$store.cart.addToCart({
-                      id: '1',
-                      name: 'Barberton Daisy',
-                      price: 119,
-                      img: 'assets/images/card-1.png',
-                      qty: 1
-                  })"
-              >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
-             fill="none" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+      <button 
+        :class="$store.cart.isInCart('1') 
+          ? 'p-2 bg-white rounded-full shadow  transition cursor-pointer' 
+          : 'p-2 bg-white rounded-full shadow  transition cursor-pointer'"
+        @click="$store.cart.addToCart({
+          id: '1',
+          name: 'Barberton Daisy',
+          price: 119,
+          img: 'assets/images/card-1.png',
+          qty: 1
+        })"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          :class="$store.cart.isInCart('1') 
+            ? 'w-6 h-6 stroke-green-600 transition' 
+            : 'w-6 h-6 stroke-gray-500 transition'"
+          fill="none" 
+          stroke-width="2" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" 
+          />
         </svg>
       </button>
       
@@ -432,18 +446,32 @@
                 transition-all duration-300">
 
       <!-- 1. Cart -->
-      <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="$store.cart.addToCart({
-                      id: '2',
-                      name: 'Angel Wing Begonia',
-                      price: 169,
-                      img: 'assets/images/card-2.png',
-                      qty: 1
-                  })"
-              >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
-             fill="none" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+      <button 
+        :class="$store.cart.isInCart('2') 
+          ? 'p-2 bg-white rounded-full shadow  transition cursor-pointer' 
+          : 'p-2 bg-white rounded-full shadow  transition cursor-pointer'"
+        @click="$store.cart.addToCart({
+          id: '2',
+          name: 'Angel Wing Begonia',
+          price: 169,
+          img: 'assets/images/card-2.png',
+          qty: 1
+        })"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          :class="$store.cart.isInCart('2') 
+            ? 'w-6 h-6 stroke-green-600 transition' 
+            : 'w-6 h-6 stroke-gray-500 transition'"
+          fill="none" 
+          stroke-width="2" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" 
+          />
         </svg>
       </button>
       
@@ -515,18 +543,32 @@
                 transition-all duration-300">
 
       <!-- 1. Cart -->
-      <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="$store.cart.addToCart({
-                      id: '3',
-                      name: 'African Violet',
-                      price: 199,
-                      img: 'assets/images/card-3.png',
-                      qty: 1
-                  })"
-              >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
-             fill="none" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+      <button 
+        :class="$store.cart.isInCart('3') 
+          ? 'p-2 bg-white rounded-full shadow  transition cursor-pointer' 
+          : 'p-2 bg-white rounded-full shadow  transition cursor-pointer'"
+        @click="$store.cart.addToCart({
+          id: '3',
+          name: 'African Violet',
+          price: 199,
+          img: 'assets/images/card-3.png',
+          qty: 1
+        })"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          :class="$store.cart.isInCart('3') 
+            ? 'w-6 h-6 stroke-green-600 transition' 
+            : 'w-6 h-6 stroke-gray-500 transition'"
+          fill="none" 
+          stroke-width="2" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" 
+          />
         </svg>
       </button>
       
@@ -596,18 +638,32 @@
                 transition-all duration-300">
 
       <!-- 1. Cart -->
-      <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="$store.cart.addToCart({
-                      id: '4',
-                      name: 'Beach Spider Lily',
-                      price: 129,
-                      img: 'assets/images/card-4.png',
-                      qty: 1
-                  })"
-              >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
-             fill="none" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+      <button 
+        :class="$store.cart.isInCart('4') 
+          ? 'p-2 bg-white rounded-full shadow  transition cursor-pointer' 
+          : 'p-2 bg-white rounded-full shadow  transition cursor-pointer'"
+        @click="$store.cart.addToCart({
+          id: '4',
+          name: 'Beach Spider Lily',
+          price: 129,
+          img: 'assets/images/card-4.png',
+          qty: 1
+        })"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          :class="$store.cart.isInCart('4') 
+            ? 'w-6 h-6 stroke-green-600 transition' 
+            : 'w-6 h-6 stroke-gray-500 transition'"
+          fill="none" 
+          stroke-width="2" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" 
+          />
         </svg>
       </button>
       
@@ -675,18 +731,32 @@
                 transition-all duration-300">
 
       <!-- 1. Cart -->
-      <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="$store.cart.addToCart({
-                      id: '5',
-                      name: 'Blushing Bromeliad',
-                      price: 139,
-                      img: 'assets/images/card-5.png',
-                      qty: 1
-                  })"
-              >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
-             fill="none" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+      <button 
+        :class="$store.cart.isInCart('5') 
+          ? 'p-2 bg-white rounded-full shadow  transition cursor-pointer' 
+          : 'p-2 bg-white rounded-full shadow  transition cursor-pointer'"
+        @click="$store.cart.addToCart({
+          id: '5',
+          name: 'Blushing Bromeliad',
+          price: 139,
+          img: 'assets/images/card-5.png',
+          qty: 1
+        })"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          :class="$store.cart.isInCart('5') 
+            ? 'w-6 h-6 stroke-green-600 transition' 
+            : 'w-6 h-6 stroke-gray-500 transition'"
+          fill="none" 
+          stroke-width="2" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" 
+          />
         </svg>
       </button>
       
@@ -754,18 +824,32 @@
                 transition-all duration-300">
 
       <!-- 1. Cart -->
-      <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="$store.cart.addToCart({
-                      id: '6',
-                      name: 'Aluminum Plant',
-                      price: 179,
-                      img: 'assets/images/card-6.png',
-                      qty: 1
-                  })"
-              >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
-             fill="none" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+      <button 
+        :class="$store.cart.isInCart('6') 
+          ? 'p-2 bg-white rounded-full shadow  transition cursor-pointer' 
+          : 'p-2 bg-white rounded-full shadow  transition cursor-pointer'"
+        @click="$store.cart.addToCart({
+          id: '6',
+          name: 'Aluminum Plant',
+          price: 179,
+          img: 'assets/images/card-6.png',
+          qty: 1
+        })"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          :class="$store.cart.isInCart('6') 
+            ? 'w-6 h-6 stroke-green-600 transition' 
+            : 'w-6 h-6 stroke-gray-500 transition'"
+          fill="none" 
+          stroke-width="2" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" 
+          />
         </svg>
       </button>
       
@@ -833,18 +917,32 @@
                 transition-all duration-300">
 
       <!-- 1. Cart -->
-      <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="$store.cart.addToCart({
-                      id: '7',
-                      name: 'Bird’s Nest Fern',
-                      price: 99,
-                      img: 'assets/images/card-7.png',
-                      qty: 1
-                  })"
-              >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
-             fill="none" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+      <button 
+        :class="$store.cart.isInCart('7') 
+          ? 'p-2 bg-white rounded-full shadow  transition cursor-pointer' 
+          : 'p-2 bg-white rounded-full shadow  transition cursor-pointer'"
+        @click="$store.cart.addToCart({
+          id: '7',
+          name: 'Bird’s Nest Fern',
+          price: 99,
+          img: 'assets/images/card-7.png',
+          qty: 1
+        })"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          :class="$store.cart.isInCart('7') 
+            ? 'w-6 h-6 stroke-green-600 transition' 
+            : 'w-6 h-6 stroke-gray-500 transition'"
+          fill="none" 
+          stroke-width="2" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" 
+          />
         </svg>
       </button>
       
@@ -912,18 +1010,32 @@
                 transition-all duration-300">
 
       <!-- 1. Cart -->
-      <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="$store.cart.addToCart({
-                      id: '8',
-                      name: 'Broadleaf Lady Palm',
-                      price: 59,
-                      img: 'assets/images/card-8.png',
-                      qty: 1
-                  })"
-              >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
-             fill="none" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+      <button 
+        :class="$store.cart.isInCart('8') 
+          ? 'p-2 bg-white rounded-full shadow  transition cursor-pointer' 
+          : 'p-2 bg-white rounded-full shadow  transition cursor-pointer'"
+        @click="$store.cart.addToCart({
+          id: '8',
+          name: 'Broadleaf Lady Palm',
+          price: 59,
+          img: 'assets/images/card-8.png',
+          qty: 1
+        })"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          :class="$store.cart.isInCart('8') 
+            ? 'w-6 h-6 stroke-green-600 transition' 
+            : 'w-6 h-6 stroke-gray-500 transition'"
+          fill="none" 
+          stroke-width="2" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" 
+          />
         </svg>
       </button>
       
@@ -991,18 +1103,32 @@
                 transition-all duration-300">
 
       <!-- 1. Cart -->
-      <button class="p-2 bg-white rounded-full shadow hover:bg-green-100 transition cursor-pointer" 
-              @click="$store.cart.addToCart({
-                      id: '9',
-                      name: 'Chinese Evergreen',
-                      price: 39,
-                      img: 'assets/images/card-9.png',
-                      qty: 1
-                  })"
-              >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 stroke-green-600 hover:stroke-green-800 transition" 
-             fill="none" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+      <button 
+        :class="$store.cart.isInCart('9') 
+          ? 'p-2 bg-white rounded-full shadow  transition cursor-pointer' 
+          : 'p-2 bg-white rounded-full shadow  transition cursor-pointer'"
+        @click="$store.cart.addToCart({
+          id: '9',
+          name: 'Chinese Evergreen',
+          price: 39,
+          img: 'assets/images/card-9.png',
+          qty: 1
+        })"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          :class="$store.cart.isInCart('9') 
+            ? 'w-6 h-6 stroke-green-600 transition' 
+            : 'w-6 h-6 stroke-gray-500 transition'"
+          fill="none" 
+          stroke-width="2" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" 
+          />
         </svg>
       </button>
       
