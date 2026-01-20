@@ -7,12 +7,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
-    <script type="module" crossorigin src="/plants/assets/main-1f0b6270.js"></script>
-    <link rel="stylesheet" href="/plants/assets/main-d1253140.css">
+    <script type="module" crossorigin src="/plants/assets/main-2c4054da.js"></script>
+    <link rel="stylesheet" href="/plants/assets/main-67f2411c.css">
   </head>
   <body>
     <div class="md:max-w-[1200px] px-6 md:mx-auto text-base  font-roboto">
-      <header class="flex justify-between items-start self-center mt-6  pt-0 font-roboto text-xl   border-b"
+      <header class="flex justify-between items-start self-center md:mt-6  pt-0 font-roboto text-xl   md:border-b"
         x-data="{ mobileMenuOpen: false}">
 
       <a href="./index.html" class="hidden md:flex">
@@ -74,8 +74,8 @@
 
 
       
-
-      <div class="flex flex-1 items-center gap-3 md:hidden">
+      
+      <div class="flex flex-1 items-center gap-3 md:hidden hidden">
         <div class="relative flex-1">
 
           <img src="/plants/assets/images/icons/search.svg" alt=""
@@ -193,16 +193,16 @@
     <a href="#" class="">Shop</a>
   </div>
 
-<div class="flex flex-col md:flex-row md:my-14 gap-12 text-neutral-700"
+<div class="flex flex-col  md:flex-row md:my-14 gap-12 text-neutral-700"
      x-data="{ count: 1, selectedSize: 'S' }">
     <div 
         x-data="galleryCarousel"
         x-load 
-        class="gallery-container"
+        class="gallery-container w-screen -mx-6"
     >
-        <!-- Thumbnails -->
+        <!-- Thumbnails (desktop) -->
         <div class="hidden md:flex justify-center flex-col gap-3 shrink-0">
-            <template  x-for="(image, index) in images" :key="index">
+            <template x-for="(image, index) in images" :key="index">
                 <div 
                     class="size-24 bg-white cursor-pointer border-2 transition" 
                     :class="{ 'border-green-600': currentIndex === index }"
@@ -214,7 +214,7 @@
         </div>
 
         <!-- Main Carousel -->
-        <div class="main-carousel">
+        <div class="main-carousel relative">
             <div class="embla" x-ref="viewport" @click="scrollNext()">
                 <div class="embla__container">
                     <template x-for="(image, index) in images" :key="index">
@@ -223,6 +223,39 @@
                         </div>
                     </template>
                 </div>
+            </div>
+
+            <!-- Кнопки навигации (мобильные) -->
+            <div class="absolute top-4 left-0 right-0 flex justify-between px-4 md:hidden">
+                <!-- Стрелка назад (слева) -->
+                <button 
+                    @click.stop="history.back()" 
+                    class="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-md hover:bg-white transition"
+                >
+                    <img src="/plants/assets/images/icons/arrow-left.svg" alt="Назад" class="w-6 h-6">
+                </button>
+
+                <!-- Сердце (справа) -->
+                <button 
+                    @click.stop 
+                    class="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-md hover:bg-white transition"
+                >
+                    <img src="/plants/assets/images/icons/heart.svg" alt="Избранное" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- Dots Navigation -->
+            <div class="flex justify-center gap-2  md:hidden">
+                <template x-for="(image, index) in images" :key="index">
+                    <button 
+                        @click="scrollTo(index)"
+                        class="transition-all duration-300"
+                        :class="currentIndex === index 
+                            ? 'w-8 h-2 bg-green-600 rounded-full' 
+                            : 'w-2 h-2 bg-gray-300 rounded-full hover:bg-green-400'"
+                        :aria-label="'Go to slide ' + (index + 1)"
+                    ></button>
+                </template>
             </div>
         </div>
     </div>
@@ -388,7 +421,7 @@
                             </div>
                             
 
-                            <p class="block text-xl font-bold text-green-600">$119.00</p>
+                            <p class="block text-xl font-bold text-green-600" x-text="'$' + count * 119"></p>
                         </div>
                         <div class=" flex  md:flex-row items-center gap-3">
                             <button class="font-bold px-16 py-5 text-white bg-green-600 rounded-3xl"
@@ -475,254 +508,429 @@
         
     </div>
 </div>
-  <div x-data="emblaProducts()" x-load class="w-full mb-11">
+  <div x-data="emblaProducts" x-load class="w-full mb-11">
     <div class="overflow-hidden" x-ref="viewport">
         <div class="flex">
             
-                <div class="flex-[0_0_100%] min-w-0  px-2">
-                    <a  href="#"
-                    class="card  transition-opacity duration-300"
-                    data-price="119">
-
-                        <div class="relative pb-5 group text-lg md:max-w-[300px] flex-none rounded-lg overflow-hidden">
-  
-  <div class="bg-gray-50 h-44 md:h-72 max relative">
-
-    <img src="assets/images/card-1.png"
-         class="mx-auto mb-3 max-h-36 max-w-28 md:max-h-64 md:max-w-56 rounded-lg "
-         alt="Barberton Daisy">
-
+                <div class="flex-[0_0_50%]
+                            sm:flex-[0_0_50%]
+                            lg:flex-[0_0_33.333%]
+                            min-w-0 px-2">
+                    <a href="#"
+                       class="card transition-opacity duration-300 block"
+                       data-price="119">
+                        <div
+  class="relative group flex-none
+         w-40 sm:w-44 md:w-[280px]
+         rounded-lg overflow-hidden pb-4 text-sm md:text-lg"
+>
+  <!-- Image wrapper -->
+  <div
+    class="bg-gray-50
+           h-36 sm:h-40 md:h-72
+           flex items-center justify-center"
+  >
+    <img
+      src="assets/images/card-1.png"
+      alt="Barberton Daisy"
+      class="object-contain
+             max-h-28 sm:max-h-32 md:max-h-64
+             max-w-28 sm:max-w-32 md:max-w-56
+             transition-transform duration-300
+             group-hover:scale-105"
+    >
   </div>
 
-  <div class="text-left px-3">
-    <h4 class="font-medium text-gray-800">Barberton Daisy</h4>
+  <!-- Content -->
+  <div class="px-2 pt-2 md:px-3 md:pt-3">
+    <h4 class="font-medium text-gray-800 leading-snug line-clamp-2">
+      Barberton Daisy
+    </h4>
+
     <div class="flex items-center gap-2 mt-1">
-      <p class="text-green-600 font-semibold">$119</p>
+      <p class="text-green-600 font-semibold">
+        $119
+      </p>
     </div>
   </div>
 </div>
-                    
                     </a>
                 </div>
             
-                <div class="flex-[0_0_100%] min-w-0  px-2">
-                    <a  href="#"
-                    class="card  transition-opacity duration-300"
-                    data-price="169">
-
-                        <div class="relative pb-5 group text-lg md:max-w-[300px] flex-none rounded-lg overflow-hidden">
-  
-  <div class="bg-gray-50 h-44 md:h-72 max relative">
-
-    <img src="assets/images/card-2.png"
-         class="mx-auto mb-3 max-h-36 max-w-28 md:max-h-64 md:max-w-56 rounded-lg "
-         alt="Angel Wing Begonia">
-
+                <div class="flex-[0_0_50%]
+                            sm:flex-[0_0_50%]
+                            lg:flex-[0_0_33.333%]
+                            min-w-0 px-2">
+                    <a href="#"
+                       class="card transition-opacity duration-300 block"
+                       data-price="169">
+                        <div
+  class="relative group flex-none
+         w-40 sm:w-44 md:w-[280px]
+         rounded-lg overflow-hidden pb-4 text-sm md:text-lg"
+>
+  <!-- Image wrapper -->
+  <div
+    class="bg-gray-50
+           h-36 sm:h-40 md:h-72
+           flex items-center justify-center"
+  >
+    <img
+      src="assets/images/card-2.png"
+      alt="Angel Wing Begonia"
+      class="object-contain
+             max-h-28 sm:max-h-32 md:max-h-64
+             max-w-28 sm:max-w-32 md:max-w-56
+             transition-transform duration-300
+             group-hover:scale-105"
+    >
   </div>
 
-  <div class="text-left px-3">
-    <h4 class="font-medium text-gray-800">Angel Wing Begonia</h4>
+  <!-- Content -->
+  <div class="px-2 pt-2 md:px-3 md:pt-3">
+    <h4 class="font-medium text-gray-800 leading-snug line-clamp-2">
+      Angel Wing Begonia
+    </h4>
+
     <div class="flex items-center gap-2 mt-1">
-      <p class="text-green-600 font-semibold">$169</p>
+      <p class="text-green-600 font-semibold">
+        $169
+      </p>
     </div>
   </div>
 </div>
-                    
                     </a>
                 </div>
             
-                <div class="flex-[0_0_100%] min-w-0  px-2">
-                    <a  href="#"
-                    class="card  transition-opacity duration-300"
-                    data-price="199">
-
-                        <div class="relative pb-5 group text-lg md:max-w-[300px] flex-none rounded-lg overflow-hidden">
-  
-  <div class="bg-gray-50 h-44 md:h-72 max relative">
-
-    <img src="assets/images/card-3.png"
-         class="mx-auto mb-3 max-h-36 max-w-28 md:max-h-64 md:max-w-56 rounded-lg "
-         alt="African Violet">
-
+                <div class="flex-[0_0_50%]
+                            sm:flex-[0_0_50%]
+                            lg:flex-[0_0_33.333%]
+                            min-w-0 px-2">
+                    <a href="#"
+                       class="card transition-opacity duration-300 block"
+                       data-price="199">
+                        <div
+  class="relative group flex-none
+         w-40 sm:w-44 md:w-[280px]
+         rounded-lg overflow-hidden pb-4 text-sm md:text-lg"
+>
+  <!-- Image wrapper -->
+  <div
+    class="bg-gray-50
+           h-36 sm:h-40 md:h-72
+           flex items-center justify-center"
+  >
+    <img
+      src="assets/images/card-3.png"
+      alt="African Violet"
+      class="object-contain
+             max-h-28 sm:max-h-32 md:max-h-64
+             max-w-28 sm:max-w-32 md:max-w-56
+             transition-transform duration-300
+             group-hover:scale-105"
+    >
   </div>
 
-  <div class="text-left px-3">
-    <h4 class="font-medium text-gray-800">African Violet</h4>
+  <!-- Content -->
+  <div class="px-2 pt-2 md:px-3 md:pt-3">
+    <h4 class="font-medium text-gray-800 leading-snug line-clamp-2">
+      African Violet
+    </h4>
+
     <div class="flex items-center gap-2 mt-1">
-      <p class="text-green-600 font-semibold">$199</p>
+      <p class="text-green-600 font-semibold">
+        $199
+      </p>
     </div>
   </div>
 </div>
-                    
                     </a>
                 </div>
             
-                <div class="flex-[0_0_100%] min-w-0  px-2">
-                    <a  href="#"
-                    class="card  transition-opacity duration-300"
-                    data-price="129">
-
-                        <div class="relative pb-5 group text-lg md:max-w-[300px] flex-none rounded-lg overflow-hidden">
-  
-  <div class="bg-gray-50 h-44 md:h-72 max relative">
-
-    <img src="assets/images/card-4.png"
-         class="mx-auto mb-3 max-h-36 max-w-28 md:max-h-64 md:max-w-56 rounded-lg "
-         alt="Beach Spider Lily">
-
+                <div class="flex-[0_0_50%]
+                            sm:flex-[0_0_50%]
+                            lg:flex-[0_0_33.333%]
+                            min-w-0 px-2">
+                    <a href="#"
+                       class="card transition-opacity duration-300 block"
+                       data-price="129">
+                        <div
+  class="relative group flex-none
+         w-40 sm:w-44 md:w-[280px]
+         rounded-lg overflow-hidden pb-4 text-sm md:text-lg"
+>
+  <!-- Image wrapper -->
+  <div
+    class="bg-gray-50
+           h-36 sm:h-40 md:h-72
+           flex items-center justify-center"
+  >
+    <img
+      src="assets/images/card-4.png"
+      alt="Beach Spider Lily"
+      class="object-contain
+             max-h-28 sm:max-h-32 md:max-h-64
+             max-w-28 sm:max-w-32 md:max-w-56
+             transition-transform duration-300
+             group-hover:scale-105"
+    >
   </div>
 
-  <div class="text-left px-3">
-    <h4 class="font-medium text-gray-800">Beach Spider Lily</h4>
+  <!-- Content -->
+  <div class="px-2 pt-2 md:px-3 md:pt-3">
+    <h4 class="font-medium text-gray-800 leading-snug line-clamp-2">
+      Beach Spider Lily
+    </h4>
+
     <div class="flex items-center gap-2 mt-1">
-      <p class="text-green-600 font-semibold">$129</p>
+      <p class="text-green-600 font-semibold">
+        $129
+      </p>
     </div>
   </div>
 </div>
-                    
                     </a>
                 </div>
             
-                <div class="flex-[0_0_100%] min-w-0  px-2">
-                    <a  href="#"
-                    class="card  transition-opacity duration-300"
-                    data-price="139">
-
-                        <div class="relative pb-5 group text-lg md:max-w-[300px] flex-none rounded-lg overflow-hidden">
-  
-  <div class="bg-gray-50 h-44 md:h-72 max relative">
-
-    <img src="assets/images/card-5.png"
-         class="mx-auto mb-3 max-h-36 max-w-28 md:max-h-64 md:max-w-56 rounded-lg "
-         alt="Blushing Bromeliad">
-
+                <div class="flex-[0_0_50%]
+                            sm:flex-[0_0_50%]
+                            lg:flex-[0_0_33.333%]
+                            min-w-0 px-2">
+                    <a href="#"
+                       class="card transition-opacity duration-300 block"
+                       data-price="139">
+                        <div
+  class="relative group flex-none
+         w-40 sm:w-44 md:w-[280px]
+         rounded-lg overflow-hidden pb-4 text-sm md:text-lg"
+>
+  <!-- Image wrapper -->
+  <div
+    class="bg-gray-50
+           h-36 sm:h-40 md:h-72
+           flex items-center justify-center"
+  >
+    <img
+      src="assets/images/card-5.png"
+      alt="Blushing Bromeliad"
+      class="object-contain
+             max-h-28 sm:max-h-32 md:max-h-64
+             max-w-28 sm:max-w-32 md:max-w-56
+             transition-transform duration-300
+             group-hover:scale-105"
+    >
   </div>
 
-  <div class="text-left px-3">
-    <h4 class="font-medium text-gray-800">Blushing Bromeliad</h4>
+  <!-- Content -->
+  <div class="px-2 pt-2 md:px-3 md:pt-3">
+    <h4 class="font-medium text-gray-800 leading-snug line-clamp-2">
+      Blushing Bromeliad
+    </h4>
+
     <div class="flex items-center gap-2 mt-1">
-      <p class="text-green-600 font-semibold">$139</p>
+      <p class="text-green-600 font-semibold">
+        $139
+      </p>
     </div>
   </div>
 </div>
-                    
                     </a>
                 </div>
             
-                <div class="flex-[0_0_100%] min-w-0  px-2">
-                    <a  href="#"
-                    class="card  transition-opacity duration-300"
-                    data-price="179">
-
-                        <div class="relative pb-5 group text-lg md:max-w-[300px] flex-none rounded-lg overflow-hidden">
-  
-  <div class="bg-gray-50 h-44 md:h-72 max relative">
-
-    <img src="assets/images/card-6.png"
-         class="mx-auto mb-3 max-h-36 max-w-28 md:max-h-64 md:max-w-56 rounded-lg "
-         alt="Aluminum Plant">
-
+                <div class="flex-[0_0_50%]
+                            sm:flex-[0_0_50%]
+                            lg:flex-[0_0_33.333%]
+                            min-w-0 px-2">
+                    <a href="#"
+                       class="card transition-opacity duration-300 block"
+                       data-price="179">
+                        <div
+  class="relative group flex-none
+         w-40 sm:w-44 md:w-[280px]
+         rounded-lg overflow-hidden pb-4 text-sm md:text-lg"
+>
+  <!-- Image wrapper -->
+  <div
+    class="bg-gray-50
+           h-36 sm:h-40 md:h-72
+           flex items-center justify-center"
+  >
+    <img
+      src="assets/images/card-6.png"
+      alt="Aluminum Plant"
+      class="object-contain
+             max-h-28 sm:max-h-32 md:max-h-64
+             max-w-28 sm:max-w-32 md:max-w-56
+             transition-transform duration-300
+             group-hover:scale-105"
+    >
   </div>
 
-  <div class="text-left px-3">
-    <h4 class="font-medium text-gray-800">Aluminum Plant</h4>
+  <!-- Content -->
+  <div class="px-2 pt-2 md:px-3 md:pt-3">
+    <h4 class="font-medium text-gray-800 leading-snug line-clamp-2">
+      Aluminum Plant
+    </h4>
+
     <div class="flex items-center gap-2 mt-1">
-      <p class="text-green-600 font-semibold">$179</p>
+      <p class="text-green-600 font-semibold">
+        $179
+      </p>
     </div>
   </div>
 </div>
-                    
                     </a>
                 </div>
             
-                <div class="flex-[0_0_100%] min-w-0  px-2">
-                    <a  href="#"
-                    class="card  transition-opacity duration-300"
-                    data-price="99">
-
-                        <div class="relative pb-5 group text-lg md:max-w-[300px] flex-none rounded-lg overflow-hidden">
-  
-  <div class="bg-gray-50 h-44 md:h-72 max relative">
-
-    <img src="assets/images/card-7.png"
-         class="mx-auto mb-3 max-h-36 max-w-28 md:max-h-64 md:max-w-56 rounded-lg "
-         alt="Bird’s Nest Fern">
-
+                <div class="flex-[0_0_50%]
+                            sm:flex-[0_0_50%]
+                            lg:flex-[0_0_33.333%]
+                            min-w-0 px-2">
+                    <a href="#"
+                       class="card transition-opacity duration-300 block"
+                       data-price="99">
+                        <div
+  class="relative group flex-none
+         w-40 sm:w-44 md:w-[280px]
+         rounded-lg overflow-hidden pb-4 text-sm md:text-lg"
+>
+  <!-- Image wrapper -->
+  <div
+    class="bg-gray-50
+           h-36 sm:h-40 md:h-72
+           flex items-center justify-center"
+  >
+    <img
+      src="assets/images/card-7.png"
+      alt="Bird’s Nest Fern"
+      class="object-contain
+             max-h-28 sm:max-h-32 md:max-h-64
+             max-w-28 sm:max-w-32 md:max-w-56
+             transition-transform duration-300
+             group-hover:scale-105"
+    >
   </div>
 
-  <div class="text-left px-3">
-    <h4 class="font-medium text-gray-800">Bird’s Nest Fern</h4>
+  <!-- Content -->
+  <div class="px-2 pt-2 md:px-3 md:pt-3">
+    <h4 class="font-medium text-gray-800 leading-snug line-clamp-2">
+      Bird’s Nest Fern
+    </h4>
+
     <div class="flex items-center gap-2 mt-1">
-      <p class="text-green-600 font-semibold">$99</p>
+      <p class="text-green-600 font-semibold">
+        $99
+      </p>
     </div>
   </div>
 </div>
-                    
                     </a>
                 </div>
             
-                <div class="flex-[0_0_100%] min-w-0  px-2">
-                    <a  href="#"
-                    class="card  transition-opacity duration-300"
-                    data-price="59">
-
-                        <div class="relative pb-5 group text-lg md:max-w-[300px] flex-none rounded-lg overflow-hidden">
-  
-  <div class="bg-gray-50 h-44 md:h-72 max relative">
-
-    <img src="assets/images/card-8.png"
-         class="mx-auto mb-3 max-h-36 max-w-28 md:max-h-64 md:max-w-56 rounded-lg "
-         alt="Broadleaf Lady Palm">
-
+                <div class="flex-[0_0_50%]
+                            sm:flex-[0_0_50%]
+                            lg:flex-[0_0_33.333%]
+                            min-w-0 px-2">
+                    <a href="#"
+                       class="card transition-opacity duration-300 block"
+                       data-price="59">
+                        <div
+  class="relative group flex-none
+         w-40 sm:w-44 md:w-[280px]
+         rounded-lg overflow-hidden pb-4 text-sm md:text-lg"
+>
+  <!-- Image wrapper -->
+  <div
+    class="bg-gray-50
+           h-36 sm:h-40 md:h-72
+           flex items-center justify-center"
+  >
+    <img
+      src="assets/images/card-8.png"
+      alt="Broadleaf Lady Palm"
+      class="object-contain
+             max-h-28 sm:max-h-32 md:max-h-64
+             max-w-28 sm:max-w-32 md:max-w-56
+             transition-transform duration-300
+             group-hover:scale-105"
+    >
   </div>
 
-  <div class="text-left px-3">
-    <h4 class="font-medium text-gray-800">Broadleaf Lady Palm</h4>
+  <!-- Content -->
+  <div class="px-2 pt-2 md:px-3 md:pt-3">
+    <h4 class="font-medium text-gray-800 leading-snug line-clamp-2">
+      Broadleaf Lady Palm
+    </h4>
+
     <div class="flex items-center gap-2 mt-1">
-      <p class="text-green-600 font-semibold">$59</p>
+      <p class="text-green-600 font-semibold">
+        $59
+      </p>
     </div>
   </div>
 </div>
-                    
                     </a>
                 </div>
             
-                <div class="flex-[0_0_100%] min-w-0  px-2">
-                    <a  href="#"
-                    class="card  transition-opacity duration-300"
-                    data-price="39">
-
-                        <div class="relative pb-5 group text-lg md:max-w-[300px] flex-none rounded-lg overflow-hidden">
-  
-  <div class="bg-gray-50 h-44 md:h-72 max relative">
-
-    <img src="assets/images/card-9.png"
-         class="mx-auto mb-3 max-h-36 max-w-28 md:max-h-64 md:max-w-56 rounded-lg "
-         alt="Chinese Evergreen">
-
+                <div class="flex-[0_0_50%]
+                            sm:flex-[0_0_50%]
+                            lg:flex-[0_0_33.333%]
+                            min-w-0 px-2">
+                    <a href="#"
+                       class="card transition-opacity duration-300 block"
+                       data-price="39">
+                        <div
+  class="relative group flex-none
+         w-40 sm:w-44 md:w-[280px]
+         rounded-lg overflow-hidden pb-4 text-sm md:text-lg"
+>
+  <!-- Image wrapper -->
+  <div
+    class="bg-gray-50
+           h-36 sm:h-40 md:h-72
+           flex items-center justify-center"
+  >
+    <img
+      src="assets/images/card-9.png"
+      alt="Chinese Evergreen"
+      class="object-contain
+             max-h-28 sm:max-h-32 md:max-h-64
+             max-w-28 sm:max-w-32 md:max-w-56
+             transition-transform duration-300
+             group-hover:scale-105"
+    >
   </div>
 
-  <div class="text-left px-3">
-    <h4 class="font-medium text-gray-800">Chinese Evergreen</h4>
+  <!-- Content -->
+  <div class="px-2 pt-2 md:px-3 md:pt-3">
+    <h4 class="font-medium text-gray-800 leading-snug line-clamp-2">
+      Chinese Evergreen
+    </h4>
+
     <div class="flex items-center gap-2 mt-1">
-      <p class="text-green-600 font-semibold">$39</p>
+      <p class="text-green-600 font-semibold">
+        $39
+      </p>
     </div>
   </div>
 </div>
-                    
                     </a>
                 </div>
             
         </div>
     </div>
 
-    <div class="flex justify-center items-center space-x-2 mt-8">
+    <!-- Dots Navigation -->
+    <div class="flex justify-center items-center gap-2 mt-8">
         <template x-for="(snap, index) in scrollSnaps" :key="index">
             <button 
                 @click="scrollTo(index)"
-                :class="selectedIndex === index ? 'bg-green-600 w-3 h-3' : 'border border-green-600 w-3 h-3'"
-                class="rounded-full "
-                aria-label="Слайд"></button>
+                :class="selectedIndex === index 
+                    ? 'bg-green-600 w-2.5 h-2.5 ' 
+                    : 'bg-gray-300 w-2.5 h-2.5 hover:bg-green-400'"
+                class="rounded-full transition-all duration-300"
+                :aria-label="'Перейти к слайду ' + (index + 1)"
+            ></button>
         </template>
     </div>
 </div>

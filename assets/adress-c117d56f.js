@@ -1,0 +1,1 @@
+function d(){return{selected:0,addresses:[{name:"Home",details:"100 Jericho avenue, Westbury,<br>NY 11590, USA"},{name:"Office",details:"100 Jericho avenue, Westbury,<br>NY 11590, USA"}],addAddress(){const e=prompt("Address name:"),s=prompt("Full address:");e&&s&&this.addresses.push({name:e,details:s})}}}export{d as shippingAddresses};
